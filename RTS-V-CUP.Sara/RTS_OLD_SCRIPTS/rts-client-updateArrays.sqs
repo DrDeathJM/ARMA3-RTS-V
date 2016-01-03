@@ -1,0 +1,19 @@
+#Init
+
+rts_updateArray = ""
+
+
+#Monitor
+~.5
+?rts_updateArray == "" : goto "Monitor"
+
+;;titletext [format ["%1",rts_updateArray],"plain"];
+_n = call compile rts_updateArray
+rts_updateArray = ""
+
+_side = _n select 0
+_assets = _n select 1
+
+call compile format ["%1Assets = _assets",_side];
+
+goto "Monitor"

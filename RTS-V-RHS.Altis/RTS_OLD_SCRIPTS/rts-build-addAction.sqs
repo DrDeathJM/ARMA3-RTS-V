@@ -1,0 +1,36 @@
+@rts_arrays_initialized
+
+
+~1
+
+#Start
+
+MCUWest = WestTruck
+MCUEast = EastTruck
+
+newBuilding = objNull
+
+_action = format ["Base Construction Menu",WestMCUName]
+MCUWest addAction ["<t color='#D80000'>" + _action + "</t>", Zen_RTS_BuildMenuStructures, [], 100, false, true, "teamSwitchPrev", "vehicle player isKindOf 'B_Truck_01_medical_F'"]
+
+_action = format ["Base Construction Menu",EastMCUName];
+MCUEast addAction ["<t color='#D80000'>" + _action + "</t>", Zen_RTS_BuildMenuStructures, [], 100, false, true, "teamSwitchPrev", "vehicle player isKindOf 'O_Truck_02_medical_F'"]
+
+
+#Wait
+~1
+?isNull newBuilding : goto "Wait"
+
+_bld = newBuilding
+_bldType = typeOf _bld
+newBuilding = objNull
+
+
+#AddAction
+
+?!(_bldType in rscBldTypesAll) : _bld addEventHandler rts_killedBase
+?_bldType in rscBldTypesAll : _bld addEventHandler rts_killedRsc
+
+
+
+goto "Wait"

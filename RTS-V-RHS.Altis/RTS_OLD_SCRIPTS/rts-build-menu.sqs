@@ -1,0 +1,247 @@
+#Init
+
+_idselection = _this select 0
+
+_index = lbCurSel _idselection
+_text = lbText [_idselection, _index]
+_type = lbData [_idselection, _index]
+_x = lbValue [_idselection, _index]
+
+rts_tmp_assetnum = _x
+
+_building = ActionUnit
+_player = Activator
+_side = Side _player
+
+?_side in [West] : _side2 = East
+?_side in [East] : _side2 = West
+
+?!(_side in [East,West,INDEPENDENT,CIVILIAN]) : _msg = format ["Side %1 is not authorized for this interface.", _side]; goto "Denied"
+
+
+_main = call compile format ["%1Assets", _side]
+
+_ma = _main select _x
+
+_bldName = _ma select 0
+_owned = _ma select 1
+_units = _ma select 2
+_asset = _ma select 3
+rts_tmpstring = _asset
+rts_name = _bldName
+
+_assetLevel = call compile format ["%1Level", _asset]
+
+;;hint format ["%1\n%2\n%3\n%4", _bldName, _owned, _units]
+
+
+#Conditions
+
+BName = _bldName
+? (alive call compile rts_tmpString): goto "STILLALIVE"
+_msg = format ["%1 not available.", _bldName]
+[_side, "HQ"] sideChat _msg
+exit
+#STILLALIVE
+~.1
+CloseDialog 0
+
+#Start
+~.1
+
+_idlist = 2000
+_idbuild = 2005
+
+_idbuildyou = 2015
+_idbuildsquad = 2020
+_idsquadlist = 2025
+_idtitle = 1050
+
+_idBtnCustom = 2016
+_idListCustom = 2030
+_idBgdCustom = 2031
+
+_indexCustoms = 0
+
+_idstats = 500
+
+_idSldQ = 1030
+_idLightQ = 1032
+_idHeavyQ = 1034
+_idAirQ = 1036
+
+;;_idBarracksQ = 1041
+
+_indnum1 = 0
+_indnum2 = 0
+
+createDialog "DlgBuild"
+
+ctrlEnable [_idstats,FALSE];
+?_bldName in [EastBarracksName,WestBarracksName] : ctrlShow [ _idbuildYou, FALSE]
+?_bldName in [EastAirFacName,WestAirFacName] : {ctrlShow [ _x, FALSE]} foreach [_idBtnCustom, _idListCustom, _idBgdCustom]
+;;?_bldName in [EastHeavyFacName,WestHeavyFacName] : {ctrlShow [ _x, FALSE]} foreach [_idBuild, _idbuildsquad, _idSquadList, _idBtnCustom, _idListCustom, _idBgdCustom, _idbuildYou]
+
+;;?!(Player in [WestCommander,EastCommander]) : ctrlShow [ _idbuildSquad, FALSE]
+
+ctrlSetText [ _idsldQ, "Soldier Queue Empty"]
+ctrlSetText [ _idLightQ, "Light Queue Empty"]
+ctrlSetText [ _idHeavyQ, "Heavy Queue Empty"]
+ctrlSetText [ _idairQ, "Air Queue Empty"]
+
+
+#SetArray
+_vArray = _units
+vArray = _units
+_vArrayCount = Count _vArray
+_x = 0
+
+_stats = [ _side, _side2] call compile preprocessfile "functions\rts-statistics-array.sqf"
+
+;;Clear the Stats list to repopulate
+lbClear _idStats
+~.1
+
+_s = 0
+#Statlist
+_statName = _stats select _s select 0
+_statLimit = _stats select _s select 1
+
+_info = format ["%1 - %2", _statName, _statLimit]
+_index = lbadd [_idStats, _info]
+
+_s = _s + 1
+?_s < count _stats : goto "StatList"
+
+_titleInfo = format ["%1 |Level %2", _bldName, _assetLevel]
+_bldNameArray = call compile format ["[%1barracksName, %1LightFacName, %1HeavyFacName, %1AirFacName]", _side]
+?!(_bldName in _bldNameArray) : _titleInfo = _bldName
+
+
+;;Set Button names
+ctrlSetText [_idbuild, "Deploy"]
+
+ctrlSetText [_idbuildyou, "Deploy Manned"]
+ctrlSetText [_idbuildsquad, "Deploy for Squad"]
+ctrlSetText [_idtitle, _titleInfo];
+ctrlSetText [_idBtnCustom, "Deploy Custom Squad"]
+
+
+#CreateBuildDialog
+;;Clear the Vehicle build list to repopulate
+lbclear _idlist
+
+
+#ArrayLoop
+_mA = _vArray Select _x
+
+_type = _mA Select 0
+_name = _mA select 1
+_class = _mA Select 2
+_pic = ""
+_bTime = _mA select 3
+_oil = _mA select 4
+_ore = _mA select 5
+_energy = _mA select 6
+_money = _mA select 7
+
+_bTimeBase = _btime/2.5
+
+;;Adjusts build time depending on energy resources;;May change this to supply factor...disabled for now.
+_teamEnergy = call compile format ["energy%1", _side]
+_bTime = (_bTime) - (_teamEnergy / .1)
+?_bTime < _bTimeBase : _bTime = _bTimeBase
+
+_info = Format ["%1 - $%2 / %3t", _name, _money, _bTime]
+
+?_bldName in [EastBarracksName, WestBarracksName, EastAirFacName, WestAirFacName] : _info = format ["%1", _name]
+
+_index = lbadd [_idlist, _info]
+lbSetData [_idlist, _index, _type]
+lbSetValue [_idlist, _index, _bTime]
+lbSetPicture [_idlist, _index, _pic]
+
+_x = _x + 1
+?_x < _vArrayCount : Goto "ArrayLoop"
+
+lbSetCurSel [_idlist, _indnum1]
+
+#GroupList
+;;Clear the Squad list to repopulate
+lbclear _idsquadlist
+~.1
+_array = call compile format ["%1Players", _side]
+
+_x = 0
+
+#ListLoop
+_unit = call compile (_array Select _x);
+?!(IsNull _unit) && !(_unit in [WestCommander, EastCommander]) : Goto "AddList"
+Goto "Skip"
+
+#AddList
+_info = Format ["%1 [%2 units]", Name _unit, Count Units (Group _unit)]
+_unitInfo = Format ["%1", _unit];
+_index = lbadd [_idsquadlist, _info];
+lbSetData [_idsquadlist, _index, _unitInfo];
+lbSetValue [_idsquadlist, _index, _x];
+;;_debug = Format["%1\n%2",_info,_x]; titletext[_debug,"PLAIN"]
+
+
+#Skip
+_x = _x + 1
+?_x < Count _array : goto "listloop"
+
+lbSetCurSel [_idsquadlist, _indnum2]
+
+#CustomSquadsList
+
+_customArray = customSquadArray
+
+_x = 0
+_c = count _customArray
+
+lbClear _idListCustom
+
+#CustomLoop
+_mA = _customArray select _x
+
+_name = _mA select 0
+_listArray = _mA select 1
+_colorStr = _mA select 2
+_color = call compile _colorStr
+
+_info = format ["%1", _name]
+_index = lbadd [_idListCustom, _info]
+lbSetData [_idListCustom, _index, _listArray]
+lbSetColor [_idListCustom, _index, _color]
+lbSetValue [_idListCustom, _index, _x]
+
+_x = _x + 1
+?_x < _c : goto "CustomLoop"
+
+lbSetCurSel [_idListCustom, _indexCustoms]
+
+_wait = Time + 5
+
+#RefreshWait
+~.1
+_indnum1 = lbCurSel _idlist
+_indnum2 = lbCurSel _idsquadlist
+_indexCustoms = lbCurSel _idListCustom
+
+;;?_indnum != _indnumcur : _indnum = _indnumcur
+
+;;?_wait < Time : _refresh = TRUE; goto "setarray"
+?!Alive _player : goto "end"
+?!Ctrlvisible _idlist : goto "end"
+
+goto "refreshwait"
+
+
+#End
+Exit
+
+
+#Denied
+[_side,"HQ"] sideChat _msg

@@ -1,0 +1,137 @@
+_posX = _this select 0
+_posY = _this select 1
+_dir = _this select 2
+_squadName = _this select 3
+_customArrayString = _this select 4
+_num = _this select 5
+
+_bld = call compile rts_tmpstring
+_bldString = rts_tmpString
+
+_side = SIDE Player
+
+_customArray = call compile _customArrayString
+
+_teamColor = customSquadArray select _num select 2
+
+player groupchat format ["Deploying Team %1", _teamcolor]
+
+_qTextID = 1030
+_qButtonID = 1031
+_cString = "Sld"
+
+call compile format ["Cancel%1 = FALSE", _cString]
+
+#Init
+_x = 0
+_c = count _customArray
+
+_num = 20
+_moveX = _posX - (_num * (_c/2))
+_moveY = _posY
+
+?_c < 1 : _msg = format ["%1 has no units assigned.  You must customize the squad first.", _squadName]; goto "Finish"
+
+rts_hq sideChat format ["Deploying %1 units for %2", count _customArray, _squadName]
+
+#Deploy
+_mA = _customArray select _x
+
+_type = _mA Select 0
+_name = _mA select 1
+_class = _mA Select 2
+_bTime = _mA select 3
+_oil = _mA select 4
+_ore = _mA select 5
+_energy = _mA select 6
+_credits = _mA select 7
+
+?param1 == 1 : _oil = round (_oil/2)
+?param1 == 1 : _ore = round (_ore/2)
+
+_teamOil = call compile format ["Oil%1", _side]
+_teamOre = call compile format ["Ore%1", _side]
+_teamEnergy = call compile format ["Energy%1", _side]
+
+?_teamOil < _oil : _msg = format ["Insufficient oil resources available for %1.", _name]; rts_hq sideChat _msg; Goto "Skip"
+?_teamOre < _ore : _msg = format ["Insufficient ore resources available for %1.", _name]; rts_hq sideChat _msg; Goto "Skip"
+?_teamEnergy < _energy : _msg = format ["Insufficient energy resources available for %1.", _name]; rts_hq sideChat _msg; Goto "Skip"
+?param1 > 0 && playerMoney < _credits : _msg = format ["Insufficient credits available for %1.", _name]; rts_hq sideChat _msg; Goto "Skip"
+
+_aiCount = (Count Units Group Player) - 1
+?_aiCount >= AILimit : _msg = Format["Limit of %1 Soldiers is already reached.  You can train more if one dies.", AILimit]; rts_hq sideChat _msg; Goto "Skip"
+
+
+?!(typeOf _bld in [EastBaseLevel4, WestBaseLevel4, typeOf WestLightFac, typeOf EastLightFac, typeOf WestHeavyFac, typeOf EastHeavyFac]) && _class == "vcl" : rts_hq sideChat format ["A %1 can only be built at a level 4 facility or the vehicle factory.", _name]; goto "Skip"
+
+_bTimeBase = _btime/3
+
+_teamEnergy = call compile format ["energy%1", _side]
+_oldTeamEnergy = _teamEnergy
+_bTime = (_bTime) - (_teamEnergy / .1)
+?_bTime < _bTimeBase : _bTime = _bTimeBase
+
+?rts_debug : _btime = 3
+
+_qTime = Time
+_wait = Time + _bTime
+
+
+playerMoney = playerMoney - _credits
+_info = Format ["%1 ready in %2 seconds.", _name, _bTime]
+
+#WaitLoop
+~1
+_timeLeft = _wait - Time
+_timeLeft = (_timeLeft + .01) - ((_timeLeft + .01) mod 1)
+?_qTime < Time : _info = Format["%1 ready in %2 seconds.", _name, _timeLeft]; _qTime = Time + 1
+ctrlSetText [_qTextID, _info]
+?!Alive _bld : _msg = format ["%1 is Offline.  %2 Aborted.", _bldName, _name]; goto "Finish"
+?call compile format ["Cancel%1", _cString] : _msg = format ["%1 Deployment Aborted.", _squadName]; goto "Finish"
+
+?Time < _wait : goto "WaitLoop"
+
+ctrlSetText [_qTextID, _info]
+
+?_class == "vcl" : [_type, [_posX, _posY], _dir, _name, _teamColor] execVM "rts-build-Manned.sqf"; goto "Skip"
+
+#BuildSoldier
+
+_init = "newSoldier = _this"
+_skill = 1
+_rank = "PRIVATE"
+_group = Group Player
+
+_type CreateUnit [[_posX, _posY], _group, _init, _skill, _rank]
+_newSoldier = newSoldier
+_newSoldier exec "rts-unit-markers.sqs"
+
+Player reveal _newsoldier
+
+_newSoldier assignTeam _teamColor
+
+_newSoldier addEventHandler rts_killedSld
+
+_moveX = _moveX + _num
+_moveY = _posY + random _num
+
+_newSoldier domove [_moveX, _moveY]
+
+_msg=Format["%2 moved to active duty.  You Command %1 Soldiers", (Count Units Group Player) -1, _name]
+rts_hq sideChat _msg
+
+#Skip
+
+_x = _x + 1
+
+?_x < _c : goto "Deploy"
+
+_msg = format ["%1 is deployed to active duty.", _squadName]
+
+#Finish
+
+rts_hq sideChat _msg
+
+call compile format ["%1QueueActive = FALSE", _bldString]
+hint "Deployment queue ready."
+ctrlSetText [_qTextID, _info]

@@ -1,0 +1,89 @@
+_bldTmp = _this select 0
+_bldName = _this select 1
+
+
+#BuildInfo
+
+_x = 0;
+_mA = allBuildings
+
+#ArrayLoop
+_sA = _mA select _x
+_unitName = _sA select 1
+?_bldName == _unitName : Goto "CollectInfo"
+
+_x = _x + 1
+?_x >= count _mA : Hint "Not Found"; Goto "End"
+
+Goto "arrayLoop"
+
+#CollectInfo
+
+_bldType = _sA select 0
+_unitName = _sA select 1
+_class = _sA Select 2
+_bldTime = _sA select 3
+;;_oil = _sA select 4
+;;_ore = _sA select 5
+_energy = _sA select 6
+_varName = _sA select 7
+_sideStr = _sA select 8
+_posZ = _sA select 9
+
+_side = call compile _sideStr
+_hq = [_side,"HQ"]
+
+_pos = getPos _bldTmp
+_dir = getDir _bldTmp
+
+_posX = _pos select 0
+_posY = _pos select 1
+
+_bld = _bldType createVehicleLocal [0, 0, 0]
+_bld setDir _dir
+~1
+Bld = _bld
+
+_bld Setpos [_posX,_posY,_posZ]; _z = _posZ/_bldTime
+
+#BuildLoop
+~1
+_bldTime = _bldTime - 1
+_textWait = Format["%1", _bldTime]
+
+_posZ = _posZ - _z
+
+?(Getpos _bld Select 2) < 0 : _bld Setpos [_posX, _posY, _posZ]
+
+?_bldTime == 135 : _info = Format["%1 ready in %2 seconds.", _bldName, _bldTime]; _hq sideChat _info
+?_bldTime == 105 : _info = Format["%1 ready in %2 seconds.", _bldName, _bldTime]; _hq sideChat _info
+?_bldTime == 75 : _info = Format["%1 ready in %2 seconds.", _bldName, _bldTime]; _hq sideChat _info
+?_bldTime == 45 : _info = Format["%1 ready in %2 seconds.", _bldName, _bldTime]; _hq sideChat _info
+?_bldTime == 15 : _info = Format["%1 ready in %2 seconds.", _bldName, _bldTime]; _hq sideChat _info
+?_bldTime > 0  : Goto "BuildLoop"
+
+
+_bld Setpos [_posX, _posY, 0]
+_bld SetDammage 0
+_bld addEventHandler rts_killedBase
+
+_hq sideChat format ["%1 reports status ready", _bldName]
+
+_bld exec "rts-build-structureMonitor.sqs"
+
+
+call compile format ["%1 = _bld", _varName]
+
+call compile format ["%1 setVehicleVarName ""%1""", _varName]
+
+_marker = _unitName
+?Side Player == _side : createMarkerLocal [_marker, getPos _bld]
+?Side Player == _side : _marker setMarkerColorLocal call compile format ["Color%1", _side]
+?Side Player == _side : _marker SetMarkerTypeLocal "mil_box"
+?Side Player == _side : _marker setMarkerTextLocal _unitName
+?Side Player == _side : _marker setMarkerSizeLocal [.7,.7]
+
+?_bld in [WestLightFac, EastLightFac, WestHeavyFac, EastHeavyFac, WestBarracks, EastBarracks] : _bld addAction ["*Ammo Menu*","arms\karr-arms-menu.sqs"]
+
+
+Exit

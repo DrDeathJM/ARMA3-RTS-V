@@ -1,0 +1,26 @@
+
+_string = _this select 0
+_strSide = str side player
+
+_trig = call compile format ["ListVP%1",_string];
+
+
+
+#Monitor
+~1
+
+_flagSide = call compile format ["SideVP%1",_string]
+_haveIcon = format ["%1Icon",_flagSide]
+_takeIcon = format ["%1Taking",_flagSide]
+
+
+?player in list _trig && _strSide == _flagSide : TitleRsc [_haveIcon,"PLAIN"]
+?player in list _trig && _strSide != _flagSide : TitleRsc [_takeIcon,"PLAIN"]
+
+;;?!(player in list _trig) : TitleRsc ["NullPic","PLAIN"]; _in = FALSE; _take = FALSE
+
+goto "Monitor"
+
+
+#IconChange
+

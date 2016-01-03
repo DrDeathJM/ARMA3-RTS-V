@@ -1,0 +1,21 @@
+?!Local Server : Exit
+~2
+
+rts_vpTickerWest = param3; publicVariable "rts_vpTickerWest";
+rts_vpTickerEast = param3; publicVariable "rts_vpTickerEast";
+
+
+#Monitor
+~5
+
+?WestVPC == EastVPC : goto "Monitor"
+
+?WestVPC > EastVPC && rts_vpTickerEast > 0 : _vp = WestVPC - EastVPC; rts_vpTickerEast = rts_vpTickerEast - _vp;
+?EastVPC > WestVPC && rts_vpTickerWest > 0 : _vp = EastVPC - WestVPC; rts_vpTickerWest = rts_vpTickerWest - _vp;
+
+publicVariable "rts_vpTickerEast";
+publicVariable "rts_vpTickerWest";
+
+
+goto "Monitor"
+

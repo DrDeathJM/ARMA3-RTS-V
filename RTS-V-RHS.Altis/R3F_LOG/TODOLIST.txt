@@ -1,0 +1,4 @@
+- Compute the height of the nearest surface under an object, to avoid non-gravity objects floating in the air
+- Realistic rotation simulation between towing vehicle and towed object
+- Ability to give back created objects to the creation factory
+- Implement a network-mutex on setVariable

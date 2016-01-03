@@ -1,0 +1,58 @@
+;;BEGIN LoadAmmoCrates.sqs By KaRRiLLioN
+;;To use: create an ammo crate and in the intitialization field put
+;;[this]exec "LoadAmmoCrates.sqs"
+
+_crate = _this
+_wait = 5
+
+_type = typeOf _crate
+
+goto "Type"
+
+#start
+~_wait
+
+_reWait = Time + 60
+
+_crate Setdammage 0
+~1
+_crate Setdammage 0
+~1
+_crate Setdammage 0
+
+#Type
+
+clearweaponcargo _crate
+clearmagazinecargo _crate
+
+
+
+goto _type
+
+
+#Box_NATO_Wps_F
+#SpecialBoxWest
+#WeaponBoxWest
+
+
+
+
+Goto "Wait"
+
+
+
+#wait
+~5
+
+?Alive _crate && Time < _reWait : goto "wait"
+
+?!Alive _crate : deleteVehicle _crate; Exit
+
+goto "start"
+
+
+
+#end
+exit;
+
+;;END LoadAmmoCrates.sqs

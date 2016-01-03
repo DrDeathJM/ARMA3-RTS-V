@@ -1,0 +1,13 @@
+_num = 1
+_total = 13
+
+#Loop
+~.2
+
+[call compile format ["West%1",_num]] exec "rts-unitMonitor.sqs"
+[call compile format ["East%1",_num]] exec "rts-unitMonitor.sqs"
+
+?_num < _total : _num = _num + 1; goto "Loop"
+
+#End
+Exit

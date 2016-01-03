@@ -1,0 +1,238 @@
+_idc = _this
+
+_index = lbCurSel _idc
+_text = lbText [_idc, _index]
+_type = lbData [_idc, _index]
+_cost = lbValue [_idc, _index]
+
+_player = Activator
+_playerName = Name _player
+_actionunit = ActionUnit
+
+CLoseDialog 0
+
+_side = SIDE _player
+
+
+#Start
+_vArray = vArray
+_countArray = Count _vArray
+_bName = BName
+
+_MCU = FALSE
+_CJ = FALSE
+
+?_bName in [WestMCUName,EastMCUName] : _MCU = TRUE
+?_bName in [WestCJName,EastCJName] : _CJ = TRUE
+
+?_mcu && _actionUnit in noBuildZone : _msg =  "Building in this area is not allowed."; goto "EarlyExit"
+
+?!_CJ && !_mcu : Exit
+
+_x = 0
+#ArrayLoop
+_subArray = _vArray Select _x
+
+_unitType = _subArray Select 0
+
+?_unitType == _type : Goto "CollectInfo"
+
+_x = _x + 1
+?_x >= _countArray : Hint "Not Found"; Goto "End"
+
+Goto "arrayLoop"
+
+#CollectInfo
+
+_unitName = _subArray select 1
+_class = _subArray Select 2
+_buildTime = _subArray select 3
+_supply = _subArray select 4
+_ore = _subArray select 5
+_energy = _subArray select 6
+_varName = _subArray select 7
+
+#Purchase PreConditions
+?!Alive _actionunit:_msg = Format ["%1 INOPERABLE UNTIL REPAIRED.", _bName]; Hint _msg; Goto "EarlyExit"
+_teamSupply = call compile format ["%1Supply", _side]
+?_teamSupply < _supply : _msg = format ["Insufficient supply: %1 %2 required.", _teamSupply, _supply]; goto "EarlyExit"
+
+?_unitName in [WestBarracksName] AND !(IsNull WestBarracks) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+?_unitName in [EastBarracksName] AND !(IsNull EastBarracks) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+
+?_unitName in [WestLightFacName] AND !(IsNull WestLightFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+?_unitName in [EastLightFacName] AND !(IsNull EastLightFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+
+?_unitName in [WestHeavyFacName] AND !(IsNull WestHeavyFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+?_unitName in [EastHeavyFacName] AND !(IsNull EastHeavyFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+
+?_unitName in [WestAirFacName] AND !(IsNull WestAirFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+?_unitName in [EastAirFacName] AND !(IsNull EastAirFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+
+;;?_unitName in [WestHQFacName] AND !(IsNull WestHQFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+;;?_unitName in [EastHQFacName] AND !(IsNull EastHQFac) : _msg = Format["%1 is already built.", _unitName]; Goto "EarlyExit"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Position
+_pos = getPos _actionunit
+_dir = getDir _actionunit
+
+_dist = +30
+?_MCU : _dist = +30
+?_CJ : _dist = +15
+_posX = (_pos select 0) + _dist * sin _dir
+_posY = (_pos select 1) + _dist * cos _dir
+_zz = _pos Select 2
+
+#Preview
+_dif = 0
+?_CJ : _dif = 0
+?_class == "Land_HelipadCircle_F" || _unitName in [BarrierName] : _dif = 90
+titletext[format["Previewing %1.  When HeliPad appears, the area is clear for construction.  Press CONFIRM to place unit.", _unitName],"plain down"]
+
+_tmpObj = _type createVehicleLocal [_posX, _posY, _zz]
+_tmpObj SetDir _dir - _dif
+
+rts_tmpObj = _tmpObj
+rts_buildconfirm = false;
+
+_aID = _actionUnit addAction ["[--Confirm Placement--]","rts-build-PreviewConfirm.sqf"]
+
+?_mcu && _class == "base" : _tmp1 = "Land_HelipadCircle_F" createVehicleLocal [0, 0, 0]
+
+_mtime = _time + 1
+
+#PlaceLoop
+~.03
+
+hint format ["Dif: %1  Dir %2", _dif, _dir]
+
+_pos = getPos _actionUnit
+_dir = getDir _actionUnit
+
+_dist = +30
+?_MCU : _dist = +30
+?_CJ : _dist = +15
+_posX = (_pos select 0) + _dist * sin _dir
+_posY = (_pos select 1) + _dist * cos _dir
+_zz = _pos select 2
+
+_posX1 = (_pos select 0) + 27 * sin _dir
+_posY1 = (_pos select 1) + 27 * cos _dir
+
+_posX2 = _posX + 7 * sin (_dir + 90)
+_posY2 = _posY + 7 * cos (_dir + 90)
+
+_posX3 = _posX + 7 * sin (_dir - 90)
+_posY3 = _posY + 7 * cos (_dir - 90)
+
+_posX4 = (_pos select 0) + 5 * sin _dir
+_posY4 = (_pos select 1) + 5 * cos _dir
+
+
+_near1 = nearestObject [_posX1, _posY1]
+_near2 = nearestObject [_posX2, _posY2]
+_near3 = nearestObject [_posX3, _posY3]
+
+_dist1 = _near1 distance _tmpObj
+_dist2 = _near2 distance _tmpObj
+_dist3 = _near3 distance _tmpObj
+
+?_mcu && _class == "base" && typeOf _near1 == _type && typeOf _near2 == _type && typeOf _near3 == _type : _tmp1 setPos [_posX4, _posY4]; _tmp1 setDir _dir; _ok = TRUE
+?_mcu && _class == "base" && (typeOf _near1 != _type || typeOf _near2 != _type || typeOf _near3 != _type) : _tmp1 setPos [0, 0, 0]; _ok = FALSE
+
+
+?_mcu && _class in ["base"] && _time > _mtime : _mtime = _time + 1; titletext [format ["%1: %4\n%2: %5\n%3: %6",typeof _near1,typeOf _near2, typeOf _near3,_dist1,_dist2,_dist3],"plain down"]
+
+_tmpObj setPos [_posX, _posY, _zz]
+_tmpObj setDir _dir - _dif
+
+;;?_mcu && _actionUnit in noBuildZone : _msg = "Preview Canceled.  Building in this area is not allowed."; deleteVehicle _tmpObj; _actionUnit removeAction _aID; goto "EarlyExit"
+?!Alive _actionUnit || CtrlVisible 1050 || isNull driver _actionUnit : _msg = "Preview Canceled."; deleteVehicle _tmpObj; _actionUnit removeAction _aID; goto "EarlyExit"
+
+?!rts_buildconfirm : goto "PlaceLoop"
+
+
+_actionUnit removeAction _aID
+DeleteVehicle _tmpObj
+
+deleteVehicle _tmp1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;Limit Distance from CHQ building can be created
+
+
+?!_ok && _mcu && _class in ["base"] : _msg = "The building site is obstructed.  When the Heli H appears, it is clear to build."; Goto "EarlyExit"
+
+;;?_unitName in [WestLightFacName, WestHeavyFacName, WestAirFacName, WestBarracksName] AND (WMCU Distance WCommandHQ) > rts_DistLimit : _msg = Format ;;["The %1 must be built within %3 meters of the %2", _unitName, WestCHQName, rts_DistLimit]; Goto "EarlyExit"
+;;?_unitName in [EastLightFacName, EastHeavyFacName, EastAirFacName, EastBarracksName] AND (EMCU Distance ECommandHQ) > rts_DistLimit : _msg = Format ["The ;;%1 must be built within %3 meters of the %2", _unitName,EastCHQName,rts_DistLimit]; Goto "EarlyExit"
+
+?!isNull firstBld && _actionUnit distance firstBld > rts_buildDistLimit : _msg = format ["Your buildings must be within %1 meters of the %2, the first building you built.", rts_buildDistLimit, firstBldName]; goto "EarlyExit"
+
+#Queue Limits
+_msg = Format["%1 QUEUE IS FULL.  RESUBMIT REQUEST IN A FEW SECONDS.", _bName]
+
+
+;;?_MCU AND MCUActive : Goto "EarlyExit"
+;;?_CJ AND CJActive : Goto "EarlyExit"
+
+#Can Purchase
+?_MCU : MCUActive = TRUE; _info = Format["Building %1 Time %2 Cost  %3", _unitName, _buildTime, _supply]; Hint _info; _player SideChat _info
+?_CJ : CJActive = TRUE; _info = Format["Building %1  Time %2", _unitName, _buildTime]; Hint _info; _player SideChat _info
+
+MCUActive = TRUE;
+CJActive = True;
+
+#Build
+
+call compile format ["%1Supply = %1Supply - %2; publicVariable ""%1Supply""", _side, _supply]
+
+?_mcu and _class in ["base"] : _obj = "Land_HelipadCircle_F" createvehicle [_posX,_posY]; _obj setDir _dir; _obj setPos [_posX, _posY, -3]
+
+?isNull firstBld : firstBld = _obj; firstBldName = _unitName
+
+call compile format ["%1Tmp = _obj; publicVariable ""%1Tmp""", _varName]
+
+~_buildTime
+
+Goto "Finish"
+
+#ClearQ
+_msg = Format["%1 DESTROYED.  %2 ORDER ABORTED.", _bName, _unitName]
+
+#ClearQ2
+_player GroupChat _msg
+
+?_MCU : MCUActive = FALSE
+?_CJ : CJActive = FALSE
+
+Goto "End"
+
+
+#Finish
+
+?_MCU : MCUActive = FALSE
+?_CJ : CJActive = FALSE
+?SIDE _player == West AND _MCU AND _unitName in allBldNames : WestBaseUnits = WestBaseUnits + 1; PublicVariable "WestBaseUnits"
+?SIDE _player == East AND _MCU AND _unitName in allBldNames : EastBaseUnits = EastBaseUnits + 1; PublicVariable "EastBaseUnits"
+;;ctrlSetText [_idTitle, _textQ]
+;;ctrlSetText [_idPic, ""]
+;;ctrlSetText [_idCur, ""]
+;;ctrlSetText [_idTimer, ""]
+
+#End
+Exit
+
+#EarlyExit
+rts_hq sideChat _msg
+hint _msg
+;;titleText [_msg, "plain"]
+
+deleteVehicle _tmp1
+
+Exit
+

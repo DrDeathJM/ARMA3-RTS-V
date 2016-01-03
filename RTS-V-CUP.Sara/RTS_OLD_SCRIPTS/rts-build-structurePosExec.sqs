@@ -1,0 +1,53 @@
+@rts_arrays_initialized
+
+
+_eb = false
+_el = false
+_eh = false
+_ea = false
+_en = false
+;;_es = false
+_wb = false
+_wl = false
+_wh = false
+_wa = false
+_wn = false
+;;_ws = false
+firstBld = objNull
+
+
+?Local Server : EastBarracksTmp = objNull; publicVariable "EastBarracksTmp"
+?Local Server : EastLightFacTmp = objNull; publicVariable "EastLightFacTmp"
+?Local Server : EastHeavyFacTmp = objNull; publicVariable "EastHeavyFacTmp"
+?Local Server : EastAirFacTmp = objNull; publicVariable "EastAirFacTmp"
+;;?Local Server : EastHQFacTmp = objNull; publicVariable "EastHQFacTmp"
+
+?Local Server : WestBarracksTmp = objNull; publicVariable "WestBarracksTmp"
+?Local Server : WestLightFacTmp = objNull; publicVariable "WestLightFacTmp"
+?Local Server : WestHeavyFacTmp = objNull; publicVariable "WestHeavyFacTmp"
+?Local Server : WestAirFacTmp = objNull; publicVariable "WestAirFacTmp"
+;;?Local Server : WestHQFacTmp = objNull; publicVariable "WestHQFacTmp"
+
+
+#InitLoop
+~.5
+
+?!isNull EastBarracksTmp && isNull EastBarracks && !_eb :  _bldTmp = EastBarracksTmp; _bldName = EastBarracksName; _eb = true; goto "BuildInfo"
+?!isNull EastLightFacTmp && isNull EastLightFac && !_el :  _bldTmp = EastLightFacTmp; _bldName = EastLightFacName; _el = true; goto "BuildInfo"
+?!isNull EastHeavyFacTmp && isNull EastHeavyFac && !_eh :  _bldTmp = EastHeavyFacTmp; _bldName = EastHeavyFacName; _eh = true; goto "BuildInfo"
+?!isNull EastAirFacTmp && isNull EastAirFac && !_ea :  _bldTmp = EastAirFacTmp; _bldName = EastAirFacName; _ea = true; goto "BuildInfo"
+;;?!isNull EastHQFacTmp && isNull EastHQFac && !_en :  _bldTmp = EastHQFacTmp; _bldName = EastHQFacName; _en = true; goto "BuildInfo"
+
+?!isNull WestBarracksTmp && isNull WestBarracks && !_wb :  _bldTmp = WestBarracksTmp; _bldName = WestBarracksName; _wb = true; goto "BuildInfo"
+?!isNull WestLightFacTmp && isNull WestLightFac && !_wl :  _bldTmp = WestLightFacTmp; _bldName = WestLightFacName; _wl = true; goto "BuildInfo"
+?!isNull WestHeavyFacTmp && isNull WestHeavyFac && !_wh :  _bldTmp = WestHeavyFacTmp; _bldName = WestHeavyFacName; _wh = true; goto "BuildInfo"
+?!isNull WestAirFacTmp && isNull WestAirFac && !_wa :  _bldTmp = WestAirFacTmp; _bldName = WestAirFacName; _wa = true; goto "BuildInfo"
+;;?!isNull WestHQFacTmp && isNull WestHQFac && !_wn :  _bldTmp = WestHQFacTmp; _bldName = WestHQFacName; _wn = true; goto "BuildInfo"
+goto "InitLoop"
+
+#BuildInfo
+
+[_bldTmp,_bldName] exec "rts-build-StructurePos.sqs"
+
+goto "InitLoop"
+

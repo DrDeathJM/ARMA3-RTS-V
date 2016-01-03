@@ -1,0 +1,19 @@
+_vcl = _this
+_wait = Time + 300
+_type = typeOf _vcl
+
+_vName = getText (configFile >> "CfgVehicles" >> _type >> "displayName")
+
+#Wait
+~2
+?Count Crew _vcl < 1 && Time < _wait : goto "Wait"
+
+?Count Crew _vcl > 0 : Exit
+
+_vcl Lock FALSE
+_action = "unlocked"
+?Time > _wait && _vcl isKindOf "Car" : deleteVehicle _vcl; _action = "removed"
+
+rts_hq sideChat format ["A %1 you created was unused for too long.  It has been %2.",_vName,_action]
+
+Exit

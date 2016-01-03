@@ -1,0 +1,43 @@
+_string = _this select 0
+_value = _this select 1
+_maxValue = call compile format ["%1 * 4",_value]
+
+_flag = call compile  format ["Flag%1",_string]
+_flagName = call compile format ["Flag%1Name",_string]
+
+_marker = format ["MarkerFlag%1",_string];
+_flagMarker = format ["IconFlag%1",_string]
+
+createMarkerLocal [_marker, getPos _flag];
+createMarkerLocal [_flagMarker, getPos _flag];
+
+_flagMarker setMarkerTextLocal format ["%1 (%2/%3)",_flagName,_value,_maxValue]
+_flagMarker setMarkerShapeLocal "ICON"
+_flagMarker setMarkerTypeLocal "hd_flag"
+
+_marker setMarkerShapeLocal "ELLIPSE"
+_marker setMarkerSizeLocal [100,100]
+
+_marker setMarkerDirLocal 0
+_marker setMarkerColorLocal ColorCivilian
+_flagMarker setMarkerColorLocal ColorCivilian;
+
+
+msgArray = ""
+
+#MarkerMonitor
+~1
+_flagSide = call compile format ["SideFlag%1",_string]
+
+ _mflag = ""
+ ?msgArray != "" : _msgArray = call compile msgArray; _msg = _msgArray select 0; _side = _msgArray select 1; _mflag = _msgArray Select 2; _value = _msgArray Select 3
+ ?msgArray != "" && _mflag == _flagName : [_side,"hq"] sidechat _msg;_flagMarker setMarkerTextLocal format ["%1 (%2/%3)",_flagName,_value,_maxValue]; msgArray = ""
+
+_color = call compile format ["Color%1",_flagSide]
+_flagTexture = call compile format ["Texture%1",_flagSide]
+_marker setMarkerColorLocal _color
+_flagMarker setMarkerColorLocal _color
+_flag setFlagTexture _flagTexture
+
+goto "MarkerMonitor"
+

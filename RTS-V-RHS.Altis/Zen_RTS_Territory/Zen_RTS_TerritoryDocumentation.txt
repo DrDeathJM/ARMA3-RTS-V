@@ -1,0 +1,109 @@
+The Zen RTS Territory System
+by Zenophon
+for RTS V
+
+Provides data access to and self-contained management of the territory control system.  Spawn Zen_RTS_TerritoryManager to active automatic processing, which calls customizable event Zen_RTS_TerritoryEventCaptured.
+
+Index
+    Zen_RTS_TerritoryCreate
+    Zen_RTS_TerritoryEventCaptured
+    Zen_RTS_TerritoryGetData
+    Zen_RTS_TerritoryManager
+    Zen_RTS_TerritoryRemove
+    Zen_RTS_TerritorySearch
+    Zen_RTS_TerritoryUpdate
+    Zen_RTS_TerritoryUpdateSubMarker
+    Zen_RTS_TerritoryUpdateVisual
+
+Zen_RTS_TerritoryCreate
+
+Registers (1) with the territory system.  The main territory thread will now
+consider this marker.  The name of the marker is used to refer to this territory
+by all other territory functions.  Sets the visual representation.
+The default side of all sub-markers is civilian.
+Usage : Call
+Params: 1. String, area marker
+        2. Array of strings, string, the sub-area marker(s) this territory relies on
+Return: Void
+
+Zen_RTS_TerritoryEventCaptured
+
+Proxy event function for Zen_RTS_TerritoryManager thread.
+Called when the side of a territory changes.
+Usage : Spawn
+Params: 1. String, the territory
+        2. Array, the previous territory data
+Return: Void
+
+Zen_RTS_TerritoryGetData
+
+Returns all data associated with (1) from the territory system.
+Usage : Call
+Params: 1. String, territory marker
+Return: Array
+        1. String, the area marker
+        2. Side, the owner of the territory
+        3. Array of string, the sub-markers
+        4. Array of sides, the owners of the sub-markers
+        5. String, a nearly identical helper marker for color
+
+Zen_RTS_TerritoryManager
+
+The main territory management thread.  Controls changing the side of territories.
+Dynamically reads current data for added and removed territories.
+Updates the visual representation of territories and their sub-markers.
+Calls Zen_RTS_TerritoryEventCaptured when the side of a territory changes.
+Usage : Spawn
+Params: None
+Return: Void
+
+Zen_RTS_TerritoryRemove
+
+Removes the given territory marker from the system.  The main territory thread
+will no longer update this marker.  Also updates the visual representation.
+Usage : Call
+Params: 1. String, territory marker
+Return: Void
+
+Zen_RTS_TerritorySearch
+
+Returns the markers of all territories whose data elements at (1) hash (3) to
+within, inclusive, the range (2).  (1,3) are aligned with each other, so the element at
+(1.n) is hashed with (3.n) and checked within (2.n).
+Usage : Call
+Params: 1. Array of scalars, indexes of nested arrays to search
+        2. Array, ranges the element must fall within
+            Array:
+                1. Scalar, lower bound
+                2. Scalar, upper bound
+        3. Array, scalar hash functions as code or global function string
+Return: Array of strings, [] if there is no match
+
+Zen_RTS_TerritoryUpdate
+
+Sets the data of the territory corresponding to (1).  Use -1 to skip (2,3) with
+no change.  Checks side argument for validity.  Updates the visual representation.
+Usage : Call
+Params: 1. String, territory marker
+ (opt.) 2. Side, the owner of the territory, (default: -1)
+ (opt.) 3. Array of strings, string, the sub-area marker(s) this territory relies on, (default: -1)
+Return: Void
+
+Zen_RTS_TerritoryUpdateSubMarker
+
+Sets the side of (1) for internal data.  Change will be observed by the manager thread.
+This function will run much faster if (3) is given; otherwise, all sub-markers in all
+territories must be searched.
+Usage : Call
+Params: 1. String, the sub-marker
+        2. Side, the new side
+ (opt.) 3. String, the territory marker, (default: "" [All])
+Return: Void
+
+Zen_RTS_TerritoryUpdateVisual
+
+Updates the visual aspect of (1) to agree with current data.
+Also updates an sub-markers to the correct color.
+Usage : Call
+Params: 1. String, territory marker
+Return: Void

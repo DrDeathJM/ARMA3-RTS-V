@@ -1,0 +1,41 @@
+class Params 
+{
+	class startMoney 
+	{
+		title = "Starting Money ($)";
+		values[] = {1000,5000,25000,50000};
+		texts[] = {"$1000","$5000","$25,000","$50,000"};
+		default = 50000;
+	};
+
+	class startSupply 
+	{
+		title = "Starting Supplies (#)";
+		values[] = {1000,5000,25000,50000};
+		texts[] = {"#1000","#5000","#25,000","#50,000"};
+		default = 50000;
+	};
+	class gameType 
+	{
+		title = "Game Type";
+		values[] = {0, 500, 1000, 1500, 2000};
+		texts[] = {"Annihilation", "Victory Point 500", "Victory Point 1000", "Victory Point 1500", "Victory Point 2000"};
+		default = 0;
+	};
+
+	class respawnDelay 
+	{
+		title = "Respawn Delay";
+		values[] = {10, 15, 30, 45, 60, 120};
+		texts[] = {"10 Seconds", "15 Seconds", "30 Seconds", "45 Seconds", "1 Minute", "2 Minutes"};
+		default = 45;
+	};
+
+	class groupAILimit 
+	{
+		title = "Group Size Limit (AI Limit)";
+		values[] = {5, 10, 12, 15, 20, 30};
+		texts[] = {"5", "10", "12", "15", "20", "30"};
+		default = 10;
+	};
+};

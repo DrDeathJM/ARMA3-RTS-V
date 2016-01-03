@@ -1,0 +1,889 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Zks_Revive_Loop">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,555.382690,-1173.659424,645.382446,-1123.659424,0.000000,"START"};
+item1[] = {"respawn",4,218,555.073730,-870.144287,645.073914,-820.144226,0.000000,"respawn"};
+item2[] = {"server",4,218,1135.601685,-1176.672119,1225.601563,-1126.672363,1.000000,"server"};
+item3[] = {"end",1,250,1134.531006,-1060.378540,1224.530762,-1010.378296,0.000000,"end"};
+item4[] = {"arrays",2,250,554.728088,-762.054749,644.728149,-712.054749,0.000000,"arrays"};
+item5[] = {"alive_or_dead",4,218,715.084778,-962.270203,805.084778,-912.270203,3.000000,"alive" \n "or" \n "dead"};
+item6[] = {"dialog",4,218,436.315796,-849.970703,526.315796,-799.970703,3.000000,"dialog"};
+item7[] = {"alive_counter",4,218,749.125183,-761.858215,839.125183,-711.858215,0.000000,"alive" \n "counter"};
+item8[] = {"base_buttons",4,218,555.199829,-653.610840,645.199829,-603.610840,0.000000,"base" \n "buttons"};
+item9[] = {"moves",4,218,437.024597,-688.307678,527.024597,-638.307678,1.000000,"moves"};
+item10[] = {"revive_cam",2,4346,975.016541,-963.353943,1065.016602,-913.353943,0.000000,"revive" \n "cam"};
+item11[] = {"in_play",4,218,1134.197266,-963.353943,1224.197266,-913.353943,0.000000,"in" \n "play"};
+item12[] = {"cam_commit",4,218,975.260864,-868.204529,1065.260498,-818.204529,0.000000,"cam" \n "commit"};
+item13[] = {"revive_cam_2",2,250,1134.239502,-867.125977,1224.239502,-817.125977,0.000000,"revive" \n "cam 2"};
+item14[] = {"dead_again",4,218,974.434387,-1062.225708,1064.434326,-1012.225830,0.000000,"dead" \n "again"};
+item15[] = {"target_change",4,218,341.755432,-761.687134,431.755615,-711.687195,2.000000,"target" \n "change"};
+item16[] = {"medic",4,218,694.736694,-832.432129,784.736938,-782.432129,1.000000,"medic"};
+item17[] = {"heal",2,250,846.198792,-834.055237,936.198730,-784.055237,0.000000,"heal"};
+item18[] = {"better",4,218,843.812134,-911.964417,933.812134,-861.964417,0.000000,"better"};
+item19[] = {"call_man",4,218,686.560608,-688.985291,776.560608,-638.985291,0.000000,"call" \n "man"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {4,7};
+link7[] = {4,8};
+link8[] = {4,9};
+link9[] = {4,15};
+link10[] = {4,16};
+link11[] = {4,19};
+link12[] = {5,10};
+link13[] = {6,4};
+link14[] = {7,4};
+link15[] = {8,4};
+link16[] = {9,4};
+link17[] = {10,12};
+link18[] = {10,14};
+link19[] = {11,3};
+link20[] = {12,13};
+link21[] = {13,11};
+link22[] = {14,3};
+link23[] = {15,4};
+link24[] = {16,17};
+link25[] = {17,18};
+link26[] = {18,10};
+link27[] = {19,4};
+globals[] = {0.000000,0,0,0,0,640,480,2,251,6316128,1,187.736481,1131.492798,-376.271332,-1137.364868,744,600,1};
+window[] = {0,-1,-1,-1,-1,907,176,1732,176,1,761};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Zks_Revive_Loop";
+  class States
+  {
+    /*%FSM<STATE "START">*/
+    class START
+    {
+      name = "START";
+      init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+       "" \n
+       "_timeout = time;" \n
+       "_obj = _this select 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "server">*/
+        class server
+        {
+          priority = 1.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!(local _obj) or (isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "respawn">*/
+        class respawn
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((local _obj) && !(isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_obj = _this select 0;" \n
+           "_compass = _this select 1;" \n
+           "_gps = _this select 2;" \n
+           "_notepad = _this select 3;" \n
+           "_radio = _this select 4;" \n
+           "_watch = _this select 5;" \n
+           "_marker = _this select 6;" \n
+           "_side = _this select 7;" \n
+           "_revdis = 350;" \n
+           "_autoview = 1;" \n
+           "_carrier = objnull;" \n
+           "_reviver = objnull;" \n
+           "_dest = [];" \n
+           "viewplr = 0;" \n
+           "_playerview = 1;" \n
+           "_onlymap = 0;" \n
+           "if (isnil ""playerview"") then {playerview = 0};" \n
+           "onlymap = 0;" \n
+           "showall = 1;" \n
+           "disableserialization;" \n
+           "side_end = false;" \n
+           "DeathCamCurTarget = _obj;" \n
+           "Deathcam CameraEffect [""Terminate"",""Back""];" \n
+           "Deathcam camSetTarget DeathCamCurTarget;" \n
+           "Deathcam camCommit 0;" \n
+           "DeathCamArray = [];" \n
+           "_DeathCamCurTarget = DeathCamCurTarget;" \n
+           "_pos = [0,0,0];" \n
+           "_carrierside = _side;" \n
+           "respawnnow = 0;" \n
+           "enableRadio false;" \n
+           "automap = 0;" \n
+           "Target = 0;" \n
+           "_target = Target;" \n
+           "autoview = 0;" \n
+           "_timeout = time;" \n
+           "_cameratrue = false;" \n
+           "fastview = 0;" \n
+           "_movetime = (time + 12);" \n
+           "_timeout = time;" \n
+           "_buttontime = time;" \n
+           "DeathCamtype = ""EXTERNAL"";" \n
+           "_viewing = objnull;" \n
+           "_t = KOtime;" \n
+           "viewon = 0;" \n
+           "_deadcheck = time;" \n
+           "_onway = (time + 5);" \n
+           "_pain = ""AinjPpneMstpSnonWrflDnon"";" \n
+           "_pains = [""AinjPpneMstpSnonWrflDnon""];" \n
+           "_soldiertmp = [];" \n
+           "_revivers = [];" \n
+           "_medic_close = 0;" \n
+           "_my_markers = [];" \n
+           "" \n
+           "" \n
+           "_sounds = [];" \n
+           "" \n
+           "_sex = 0;" \n
+           "_sex = (getNumber(configfile >> ""CfgVehicles"" >> (typeof _obj) >> ""woman""));" \n
+           "" \n
+           "	switch (_side) do " \n
+           "	{" \n
+           "		case West : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_EN"",""holyshite_EN"",""motherfuckere_EN"",""ohjesuse_EN"",""scream1_EN"",""scream4_EN"",""shite_EN"",""thatsucks_EN""]};" \n
+           "		case East : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_RU"",""holyshite_RU"",""motherfuckere_RU"",""ohjesuse_RU"",""scream1_RU"",""scream4_RU"",""shite_RU"",""thatsucks_RU""]};" \n
+           "		case RESISTANCE : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_CZ"",""holyshite_CZ"",""motherfuckere_CZ"",""ohjesuse_CZ"",""scream1_CZ"",""scream4_CZ"",""shite_CZ"",""thatsucks_CZ""]};" \n
+           "	};" \n
+           "" \n
+           "if (_sex != 0) then {_sounds = [""scream_01"",""scream_02"",""scream_03"",""scream_04"",""scream_05"",""scream_06"",""scream_07"",""scream_08""]};" \n
+           "" \n
+           "if (count _sounds == 0) then {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_EN"",""holyshite_EN"",""motherfuckere_EN"",""ohjesuse_EN"",""scream1_EN"",""scream4_EN"",""shite_EN"",""thatsucks_EN""]};" \n
+           "" \n
+           "_soundcode = {" \n
+           "private [""_obj"",""_sound""];" \n
+           "_obj = _this select 0;" \n
+           "_sound = _this select 1;" \n
+           "_obj say3D _sound;" \n
+           "};" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "/*" \n
+           "" \n
+           "" \n
+           "_myhospitalarray = (nearestObjects [(position _obj),Spawn_Places,RespawnArea]);" \n
+           "" \n
+           "{if (_x getVariable ""side"" == _side) then {" \n
+           "" \n
+           "_hos = str(_x);" \n
+           "_hos = createMarkerLocal [_hos, position _x];" \n
+           "_hos setMarkerShapeLocal ""ICON"";" \n
+           "_hos setMarkerTypeLocal ""mil_dot"";" \n
+           "_hos setMarkerSizeLocal [.5,.5];" \n
+           "" \n
+           "" \n
+           "if (_x iskindof ""HOUSE"") then" \n
+           "{" \n
+           "_hos setmarkercolorLocal ""ColorBlue"";" \n
+           "_hos setMarkerTextLocal ""LOCAL CLINIC"";" \n
+           "}else{" \n
+           "_hos setmarkercolorLocal ""ColorGreen"";" \n
+           "_hos setMarkerTextLocal ""MOBILE CLINIC"";" \n
+           "};" \n
+           "" \n
+           "_my_markers = _my_markers + [_hos];" \n
+           "" \n
+           "}} foreach _myhospitalarray;" \n
+           "" \n
+           "" \n
+           "*/" \n
+           "" \n
+           "" \n
+           "_viewing = createMarkerLocal [""viewing"", position _obj];" \n
+           "_viewing setMarkerShapeLocal ""ICON"";" \n
+           "_viewing setMarkerTypeLocal ""mil_dot"";" \n
+           "_viewing setMarkerSizeLocal [.5,.5];" \n
+           "_viewing setmarkercolorLocal ""ColorOrange"";" \n
+           "" \n
+           "_myveh = objnull;" \n
+           "" \n
+           "	_carriercode = {" \n
+           "	private [""_carrier"",""_obj"",""_dest"",""_movetime""];" \n
+           "" \n
+           "	_carrier = _this select 0;" \n
+           "	_obj = _this select 1;" \n
+           "	_carrier setVariable [""reviving"", 1, true];" \n
+           "	_carrier setDamage 0;" \n
+           "_mode = speedmode _carrier;" \n
+           "	sleep 3;" \n
+           "	_carrier disableAI ""TARGET"";" \n
+           "	_carrier disableAI ""AUTOTARGET"";" \n
+           "	_carrier setBehaviour ""CARELESS"";" \n
+           "	_movetime = (time + 20);" \n
+           "_carrier setSpeedMode ""full"";" \n
+           " " \n
+           "		while {((""HEALTHY"" !=  lifeState _obj) && (str(side _carrier) != ""ENEMY"") && (!isnil {(_carrier getVariable ""reviving"")}))} do" \n
+           "		{" \n
+           "		sleep 2;" \n
+           "		if ((_carrier distance _obj < 100) && (time > _movetime)) then {_carrier domove (position _obj)};" \n
+           "		if (time > _movetime) then {_carrier setBehaviour ""CARELESS"";_movetime = (time + 20)};" \n
+           "		};" \n
+           "" \n
+           "	_carrier enableAI ""TARGET"";" \n
+           "	_carrier enableAI ""AUTOTARGET"";" \n
+           "	_carrier setBehaviour ""AWARE"";" \n
+           "_carrier setSpeedMode _mode;" \n
+           "	_dest = expectedDestination _carrier;" \n
+           "	_carrier domove (_dest select 0);" \n
+           "	if (!isnil {(_carrier getVariable ""reviving"")}) then {_carrier setVariable [""reviving"", nil, true]};" \n
+           "	};" \n
+           "" \n
+           "_ordercode = {" \n
+           "private [""_carrier"",""_obj"",""_myhurtpos"",""_dest"",""_carriercode""];" \n
+           "" \n
+           "_carrier = _this select 0;" \n
+           "_obj = _this select 1;" \n
+           "_myhurtpos = _this select 2;" \n
+           "_carriercode = _this select 3;" \n
+           "if ((isnil {(_carrier getVariable ""reviving"")}) && (str(side _carrier) != ""ENEMY"")) then {[_carrier,_obj] spawn _carriercode;};" \n
+           "if (str(side _carrier) != ""ENEMY"") then {_carrier domove _myhurtpos};" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "end">*/
+    class end
+    {
+      name = "end";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "detach _obj;" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "arrays">*/
+    class arrays
+    {
+      name = "arrays";
+      init = /*%FSM<STATEINIT""">*/"if ((count  DeathCamArray) < 2) then {DeathCamCurTarget = _obj};" \n
+       "" \n
+       "if (viewplr == 1) then {autoview = 0};" \n
+       "" \n
+       "if ((showall == 1) && (playerview == 1)) then {ctrlShow [10019,false];ctrlShow [10020,true];};" \n
+       "if ((showall == 1) && (playerview == 0)) then {ctrlShow [10019,true];ctrlShow [10020,false];};" \n
+       "" \n
+       "if (autoview == 1) then {ctrlShow [10008,false];ctrlShow [10009,true]};" \n
+       "if (autoview == 0) then {ctrlShow [10008,true];ctrlShow [10009,false]};" \n
+       "" \n
+       "if ((onlymap == 1) && (showall == 0))  then" \n
+       "{" \n
+       "if !(ctrlShown ((findDisplay 170964) displayCtrl 2222)) then {ctrlShow [2222,true];}else{ctrlShow [2222,false]};" \n
+       "};" \n
+       "" \n
+       "onlymap = 0;" \n
+       "" \n
+       "" \n
+       "if (No_Camera == 0) then " \n
+       "{" \n
+       "" \n
+       "};" \n
+       "" \n
+       "ctrlEnable [2501, true];" \n
+       "" \n
+       "if (Group_Revive_Only == 0) then " \n
+       "{" \n
+       "if (_obj countFriendly  (nearestObjects [_obj,[""CAManBase""], _revdis]) > 1) then {_medic_close = 1}else{_medic_close = 0};" \n
+       "}else{" \n
+       "if (count (units group _obj) > 1) then {_medic_close = 1}else{_medic_close = 0};" \n
+       "};" \n
+       "" \n
+       "if (dialog) then {" \n
+       "if (automap == 1) then {" \n
+       "disableserialization;" \n
+       "if ((showall == 0) && ((ctrlText 2222) != """")) then {ctrlSetText [2222,""""]};" \n
+       "if ((showall == 1) && ((ctrlText 2222) == """")) then {ctrlSetText [2222,""ZKS\Revive\Dialogs\map_background2_co.paa""]};" \n
+       "_n = ctrlMapScale ((findDisplay 170964) displayCtrl 2222);" \n
+       "((findDisplay 170964) displayCtrl 2222) ctrlMapAnimAdd [.1, _n, GetPos DeathCamCurTarget];" \n
+       "ctrlMapAnimCommit ((findDisplay 170964) displayCtrl 2222);" \n
+       "ctrlShow [10007,false];ctrlShow [10006,true];" \n
+       "}" \n
+       "else" \n
+       "{" \n
+       "ctrlShow [10007,true];ctrlShow [10006,false];" \n
+       "};" \n
+       "_viewing setmarkerposLocal position DeathCamCurTarget;" \n
+       "};" \n
+       "" \n
+       "if ((keypressed select 1) == 197) then " \n
+       "{" \n
+       "_obj setdamage 1;" \n
+       "};" \n
+       "" \n
+       "if (((keypressed select 1) == 47) && !(isnull _carrier)) then " \n
+       "{" \n
+       "		DeathCamCurTarget = _carrier;" \n
+       "		_viewing setMarkerTextLocal name DeathCamCurTarget;" \n
+       "		_viewing setmarkerposLocal position DeathCamCurTarget;" \n
+       "		viewon = 0;" \n
+       "};" \n
+       "" \n
+       "keypressed = [0,0];" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "dialog">*/
+        class dialog
+        {
+          priority = 3.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(dialog)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"DeathCamArray = [_obj];" \n
+           "DeathCamCurTarget = (DeathCamArray select 0);" \n
+           "if (_t < 0) then {_t = 0};" \n
+           "" \n
+           "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "_obj switchCamera ""INTERNAL"";" \n
+           "" \n
+           "_ok = createDialog ""ZKS_DlgSpectateDeath"";" \n
+           "" \n
+           "" \n
+           "ctrlShow [1047008,true];ctrlShow [1047007,true];ctrlShow [1047006,true];ctrlShow [1047005,true];ctrlShow [1047004,true];ctrlShow [1047003,true];ctrlShow [1047002,false];ctrlShow [1047001,true];ctrlShow [12345,true];ctrlShow [12346,true];ctrlShow [10001,true];ctrlShow [10002,true];ctrlShow [10003,true];ctrlShow [10004,true];ctrlShow [10018,False];ctrlShow [10010,true];ctrlShow [10011,true];ctrlShow [10012,true];ctrlShow [10013,true];ctrlShow [10014,true];ctrlShow [10015,true];ctrlShow [10016,true];ctrlShow [10017,false];ctrlShow [10019,true];ctrlShow [10100,true];ctrlShow [10101,true];ctrlShow [10102,true];ctrlShow [10103,true];ctrlShow [10104,true];ctrlShow [10105,true];ctrlShow [10106,true];ctrlShow [10107,true];ctrlShow [2222,true];" \n
+           "" \n
+           "showall = 1;" \n
+           "_cameratrue = false;" \n
+           "_num = 1;" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "[_obj,_side] execFSM ""ZKS\Revive\Zks_Revive_Spawn.fsm"";" \n
+           "" \n
+           "disableserialization;" \n
+           "ctrlMapAnimClear ((findDisplay 170964) displayCtrl 2222);" \n
+           "((findDisplay 170964) displayCtrl 2222) ctrlMapAnimAdd [0.1,0.1, GetPos DeathCamCurTarget];" \n
+           "ctrlMapAnimCommit ((findDisplay 170964) displayCtrl 2222);" \n
+           "" \n
+           "" \n
+           "" \n
+           "carrier = objnull;" \n
+           "MouseCoord = [0.5,0.5];" \n
+           "MouseScroll =0;" \n
+           "MouseButtons =[false,false];" \n
+           "camzoomspeed = 1.50;" \n
+           "maxzoomout = 1000;" \n
+           "range_to_unit = 15;" \n
+           "disableserialization;" \n
+           "sliderSetRange [1046010, 1.0, 7]; " \n
+           "sliderSetPosition [1046010, 2.5];" \n
+           "fastview = -1;" \n
+           "_cameratrue = true;" \n
+           "" \n
+           "if (No_Camera == 0) then " \n
+           "{" \n
+           "{if (!(_x == _obj) && ((""HEALTHY"" == lifeState _x) && (side _x == _side) && (alive _x))) then {DeathCamArray set [_num, _x];_num = _num + 1}} foreach allunits;" \n
+           "_num = 0;" \n
+           "[_side,_obj] execFSM ""ZKS\Revive\Zks_Revive_Players.fsm"";" \n
+           "[_obj,_side] execFSM ""ZKS\Revive\Zks_Revive_Camera.fsm"";" \n
+           "" \n
+           "}else{" \n
+           "" \n
+           "DeathCamArray = [_obj];" \n
+           "_DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+           "DeathCam camSetTarget DeathCamCurTarget;" \n
+           "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "_DeathCamCurTarget switchCamera ""EXTERNAL"";" \n
+           "DeathCam camCommit 0;" \n
+           "plr = 0;" \n
+           "_deadcheck = (time + 5000000);" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "alive_or_dead">*/
+        class alive_or_dead
+        {
+          priority = 3.000000;
+          to="revive_cam";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((isnil {(_obj GetVariable ""HURT"")}) or (""HEALTHY"" == lifeState _obj) or !(alive _obj))" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"Deathcam camSetTarget _obj;" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "target_change">*/
+        class target_change
+        {
+          priority = 2.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((!(alive DeathCamCurTarget) or (Target != _target) or ((autoview == 1) && (time > (_timeout + 10)))) && (count DeathCamArray > 1) && (dialog))  "/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"if ((autoview == 1) && (Target == 1)) then {_autoview = 1};" \n
+           "if ((autoview == 1) && (Target == -1)) then {_autoview = 0};" \n
+           "" \n
+           "if ((autoview == 0) && (Target == 1))  then {_autoview = 1;_num = (_num + 1)};" \n
+           "if ((autoview == 0) && (Target == -1))  then {_autoview = 0;_num = (_num - 1)};" \n
+           "if ((autoview == 1) && (_autoview == 1))  then {_num = (_num + 1)};" \n
+           "if ((autoview == 1) && (_autoview == 0))  then {_num = (_num - 1)};" \n
+           "" \n
+           "" \n
+           "if (_num < 0) then {_num = ((count DeathCamArray) - 1)};" \n
+           "if (_num >= (count DeathCamArray)) then {_num = 0};" \n
+           "" \n
+           "if ((playerview == 1) && (_playerview == 1)) then" \n
+           "{" \n
+           "{if !(isplayer _x) then {DeathCamArray = DeathCamArray - [_x]};_num = 0;_deadcheck = (time - 60);} foreach DeathCamArray;" \n
+           "};" \n
+           "" \n
+           "if ((playerview == 0) && (_playerview == 0)) then {_deadcheck = (time - 31);_num = 0};" \n
+           "" \n
+           "if (playerview == 1) then {_playerview = 0}else{_playerview = 1};" \n
+           "" \n
+           "if ((count DeathCamArray) > _num) then " \n
+           "{" \n
+           "" \n
+           "	if ((name (DeathCamArray select _num) == ""error: no unit"") or (_myveh == (vehicle (DeathCamArray select _num))) or (name (DeathCamArray select _num) == ""error: no vehicle"")) then " \n
+           "	{" \n
+           "" \n
+           "	if (_autoview == 0) then {_num = (_num - 1)}else{_num = (_num + 1)};" \n
+           "" \n
+           "	while {(_myveh == (vehicle (DeathCamArray select _num)))} do" \n
+           "			{" \n
+           "				if (_autoview == 0) then {_num = (_num - 1)}else{_num = (_num + 1)};" \n
+           "				if ((count DeathCamArray) > _num) then {DeathCamCurTarget = (DeathCamArray select _num)}else{DeathCamCurTarget = (DeathCamArray select 0);};" \n
+           "			};" \n
+           "" \n
+           "	if ((count DeathCamArray) > _num) then {DeathCamCurTarget = (DeathCamArray select _num)}else{DeathCamCurTarget = (DeathCamArray select 0);_viewing setMarkerTextLocal """"};" \n
+           "	}" \n
+           "	else" \n
+           "	{" \n
+           "	DeathCamCurTarget = (DeathCamArray select _num);" \n
+           "	_viewing setMarkerTextLocal name DeathCamCurTarget;" \n
+           "	_viewing setmarkerposLocal position DeathCamCurTarget;" \n
+           "	if (DeathCamCurTarget == _obj) then {_viewing setMarkerTextLocal """"};" \n
+           "	};" \n
+           "" \n
+           "}" \n
+           "else" \n
+           "{" \n
+           "DeathCamCurTarget = (DeathCamArray select 0);" \n
+           "DeathCam camPreparePos getPos (vehicle DeathCamCurTarget);" \n
+           "_viewing setMarkerTextLocal """";" \n
+           "};" \n
+           "" \n
+           "_myveh = (vehicle DeathCamCurTarget);" \n
+           "viewon = 0;" \n
+           "_timeout = time;" \n
+           "" \n
+           "Target = 0;" \n
+           "_target = Target;" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "moves">*/
+        class moves
+        {
+          priority = 1.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time > _movetime) && (dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_ran = random 120;" \n
+           "_sound = _sounds select (floor (random (count _sounds)));" \n
+           "" \n
+           "playerorders = [_obj,_sound,_soundcode];" \n
+           "publicVariable ""playerorders"";" \n
+           "if !(isDedicated) then {_obj say3D _sound};" \n
+           "" \n
+           "" \n
+           "_pain = _pains select (floor (random (count _pains)));" \n
+           "_obj switchmove _pain;" \n
+           "_movetime = (time + 6);" \n
+           "if (_ran > 30) then {_movetime = _movetime + 6};" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "medic">*/
+        class medic
+        {
+          priority = 1.000000;
+          to="heal";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(( (count (nearestObjects [_obj, [""CAManBase""], 3]) > 1)" \n
+           " &&" \n
+           "(_carrierside == side ((nearestObjects [_obj, [""CAManBase""], 3]) select 1))" \n
+           " &&" \n
+           "(""HEALTHY"" == lifeState ((nearestObjects [_obj, [""CAManBase""], 3]) select 1))" \n
+           " &&" \n
+           "(!isPlayer ((nearestObjects [_obj, [""CAManBase""], 3.1]) select 1))  " \n
+           " &&" \n
+           "(dialog) )" \n
+           "or" \n
+           "(damage _obj < .4))" \n
+           "&&" \n
+           "(respawnnow == 1)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "base_buttons">*/
+        class base_buttons
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time > _buttontime + 1) && (dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "if (_t == -1) then {((findDisplay 170964) displayCtrl 1047009) ctrlSetBackgroundColor [0,1,0,.5];ctrlSetText [1047010, ""RESPAWN""]};" \n
+           "if (_t >= 0) then {ctrlSetText [1047010, str(_t)]; };" \n
+           "if (_t <= 0) then {respawnnow = 1};" \n
+           "_t = _t - 1;" \n
+           "_buttontime = time;" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "call_man">*/
+        class call_man
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"( (_medic_close == 1)" \n
+           " &&" \n
+           "(time > _onway)" \n
+           " &&" \n
+           "(dialog) )"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"private [""_carrier"",""_obj"",""_myhurtpos"",""_carriers"",""_carriercode"",""_revivers"",""_reviver""];" \n
+           "" \n
+           "_carriers = [];" \n
+           "" \n
+           "" \n
+           "if (Group_Revive_Only == 1) then " \n
+           "{" \n
+           "_carriers = (units group _obj);" \n
+           "{if ((Group _obj == Group _x) && (isnil {(_x getVariable ""reviving"")})  && (""HEALTHY"" ==  lifeState _x) && (!isplayer _x)) exitwith {_carrier = _x;}} foreach _carriers;" \n
+           "}else{" \n
+           "" \n
+           "_carriers = (nearestObjects [_obj, [""CAManBase""], (_revdis + 1)]);" \n
+           "" \n
+           "	if (Civ_Revive == 0) then " \n
+           "	{" \n
+           "	{if ((side _x == _side) && (isnil {(_x getVariable ""reviving"")})  && (""HEALTHY"" ==  lifeState _x) && (!isplayer _x)) exitwith {_carrier = _x;}} foreach _carriers;" \n
+           "	}else{" \n
+           "	{if (((_side getFriend (side _x)) >=  .6) && (isnil {(_x getVariable ""reviving"")}) && (str(side _x) != ""ENEMY"")  && (""HEALTHY"" ==  lifeState _x) && (!isplayer _x)) exitwith {_carrier = _x;}} foreach _carriers;" \n
+           "	_carrierside = side _carrier;" \n
+           "	};" \n
+           "" \n
+           "};" \n
+           "" \n
+           "" \n
+           "" \n
+           "_onway = (time + 10);" \n
+           "" \n
+           "" \n
+           "if ((!isnull _carrier) && (alive _carrier) && (str(side _carrier) != ""ENEMY"")) then" \n
+           "{" \n
+           "_myhurtpos = position _obj; " \n
+           "_myhurtpos set [2,0];" \n
+           "" \n
+           "	if !(_carrier in _revivers) then " \n
+           "	{" \n
+           "" \n
+           "	_revivers = _revivers + [_carrier];" \n
+           "	{if (((_x distance _obj) < (_carrier distance _obj)) && (isnull (assignedVehicle _x))) then {_carrier = _x}} foreach _revivers;" \n
+           "" \n
+           "		if (_reviver != _carrier) then " \n
+           "		{" \n
+           "		if (!isnull _reviver) then {_reviver setVariable [""reviving"", nil, true]};" \n
+           "" \n
+           "		Titletext[format [""%1"", ""IM ON MY WAY TO REVIVE YOU\n\nPress -V- to View Me""], ""PLAIN DOWN"" , 1];" \n
+           "		_reviver = _carrier;" \n
+           "" \n
+           "			if (local _carrier) then " \n
+           "			{" \n
+           "			if (isnil {(_carrier getVariable ""reviving"")}) then {[_carrier,_obj] spawn _carriercode;};	" \n
+           "			_carrier domove _myhurtpos;" \n
+           "			}else{" \n
+           "			serverorders = [_carrier,_obj,_myhurtpos,_carriercode,_ordercode];" \n
+           "			publicVariableServer ""serverorders"";" \n
+           "			};" \n
+           "		};" \n
+           "	_revivers = [_carrier];" \n
+           "	};" \n
+           "};" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "alive_counter">*/
+        class alive_counter
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time > _deadcheck) && (dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_DeathCamArraytmp = [];" \n
+           "_deadcheck = (time + 5);" \n
+           "" \n
+           "if (playerview == 1) then" \n
+           "{" \n
+           "{if ((side _x == _side) && !(_x in DeathCamArray) && (alive _x)) then {_DeathCamArraytmp = _DeathCamArraytmp + [_x]}} foreach playableUnits;" \n
+           "{if ((name _x == ""error: no unit"") or (name _x == ""error: no vehicle"") or !(alive _x) or !(isplayer _x)) then {DeathCamArray = DeathCamArray - [_x]}} foreach DeathCamArray;" \n
+           "}" \n
+           "else" \n
+           "{" \n
+           "{if ((side _x == _side) && !(_x in DeathCamArray) && (alive _x) && (""ALIVE"" == lifeState _x)) then {_DeathCamArraytmp = _DeathCamArraytmp + [_x]}} foreach allUnits;" \n
+           "{if ((name _x == ""error: no unit"") or (name _x == ""error: no vehicle"") or !(alive _x)) then {DeathCamArray = DeathCamArray - [_x]}} foreach DeathCamArray;" \n
+           "};" \n
+           "" \n
+           "_arraynum = 0;" \n
+           "_arraynum = (count  DeathCamArray);" \n
+           "{DeathCamArray set [_arraynum, _x];_arraynum = _arraynum + 1} foreach _DeathCamArraytmp;" \n
+           "_DeathCamArraytmp = [];" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "revive_cam">*/
+    class revive_cam
+    {
+      name = "revive_cam";
+      init = /*%FSM<STATEINIT""">*/"_obj setdamage 0;" \n
+       "_obj setcaptive false;" \n
+       "_obj setVariable [""HURT"", nil, true];" \n
+       "" \n
+       "" \n
+       "ctrlShow [1046001,false];ctrlShow [1046002,false];ctrlShow [1046003,false];ctrlShow [1046004,false];ctrlShow [1046005,false];ctrlShow [1046006,false];ctrlShow [1046007,false];ctrlShow [1046008,true];ctrlShow [1046009,false];ctrlShow [1046010,false];ctrlShow [1046011,false];ctrlShow [1046012,false];ctrlShow [1046013,false];ctrlShow [1046014,false];ctrlShow [1046015,false];ctrlShow [1046016,false];ctrlShow [1046017,false];ctrlShow [1046018,false];ctrlShow [1046019,false];ctrlShow [1046020,false];ctrlShow [1046021,false];ctrlShow [10001,false];ctrlShow [10002,false];ctrlShow [10003,false];ctrlShow [10004,false];ctrlShow [10005,false];ctrlShow [10006,false];ctrlShow [10007,false];ctrlShow [10008,false];ctrlShow [10009,false];ctrlShow [10010,false];ctrlShow [10011,false];ctrlShow [10012,false];ctrlShow [10111,false];" \n
+       "ctrlShow [1047002,false];ctrlShow [1047001,false];ctrlShow [1048001,false];" \n
+       "ctrlEnable [2501, false];" \n
+       "closeDialog 821151551;" \n
+       "deletemarker _viewing;" \n
+       "deletemarker _marker;" \n
+       "//{deletemarker _x} foreach _my_markers;" \n
+       "" \n
+       "if (_compass == 1) then {showCompass true};" \n
+       "if (_gps == 1) then {showGPS true};" \n
+       "if (_notepad == 1) then {showPad true};" \n
+       "if (_radio == 1) then {showRadio true};" \n
+       "if (_watch == 1) then {showWatch true};" \n
+       "" \n
+       "Deathcam cameraEffect [""Terminate"", ""BACK""];" \n
+       "Deathcam camSetTarget _obj;" \n
+       "_obj switchCamera ""EXTERNAL"";" \n
+       "" \n
+       "_obj camCommand ""manual on"";" \n
+       "Deathcam cameraEffect [""internal"",""front""];" \n
+       "" \n
+       "    Deathcam camSetRelPos [5.49, -5.61, 3.48];" \n
+       "	Deathcam camSetFov 0.7;" \n
+       "	Deathcam camCommand ""manual off"";" \n
+       "	showCinemaBorder false;" \n
+       "	Deathcam camCommit 0;" \n
+       "" \n
+       "" \n
+       "(group _obj) selectLeader _obj;" \n
+       "{_x doFollow _obj} foreach (units group _obj);" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "dead_again">*/
+        class dead_again
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((""DEAD"" ==  lifeState _obj) or !(alive _obj) or (side_end))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_obj switchCamera ""INTERNAL"";" \n
+           "Deathcam cameraEffect [""Terminate"", ""BACK""];" \n
+           "camDestroy DeathCam;" \n
+           "_obj setcaptive false;" \n
+           "DeathCamArray = [];" \n
+           "enableRadio true;" \n
+           "finddisplay(46) displayRemoveAllEventHandlers ""KeyDown""; " \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "cam_commit">*/
+        class cam_commit
+        {
+          priority = 0.000000;
+          to="revive_cam_2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((""HEALTHY"" ==  lifeState _obj) && (camCommitted DeathCam))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "revive_cam_2">*/
+    class revive_cam_2
+    {
+      name = "revive_cam_2";
+      init = /*%FSM<STATEINIT""">*/"Deathcam camSetRelPos [-0.82, -3.12, 3.0];" \n
+       "Deathcam camSetFov 0.044;" \n
+       "Deathcam camCommit 3.0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "in_play">*/
+        class in_play
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"camCommitted DeathCam"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_obj switchCamera ""INTERNAL"";" \n
+           "Deathcam cameraEffect [""Terminate"", ""BACK""];" \n
+           "camDestroy DeathCam;" \n
+           "_obj setcaptive false;" \n
+           "DeathCamArray = [];" \n
+           "enableRadio true;" \n
+           "finddisplay(46) displayRemoveAllEventHandlers ""KeyDown""; " \n
+           "_obj allowDamage true;" \n
+           "" \n
+           "" \n
+           "[_obj] execVM ""ZKS\Revive\Respawn_Scripts.sqf"";" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "heal">*/
+    class heal
+    {
+      name = "heal";
+      init = /*%FSM<STATEINIT""">*/"_carrier = ((nearestObjects [_obj, [""CAManBase""], 3.5]) select 1);" \n
+       "_timeout = time;" \n
+       "" \n
+       "if !(isplayer _carrier) then {" \n
+       "" \n
+       "_carrier setVariable [""reviving"", nil, true];" \n
+       "" \n
+       "if !(isserver) then {" \n
+       "				_ordercode_1 = {" \n
+       "				private [""_obj"",""_carrier""];" \n
+       "				_obj = _this select 0;" \n
+       "				_carrier = _this select 1;" \n
+       "				_carrier attachto[_obj,[-.6,.2,0]];" \n
+       "				_carrier setdir 90;" \n
+       "				_carrier playMoveNow ""AmovPercMstpSrasWpstDnon_AinvPknlMstpSnonWnonDnon_end"";" \n
+       "				};" \n
+       "				serverorders = [_obj,_carrier,_ordercode_1];" \n
+       "				publicVariableServer ""serverorders"";" \n
+       "" \n
+       "				}else{" \n
+       "" \n
+       "				_carrier attachto[_obj,[-.6,.2,0]];" \n
+       "				_carrier setdir 90;" \n
+       "				_carrier playMoveNow ""AmovPercMstpSrasWpstDnon_AinvPknlMstpSnonWnonDnon_end"";" \n
+       "				};" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "better">*/
+        class better
+        {
+          priority = 0.000000;
+          to="revive_cam";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(time > (_timeout + 4))" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "if !(isplayer _carrier) then {" \n
+           "" \n
+           "[_obj] spawn {" \n
+           "" \n
+           "				_obj = _this select 0;" \n
+           "				_obj switchmove ""AinjPpneMstpSnonWrflDnon_rolltofront"";" \n
+           "				sleep 2;" \n
+           "				waituntil {""AinjPpneMstpSnonWrflDnon_rolltofront"" != animationState _obj};" \n
+           "				_obj switchmove ""AmovPpneMstpSrasWrflDnon"";" \n
+           "};" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "				_ordercode5 = {" \n
+           "				private [""_carrier""];" \n
+           "				_carrier = _this select 0;" \n
+           "				_carrier playMoveNow ""AinvPknlMstpSnonWrflDnon_medicEnd"";" \n
+           "				};" \n
+           "				serverorders = [_carrier,_ordercode5];" \n
+           "" \n
+           "publicVariableServer ""serverorders"";" \n
+           "" \n
+           "detach _carrier;" \n
+           "" \n
+           "}else{" \n
+           "" \n
+           "_obj spawn {_obj = _this;" \n
+           "				_obj switchmove ""AinjPpneMstpSnonWrflDnon_rolltofront"";" \n
+           "				sleep 2;" \n
+           "				waituntil {""AinjPpneMstpSnonWrflDnon_rolltofront"" != animationState _obj};" \n
+           "				_obj switchmove ""AmovPpneMstpSrasWrflDnon"";" \n
+           "			};" \n
+           "};" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="START";
+  finalStates[] =
+  {
+    "end",
+  };
+};
+/*%FSM</COMPILE>*/

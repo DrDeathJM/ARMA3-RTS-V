@@ -1,0 +1,40 @@
+
+
+
+CUP_O_TK_INS_Soldier_GL
+CUP_O_RU_Soldier_MG
+CUP_O_RU_Soldier_Marksman
+Level 1:
+CUP_O_RU_Soldier_TL
+CUP_O_RU_Soldier_LAT
+CUP_O_RU_Soldier_AT
+CUP_O_RU_Soldier_HAT
+CUP_O_RU_Soldier_AA
+CUP_O_RU_Soldier_Saiga
+CUP_O_TK_INS_Soldier_AAT
+CUP_O_TK_INS_Soldier_Enfield 
+Level 2: 
+CUP_O_RU_Officer
+CUP_O_RU_Soldier_SL
+CUP_O_RU_Soldier_Light
+CUP_O_RU_Soldier
+CUP_O_RU_Soldier_AR
+CUP_O_RU_Soldier_GL
+CUP_O_TK_INS_Soldier_FNFAL
+CUP_O_TK_INS_Soldier_AA
+CUP_O_TK_INS_Soldier_AT
+CUP_O_TK_INS_Soldier_TL
+ Level 3:
+ 
+CUP_O_TK_INS_Soldier_AR
+CUP_O_TK_INS_Soldier_MG
+CUP_O_RU_Spotter
+CUP_O_TK_INS_Soldier_FNFAL
+CUP_O_RU_Medic
+CUP_O_RU_Pilot
+CUP_O_RU_Crew
+CUP_O_TK_INS_Commander
+CUP_O_RU_Sniper
+CUP_O_RU_Sniper_KSVK
+CUP_O_TK_INS_Sniper
+

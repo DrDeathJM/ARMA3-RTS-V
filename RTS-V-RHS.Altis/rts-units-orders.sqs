@@ -1,0 +1,37 @@
+_idListGroup = _this select 0
+_idOrder = _this select 1
+_typeOrder = _this select 2
+
+_index = lbCurSel _idListGroup
+_text = lbText [_idListGroup, _index]
+_uNum = lbValue [_idListGroup, _index]
+_group = units group player
+
+_unit = _group select _uNum
+
+?_unit == Player : player groupChat "I can't give orders to myself"; exit
+
+goto STR _typeOrder
+
+
+
+#1
+;;flyinheight
+
+_height = lbValue [_idOrder, lbCurSel _idOrder]
+
+_vcl = vehicle _unit
+
+?!(_vcl isKindOf "Air") : _unit groupChat "Sir, I am not in an aircraft."; Exit
+?_unit != driver _vcl : _unit groupChat "Sir, I am not the pilot."; Exit
+
+_vcl flyInHeight _height
+
+?!isEngineOn _vcl : _unit action ["engineOn",_vcl]
+
+?speed _vcl < 1 : _vcl doMove getPos _vcl
+
+_unit groupChat format ["Command acknowledged.  Changing Altitude to %1 meters",_height]
+
+Exit
+

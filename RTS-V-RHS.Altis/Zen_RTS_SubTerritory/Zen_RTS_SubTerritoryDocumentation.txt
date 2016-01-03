@@ -1,0 +1,92 @@
+The Zen RTS Sub Territory System
+by Zenophon
+for RTS V
+
+Provides data access to and self-contained management of the sub-territory control system.  Spawn Zen_RTS_SubTerritoryManager to active automatic processing, which calls customizable event Zen_RTS_SubTerritoryEventCaptured.
+
+Index
+    Zen_RTS_SubTerritoryCreate
+    Zen_RTS_SubTerritoryEventCaptured
+    Zen_RTS_SubTerritoryGetData
+    Zen_RTS_SubTerritoryManager
+    Zen_RTS_SubTerritorySearch
+    Zen_RTS_SubTerritoryUpdate
+    Zen_RTS_SubTerritoryUpdateVisual
+
+Zen_RTS_SubTerritoryCreate
+
+Registers (1) with the sub-territory system.  The sub territory thread will now
+consider this flag.  The name of the marker is used to refer to this sub-territory
+by all other sub-territory functions.  Sets the visual representation.
+The starting side is civilian.
+Usage : Call
+Params: 1. String, area marker
+ (opt.) 2. String, display name, (default: 'Flag')
+ (opt.) 3. Array of scalars, resource value at each level, (default: [0])
+Return: Void
+
+Zen_RTS_SubTerritoryEventCaptured
+
+Proxy event function for Zen_RTS_SubTerritoryManager thread.
+Called when the side of a sub-territory changes.
+Usage : Spawn
+Params: 1. String, the sub-territory
+        2. Array, the previous sub-territory data
+Return: Void
+
+Zen_RTS_SubTerritoryGetData
+
+Returns all data associated with (1) from the sub-territory system.
+Usage : Call
+Params: 1. String, sub-territory marker
+Return: Array
+        1. String, marker name
+        2. Side, current owner
+        3. String, display name
+        4. Scalar, level
+        5. Array of scalars, resource value at each level
+        6. Scalar, FOB status
+
+Zen_RTS_SubTerritoryManager
+
+The sub-territory management thread.  Controls changing the side of sub-territories.
+Dynamically reads current data for added and removed sub-territories.
+Updates the visual representation of sub-territories.
+Calls Zen_RTS_SubTerritoryEventCaptured when the side of a sub-territory changes.
+Usage : Spawn
+Params: None
+Return: Void
+
+Zen_RTS_SubTerritorySearch
+
+Returns the markers of all sub-territories whose data elements at (1) hash (3) to
+within, inclusive, the range (2).  (1,3) are aligned with each other, so the element at
+(1.n) is hashed with (3.n) and checked within (2.n).
+Usage : Call
+Params: 1. Array of scalars, indexes of nested arrays to search
+        2. Array, ranges the element must fall within
+            Array:
+                1. Scalar, lower bound
+                2. Scalar, upper bound
+        3. Array, scalar hash functions as code or global function string
+Return: Array of strings, [] if there is no match
+
+Zen_RTS_SubTerritoryUpdate
+
+Sets the data of the sub-territory corresponding to (1).  Use -1 to skip (2,6) with
+no change.  Checks side argument for validity.  Updates the visual representation.
+Usage : Call
+Params: 1. String, territory marker
+ (opt.) 2. Side, the owner of the sub-territory, (default: -1)
+ (opt.) 3. String, display name, (default: -1)
+ (opt.) 4. Scalar, level, (default: -1)
+ (opt.) 5. Array of scalars, resource value at each level, (default: -1)
+ (opt.) 6. String, FOB status, (default: -1)
+Return: Void
+
+Zen_RTS_SubTerritoryUpdateVisual
+
+Updates the visual aspect of (1) to agree with current sub-territory data.
+Usage : Call
+Params: 1. String, sub-territory marker
+Return: Void

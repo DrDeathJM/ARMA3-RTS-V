@@ -1,0 +1,56 @@
+#Init
+~5
+
+_string = str Player
+_side = side Player
+
+[_side,"HQ"] sideChat "Operating funds established."
+
+playerMoney = paramsArray select 0
+call compile format ["Money%1 = 0; publicVariable ""Money%1""",_string]
+
+rts_moneyMonitorActive = TRUE
+
+
+#Monitor
+~1
+
+;;Money algorithm is Number of territories
+_factorMoney = call compile format ["%1FC",_side]
+_factorMoney = call compile format ["%1SupplyFactor",_side]
+?_factorMoney <= 0 : _factorMoney = 1
+_moneyPerMinute = _factorMoney * 3
+_moneyPerSecond = _moneyPerMinute/60
+
+playerMoney = playerMoney + _moneyPerSecond
+
+;;Supply algorithm is Total Value of Resources of territories - Public Var is handed in server-side script
+_factorSupply = call compile format ["%1SupplyFactor",_side]
+?_factorSupply < 0 : _factorSupply = .1
+_supplyPerMinute = _factorSupply
+_supplyPerSecond = _supplyPerMinute/60
+
+_supply = call compile format ["%1Supply",_side]
+
+;;This part used to call the pub variable but that's handled server-side now
+;;call compile format ["%1Supply = %1Supply + _supplyPerSecond",_side]
+
+
+;;debug info
+_tmp = format ["Money Factor:  $%1, Supply Factor: #%2  East Towns: %3  West Towns: %4 CIV Towns: %5",_factorMoney,_factorSupply,EastFC,WestFC,civFC]
+
+;;player groupChat _tmp
+
+
+call compile format ["Money%1 = playerMoney; publicVariable ""Money%1""",_string]
+
+_msg1 = format ["Funds : %1 +%2/min",round playerMoney,_moneyPerMinute]
+_msg2 = format ["Supply: %1 +%2/min",round _supply,_supplyPerMinute]
+_msg3 = format  ["FPS: %1", round diag_fps]
+
+ctrlSetText [idMoney,_msg1]
+ctrlSetText [idSupply,_msg2]
+ctrlSetText [idFPS,_msg3]
+
+
+goto "Monitor"

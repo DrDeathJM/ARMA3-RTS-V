@@ -1,0 +1,89 @@
+;;--------------------------------------------------------------------------------------------------------
+;;Dedicated Server execs only this section
+;;--------------------------------------------------------------------------------------------------------
+
+?!Local server : Exit
+
+BuildForWest = ObjNull
+VclWest = ObjNull
+BuildForEast = ObjNull
+VclEast = ObjNull
+
+#DedicatedServer
+
+@(!IsNull BuildForWest and  !IsNull VclWest) OR (!IsNull BuildForEast and !IsNull VclEast)
+
+?(!IsNull BuildForWest and !IsNull VclWest) : _side = West
+?(!IsNull BuildForEast and !IsNull VclEast) : _side = East
+
+_builder = call compile format ["BuildFor%1", _side]
+_vcl = call compile format ["Vcl%1", _side]
+
+call compile format ["BuildFor%1 = ObjNull", _side]
+call compile format ["Vcl%1 = ObjNull", _side]
+
+#DedicatedBuild
+
+_type = typeOf _vcl
+
+_sType = getText (configFile >> "CfgVehicles" >> _type >> "crew")
+
+player groupChat _stype
+
+_pos = getPos _vcl
+_dir = getDir _vcl
+
+_dist = +30
+_posX = (_pos select 0) + _dist * sin _dir
+_posY = (_pos select 1) + _dist * cos _dir
+_vclType = CJ;
+_player = _sideplayer;
+_obj = _vclType createVehicle [_posX, _posY]
+?( _createType == "vcl") : _dir = _dir - 180
+_obj SetDir _dir
+
+[_obj, _vclType, _player, _vclName] exec "rts-vcl-special.sqs"
+
+#DedicatedBuildSoldier
+
+_group1 = createGroup _side
+
+_init = "newSoldier = _this"
+_group2 = Group _builder
+_skill = 1
+_rank = "PRIVATE"
+
+_hasDriver = getNumber (configFile >> "CfgVehicles" >> _type >> "hasDriver")
+_hasGunner = getNumber (configFile >> "CfgVehicles" >> _type >> "hasGunner")
+_hasCommdr = getNumber (configFile >> "CfgVehicles" >> _type >> "hasCommander")
+
+_sType CreateUnit [[_posX, _posY], _group1, _init, _skill, _rank]
+_soldier1 = newSoldier
+
+_soldier1 = _group1 createUnit [_sType, [_posX, _posY], [], 0, "FORM"]
+_soldier1 addEventHandler rts_killedSld
+_soldier1 moveInDriver _vcl
+
+_tmpArray = [_soldier1]
+
+?_hasGunner == 1 : _sType CreateUnit [[_posX, _posY], _group1, _init, _skill, _rank]; _soldier2 = newSoldier; _soldier2 addEventHandler rts_killedSld; _soldier2 moveInGunner _vcl; _tmpArray = _tmpArray + [_soldier2]
+?_hasCommdr == 1 : _sType CreateUnit [[_posX, _posY], _group1, _init, _skill, _rank]; _soldier3 = newSoldier; _soldier3 addEventHandler rts_killedSld; _soldier3 moveInCommander _vcl; _tmpArray = _tmpArray + [_soldier3]
+
+?_hasGunner == 1 : _soldier2 = _group1 createUnit [_sType, [_posX, _posY], [], 0, "FORM"]; _soldier2 addEventHandler rts_killedSld; _soldier2 moveInGunner _vcl; _tmpArray = _tmpArray + [_soldier2]
+?_hasCommdr == 1 : _soldier3 = _group1 createUnit [_sType, [_posX, _posY], [], 0, "FORM"]; _soldier3 addEventHandler rts_killedSld; _soldier3 moveInCommander _vcl; _tmpArray = _tmpArray + [_soldier3]
+
+_vcl addEventHandler rts_killedSld
+
+player groupChat format ["%1", _tmpArray]
+
+~1
+
+_tmpArray JOIN _group2
+
+?_vcl isKindOf "plane" : [_vcl] exec "rts-vcl-aiplanetakeoff.sqs"
+
+~1
+
+deleteGroup _group1
+
+Goto "DedicatedServer"

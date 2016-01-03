@@ -1,0 +1,121 @@
+_string = _this select 0
+_flag = call compile format ["vp%1", _string]
+_flagNum = call compile _string
+
+if (format ["%1", _flag] == undefined_var) then {hint "Exit"; Exit};
+
+[_string] exec "vicpoint\rts-vpMarkers.sqs"
+[_string] exec "vicpoint\rts-vpIcons.sqs"
+
+?!Local Server : Exit
+
+_side = GUER
+_neutral = GUER
+
+vpNumber = vpNumber + 1; publicVariable "vpNumber"
+
+call compile format ["Sidevp%1 = ""%2""; publicVariable ""Sidevp%1""",_string,_side];
+
+call compile format ["%1VPC = %1VPC + 1; publicVariable ""%1VPC""",_side];
+
+;;player groupchat format ["%1, %2", sideflag1, CIVFC];
+
+_trig = call compile format ["ListVP%1",_string];
+
+_angle = getDir _trig
+_sizeX = 5
+_sizeY = 5
+
+_trig setTriggerArea [_sizeX, _sizeY, _angle, true];
+
+_marker = format ["MarkerVP%1",_string];
+_flagMarker = format ["IconVP%1",_string];
+
+;;?Local Server : createMarker [_marker, getPos _trig];
+;;?Local Server : createMarker [_flagMarker, getPos _flag];
+~2
+_flagMarker setMarkerText call compile format ["NameVP%1",_string];
+
+_scoreTime = 60
+_points = 1
+_scoreWait = Time
+_takeTime = 20
+
+#Monitor
+~2
+
+publicVariable "VPNumber"
+call compile format ["publicVariable ""SideVP%1""",_string];for JIP
+
+;;?Time > _scoreWait && _side in [West,East,GUER] ;  call compile format ["score%1 = score%1 + _points; publicVariable ""score%1""",_side]; _scoreWait = Time + _scoreTime
+
+?count list _trig < 1 : goto "Monitor"
+
+_West = {Side _x == West && (getpos _x select 2 < 2)} count list _trig
+_East = {Side _x == East && (getpos _x select 2 < 2)} count list _trig
+_guer = {Side _x == GUER && (getpos _x select 2 < 2)} count list _trig
+
+;;hint format ["[start]\n%1\nw: %2\nE: %3\nG: %4",list _trig,_West,_East,_guer];
+
+?_West == _East && _East == _guer && _West == _guer : goto "Monitor"
+?_West > _East && _West > _guer : _side = West; _stat = 1; _num = -1; goto "CheckSide"
+?_East > _West && _East > _guer : _side = East; _stat = 2; _num = +1; goto "CheckSide"
+?_guer > _West && _guer > _East : _side = GUER; _stat = 3; goto "CheckSide"
+
+
+goto "Monitor"
+
+
+#CheckSide
+
+?call compile format ["SideVP%1 == ""%2""",_string,_side] : goto "Monitor"
+
+_tt = Time + _takeTime
+
+_flagSide = call compile format ["SideVP%1",_string];
+?_flagSide in ["GUER","CIV"] : goto "takeOver"
+
+call compile format ["threatVP%1 = TRUE; publicVariable ""threatVP%1""",_string];
+
+#takeAway
+~.5
+_countTaker = {Side _x == _side && (getpos _x select 2 < 2)} count list _trig
+_color = call compile format ["Color%1",_flagSide];
+
+_marker setMarkerColor "ColorYellow"
+~.5
+_marker setMarkerColor _color
+
+?_countTaker < 1 : goto "Monitor"
+
+?Time < _tt : goto "takeAway"
+
+;;set flagside back to neutral
+
+call compile format ["Sidevp%1 = ""%2""; publicVariable ""Sidevp%1""",_string,_neutral];
+
+call compile format ["%1VPC = %1VPC - 1; publicVariable ""%1VPC""",_flagSide];
+
+_tt = Time + _takeTime
+
+#takeOver
+~1
+_countTaker = {Side _x == _side && (getpos _x select 2 < 2)} count list _trig
+
+?_countTaker < 1 : goto "Monitor"
+
+?Time < _tt : goto "takeOver"
+
+
+
+#Owned
+
+_flagSide = call compile format ["SideVP%1",_string];
+
+call compile format ["%1VPC = %1VPC + 1; publicVariable ""%1VPC""",_side];
+
+call compile format ["SideVP%1 = ""%2""; publicVariable ""SideVP%1""",_string,_side];
+
+rts_vpTaken = _flag; publicVariable "rts_vpTaken"
+
+goto "Monitor"

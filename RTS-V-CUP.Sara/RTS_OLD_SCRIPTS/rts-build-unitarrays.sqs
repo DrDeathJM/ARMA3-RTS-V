@@ -1,0 +1,340 @@
+~.1
+;;rts_hq sideChat "Intializing Unit Arrays..."
+#UnitNames
+
+Null = []
+
+
+    BarrierName = "Concrete Layered Wall "
+     transport1  = []
+    Easttransport1  = []
+    WestLightGround = []
+    EastLightGround = []
+    Westair4        = []
+    Eastair4        = []
+    Westair5        = []
+    Eastair5        = []
+    Westair6        = []
+    Eastair6        = []
+    WestAllGround   = []
+    WestAllAir      = []
+    AllGround       = []
+    WestMedium1     = []
+    EastMedium1     = []
+    WestSupport     = []
+    EastSupport     = [] 
+    WestTeamName = "BLUFOR";
+WestCommanderName = "BLUFOR Commander";
+AmmoCrateName = "Weapons Box";
+WestAmmoCrate = "Box_NATO_WpsSpecial_F"
+Westammoboxtype = "Box_NATO_WpsSpecial_F";
+
+WestBarracksName = format ["%1 Barracks",WestTeamName]
+WestLightFacName = format ["%1 Light Factory",WestTeamName]
+WestHeavyFacName = format ["%1 Heavy Factory",WestTeamName]
+WestAirFacName = format ["%1 Aircraft Factory",WestTeamName]
+;;WestHQFacName = format ["%1 HQ Factory",WestTeamName]
+WestMCUName = format ["%1 MCU",WestTeamName]
+WestCJName = format ["%1 CJ",WestTeamName]
+
+EastTeamName = "OPFOR"
+EastCommanderName = "OPFOR Commander"
+;;AmmoCrateName = "Weapons Box"
+WestAmmoCrate  =  "Box_East_WpsSpecial_F"
+Eastammoboxtype = "Box_East_WpsSpecial_F"
+guerammoboxtype = "Box_East_Ammo_F"
+EastBarracksName = format ["%1 Barracks",EastTeamName]
+EastLightFacName = format ["%1 Light Factory",EastTeamName]
+EastHeavyFacName = format ["%1 Heavy Factory",EastTeamName]
+EastAirFacName = format ["%1 Aircraft Factory",EastTeamName]
+;;EastHQFacName = format ["%1 HQ Factory",EastTeamName]
+EastMCUName = format ["%1 MCU",EastTeamName]
+EastCJName = format ["%1 CJ",EastTeamName]
+
+
+GuerTeamName = "Rebel"
+CivTeamName = "Civilian"
+
+WestBarracks = objNull
+WestLightFac = objNull
+WestHeavyFac = objNull
+WestAirFac = objNull
+;;WestHQFac = objNull
+
+EastBarracks = objNull
+EastLightFac = objNull
+EastHeavyFac = objNull
+EastAirFac = objNull
+;;EastHQFac = objNull
+
+_team = "West"
+
+#Init
+_x = 1
+_max = 13
+_list = []
+
+#ListLoop
+~.02
+_m = format ["%1%2",_team,_x]
+_list = _list + [_m]
+
+_x = _x + 1
+
+?_x < _max : goto "ListLoop"
+
+?_team == "West" : WestPlayers = _list; _team = "East"; goto "Init"
+?_team == "East" : EastPlayers = _list; _team = "guer"; goto "Init"
+?_team == "guer" : guerPlayers = _list
+
+WestTankCrew = [["B_crew_F","Crewman","troop",30,0,0,2,10]]
+WestAirCrew = [["B_Pilot_F","Pilot","troop",30,0,0,2,10]]
+
+EastTankCrew = [["O_crew_F","Crewman","troop",30,0,0,2,10]]
+EastAirCrew = [["O_Pilot_F","Pilot","troop",30,0,0,2,10]]
+
+;;Array info:  ["VehicleType","Vcl Name","unit type- vcl, base, aux",Build Time in seconds,Oil,Ore,Energy]
+
+NormalAir = [[]]
+
+WestAir0 = [["B_Heli_Light_01_F","(Transport)","vcl", 60, 5, 3, 1, 2000],["B_Heli_Transport_01_camo_F","(Transport)","vcl", 60, 12, 8, 1, 2000]]
+
+EastAir0 = [["O_Heli_Light_02_unarmed_F","(Transport)","vcl",60,12,8,1,1200]]
+
+WestAir1 = [["B_Heli_Light_01_armed_F","AH-9","vcl",30,5,3,1,2000]]
+
+EastAir1 = [["O_Heli_Light_02_F","PO-30 Orca","vcl",60,12,8,1,2000],["O_Heli_Light_02_unarmed_F"," OrcaBlack","vcl",60,12,8,1,2000]]
+
+WestAir2 = [["B_Heli_Attack_01_F","(Gunship)","vcl",30,9,6,1,6500]]
+
+EastAir2 = [["O_Heli_Attack_02_F","(Gunship)","vcl",120,12,8,1,6500],["O_Heli_Attack_02_black_F","(Gunship)","vcl",120,12,8,1,7000]]
+
+WestAir3 = [["B_Plane_CAS_01_F","Wipeout","vcl",150,12,6,1,9000],["B_UAV_02_F","(missles)","vcl",120,11,7,1,6500],["B_UAV_02_CAS_F ","(bombs)","vcl",120,11,7,1,6500]]
+
+EastAir3 = [["O_Plane_CAS_02_F","Neophron","vcl",150,12,8,1,9000],["O_UAV_02_F","(missles)","vcl",120,11,7,1,6500],["O_UAV_02_CAS_F","(bombs)","vcl",120,11,7,1,6500]]
+
+
+WestMCUList = [["B_Truck_01_medical_F",WestMCUName,"vcl",60,2,2,1,100]]
+WestCJList = [["B_MRAP_01_F",WestCJName,"vcl",60,2,2,1,1000]]
+EastMCUList = [["O_Truck_02_medical_F",EastMCUName,"vcl",60,2,2,1,100]]
+EastCJList = [["O_MRAP_02_F",EastCJName,"vcl",60,2,2,1,1000]]
+
+B_Truck_01_medical_F = "HQ"
+O_Truck_02_medical_F = "HQ"
+B_MRAP_01_F = "CJ"
+O_MRAP_02_F = "CJ"
+
+;;West LIGHT FACTORY
+
+WestLight0 = [["B_Truck_01_Repair_F"," (Captures Towns)","vcl",60,0,0,0,1000],["B_MRAP_01_F","Hunter","vcl",20,5,6,1,1000],["B_Quadbike_01_F","Quadbike","vcl",10,1,1,1,100],["B_G_Offroad_01_F","Offroad","vcl",10,1,1,1,100]]
+
+WestLight1 =  [["B_G_Quadbike_01_F","(Quadbike)","vcl",20,5,6,1,250],["B_G_Offroad_01_armed_F","Offroad (Armed)","vcl",20,5,6,1,240],["B_Truck_01_ammo_F","Ammo","vcl",20,5,6,1,350],["B_Truck_01_fuel_F","Fuel","vcl",20,5,6,1,350]]
+
+WestLight2 = [["B_MRAP_01_hmg_F","Hunter HMG","vcl",30,1,1,1,850],["B_UGV_01_F","Stomper","vcl",30,1,1,1,900],["B_G_Offroad_01_repair_F","Offroad (Repair)","vcl",20,5,6,1,550]]
+
+WestLight3 = [["B_MRAP_01_gmg_F","Hunter GMG","vcl",30,2,2,1,1500],["B_UGV_01_rcws_F","Stomper RCWS","vcl",30,2,2,1,2000]]
+
+
+;;East LIGHT FACTORY
+
+ EastLight0 = [["O_Truck_03_repair_F"," (Captures Towns) ","vcl",60,0,0,0,1000],["O_MRAP_02_F","Ifrit","vcl",20,5,6,1,1000],["O_Quadbike_01_F","Quadbike","vcl",10,1,1,1,100],["O_G_Offroad_01_armed_F","Offroad (Armed)","vcl",10,1,1,1,240]]
+
+ EastLight1 = [["O_G_Quadbike_01_F","(Quadbike)","vcl",10,1,1,1,250],["O_G_Offroad_01_armed_F","Offroad (Armed)","vcl",20,1,1,1,200],["O_Truck_03_medical_F","Medical","vcl",20,5,6,1,290],["O_Truck_03_ammo_F","Ammo","vcl",20,5,6,1,350],["O_Truck_03_fuel_F","Fuel","vcl",20,5,6,1,350]]
+
+ EastLight2 = [["O_MRAP_02_hmg_F","Ifrit HMG","vcl",30,2,2,1,850],["O_UGV_01_F","Saif","vcl",30,2,2,1,900],["O_G_Offroad_01_repair_F","Offroad (Repair)","vcl",20,5,6,1,550]]
+
+ EastLight3 = [["O_MRAP_02_gmg_F","Ifrit GMG","vcl",30,2,2,1,1500],["O_UGV_01_rcws_F","RCWS","vcl",30,2,2,1,2000]]
+
+;;West HEAVY FACTORY
+
+ WestHeavy0 = [["B_APC_Tracked_01_rcws_F","Panther","vcl",30,5,6,1,5000],["B_APC_Wheeled_01_cannon_F","Marshall","vcl",30,5,6,1,5000]]
+ WestHeavy1 = [["B_MBT_01_cannon_F","M2A1","vcl",30,5,6,1,5000]];
+ WestHeavy2 = [["B_MBT_01_TUSK_F","M2A4 Tusk","vcl",60,5,6,1,5000],["B_APC_Tracked_01_AA_F","AA","vcl",30,5,6,1,2500]]
+ WestHeavy3 = [["B_MBT_01_TUSK_F","M2A4 Tusk","vcl",60,5,6,1,5000],["B_MBT_01_arty_F","Artillery","vcl",60,5,6,1,6000]]
+
+
+
+;;East HEAVY FACTORY
+
+ EastHeavy0 = [["O_MRAP_02_gmg_F","Ifrit GMG","vcl",30,5,6,1,2200]]
+ EastHeavy1 = [["O_APC_Wheeled_02_rcws_F","Marid","vcl",30,5,6,1,3000]]
+ EastHeavy2 = [["O_APC_Tracked_02_cannon_F","BTR-K","vcl",30,5,6,1,3700],["O_APC_Tracked_02_AA_F","Tigris","vcl",30,5,5,1,2500]]
+ EastHeavy3 = [["O_MBT_02_cannon_F ","T-100","vcl",200,5,6,1,7000],["O_MBT_02_arty_F","vcl",60,5,6,1,5000]]
+
+
+
+;;Independent ARMOR
+
+;;guerAPC1 = [["O_Truck_02_box_F_Gue","Independent BMP","vcl",30,5,5,1,2500],["T34_TK_GUE_EP1","Independent T34","vcl",30,5,5,1,2500]]
+
+;;guerHeavy1 = [["T72_Gue","Independent T-72","vcl",30,5,5,1,4500]]
+
+commonBuildings = []
+
+WestBuildings = [["Land_Cargo_House_V1_F",WestBarracksName,"base",10,200,0,1,"WestBarracks","West",-5.7],["Land_i_House_Small_03_V1_F",WestLightFacName,"base",10,500,0,1,"WestLightFac","West",-8],["Land_CarService_F",WestHeavyFacName,"base",10,2500,0,1,"WestHeavyFac","West",-8],["Land_Lighthouse_small_F",WestAirFacName,"base",30,5000,0,1,"WestAirFac","West", -14]]
+
+EastBuildings = [["Land_Cargo_House_V1_F",EastBarracksName,"base",10,200,0,1,"EastBarracks","East",-5.7],["Land_i_House_Small_03_V1_F",EastLightFacName,"base",10,500,0,1,"EastLightFac","East",-8],["Land_CarService_F",EastHeavyFacName,"base",10,2500,0,1,"EastHeavyFac","East",-8],["Land_Lighthouse_small_F",EastAirFacName,"base",30,5000,0,1,"EastAirFac","East", -14]]
+
+
+
+;;WestNavy = [["Westboat","B_Boat_Armed_01_minigun_F","vcl",10,2,2,1,100]]
+;;EastNavy = [["Eastboat","O_Boat_Armed_01_hmg_F","vcl",10,2,2,1,100]]
+
+allBuildings = WestBuildings + EastBuildings
+
+;;WestLightGround = WestTransport1 + WestLight1 + WestMedium1 + WestSupport + WestMCUList
+;;EastLightGround = EastTransport1 + EastLight1 + EastMedium1 + EastSupport + EastMCUList
+
+;;WestHeavyGround = WestHeavy1 + WestAAA
+;;EastHeavyGround = EastHeavy1 + EastAAA
+
+;;WestAllGround = WestHeavyGround + WestLightGround
+;;EastAllGround = EastHeavyGround + EastLightGround
+
+;;WestAllAir = WestAir1 + WestAir2 + WestAir3 + WestAir4 + WestAir5 + WestAir6
+;;EastAllAir = EastAir1 + EastAir2 + EastAir3 + EastAir4 + EastAir5 + EastAir6
+
+;;allGround = WestAllGround + EastAllGround
+;;allAir = WestAllAir + EastAllAir
+CommonAuxilary = [["WireFence",5,1,"","Wire Fence",NULL,"Land_HelipadCircle_F"],["Land_BagFence_Long_F",20,5,"","Bag Fence",NULL,"aux"],["Land_Mil_WiredFence_F ",5,1,"","Wire Barrier",NULL,"Land_HelipadCircle_F"],["Land_Medevac_house_V1_F",10,5,"","Medical Tent",NULL,"vcl"],["Box_IND_Support_F",250,20,"","Support AAF",NULL,"aux"],["Land_FuelStation_Build_F",100,20,"","Fuel Station",NULL,"aux"]]
+
+WestAuxilary = CommonAuxilary + [["B_HMG_01_high_F",3000,40,"","HMG .50  Site",NULL,"aux"]]
+
+EastAuxilary = CommonAuxilary + [["O_HMG_01_high_F",3000,40,"","HMG .50  Site",NULL,"aux"]]
+
+CJWest = [["RTSWestCJ",2000,20,"B_MRAP_01_F",WestCJName,WestAuxilary,"cj"]]
+CJEest = [["RTSEastCJ",2000,20,"O_MRAP_02_F",EastCJName,EastAuxilary,"cj"]]
+
+WestMen0 = [["B_Soldier_02_f","Rifleman","troop",30,0,0,2,125],["B_medic_F","Medic","troop",30,0,0,2,100],["B_engineer_F","Engineer","troop",30,0,0,2,100]]
+
+EastMen0 = [["O_G_Soldier_F","Rifleman","troop",30,0,0,2,125],["O_G_medic_F","Medic","troop",30,0,0,2,100],["O_G_engineer_F","Engineer","troop",30,0,0,2,100]]
+
+WestMen1 = [["B_Soldier_GL_F","Grenadier","troop",30,0,0,2,100],["B_soldier_AR_F","(AR)","troop",30,0,0,2,100],["B_Soldier_SL_F","Gunner","troop",30,0,0,2,100]]
+
+EastMen1 = [["O_G_Soldier_GL_F","Grenadier","troop",30,0,0,2,100],["O_G_Soldier_AR_F","(LMG) ","troop",30,0,0,2,100],["O_Soldier_AR_F","(LMG)","troop",30,0,0,2,100]]
+
+WestMen2 = [["B_recon_LAT_F","(NALW)","troop",30,0,0,2,100],["B_Soldier_A_F","(Bearer)","troop",30,0,0,2,100],["B_soldier_AA_F","AA","troop",30,0,0,2,100]]
+
+EastMen2 = [["O_G_Soldier_LAT_F","(RPG)","troop",30,0,0,2,100],["O_Soldier_AT_F","(AT)","troop",30,0,0,2,100],["O_soldierU_AA_F","(AA)","troop",30,0,0,2,100]]
+
+WestMen3 = [["B_soldier_M_F","Marksman","troop",30,0,0,2,100],["B_recon_M_F","(Marksman)","troop",30,0,0,2,100]]
+
+EastMen3 = [["O_soldierU_M_F","Marksman","troop",30,0,0,2,100],["O_spotter_F","Spotter","troop",30,0,0,2,100]]
+
+WestUpgrades = [["Nothing","Use Upgrade Button on Main Menu",0,0,0,0,0]]
+EastUpgrades = [["Nothing","Use Upgrade Button on Main Menu",0,0,0,0,0]]
+
+
+;;Soldiers = WestSoldiers + EastSoldiers + WestTankCrew + WestAirCrew + EastTankCrew + EastAirCrew
+
+;;_other = [["ParachuteWest","West Parachute","troop",10,0,0,2,100],["ParachuteEast","East Parachute","troop",10,0,0,2,100]]
+
+;;AllVehicles = AllGround + AllAir + Soldiers + _other + WestNavy + EastNavy
+
+WestBarracksArray = WestMen0;
+EastBarracksArray = EastMen0;
+
+WestLightFacArray = WestLight0
+EastLightFacArray = EastLight0
+WestHeavyFacArray = WestHeavy0
+EastHeavyFacArray = EastHeavy0
+WestAirFacArray = WestAir0
+EastAirFacArray = EastAir0
+
+WestAssets = [[WestBarracksName,1,WestBarracksArray,"WestBarracks"],[WestLightFacName,2,WestLightFacArray,"WestLightFac"],[WestHeavyFacName,3,WestHeavyFacArray,"WestHeavyFac"],[WestAirFacName,4,WestAirFacArray,"WestAirFac"]]
+EastAssets = [[EastBarracksName,1,EastBarracksArray,"EastBarracks"],[EastLightFacName,2,EastLightFacArray,"EastLightFac"],[EastHeavyFacName,3,EastHeavyFacArray,"EastHeavyFac"],[EastAirFacName,4,EastAirFacArray,"EastAirFac"]]
+WestBldNames = [WestMCUName,WestBarracksName,WestLightFacName,WestHeavyFacName,WestAirFacName]
+EastBldNames = [EastMCUName,EastBarracksName,EastLightFacName,EastHeavyFacName,EastAirFacName]
+
+allBldNames = WestBldNames + EastBldNames
+
+WestMCUType = WestMCUList Select 0 Select 0
+EastMCUType = EastMCUList Select 0 Select 0
+
+;;Forward Base Arrays.  Some remain empty until certain upgrades are completed.
+
+EastForwardBaseArray1 = EastBarracksArray
+WestForwardBaseArray1 = WestBarracksArray
+EastForwardBaseArray2 = EastForwardBaseArray1 + EastLightFacArray
+WestForwardBaseArray2 = WestForwardBaseArray1 + WestLightFacArray
+EastForwardBaseArray3 = EastForwardBaseArray2 + EastHeavyFacArray
+WestForwardBaseArray3 = WestForwardBaseArray2 + WestHeavyFacArray
+EastForwardBaseArray4 = EastForwardBaseArray3 + EastHeavyFacArray
+WestForwardBaseArray4 = WestForwardBaseArray3 + WestHeavyFacArray
+
+customSquad0 = []
+customSquad1 = []
+customSquad2 = []
+customSquad3 = []
+
+blue = [0,0,1,.5]
+red = [1,0,0,.5]
+green = [0,1,0,.5]
+yellow = [1,1,0,.5]
+
+customSquadArray = [["Alpha Red","customSquad0","Red"],["Bravo Blue","customSquad1","Blue"],["Charlie Green","customSquad2","Green"],["Delta Yellow","customSquad3","Yellow"]]
+
+ammoTruckWest = "B_Truck_01_ammo_F"
+repairTruckWest = "B_Truck_01_Repair_F"
+fuelTruckWest = "B_Truck_01_fuel_F"
+
+ammoTruckEast = "O_Truck_03_ammo_F";
+repairTruckEast = "O_Truck_03_repair_F"
+fuelTruckEast = "O_Truck_03_fuel_F"
+
+
+CargoArray = AllGround
+
+;;AmmoCamArray = ["B_Plane_CAS_01_F","SU25","B_Plane_CAS_01_F"]
+
+;;Building Types for Territories
+
+buildingOil = "Land_ReservoirTank_V1_F"
+buildingOre = "Land_TBox_F"
+buildingEnergy = "Land_wpp_Turbine_V1_F"
+
+WestRefineryLevel1 = "Land_cmp_Tower_F"
+WestRefineryLevel2 = "Land_ReservoirTank_Airport_F"
+WestRefineryLevel3 = "Land_FuelStation_Feed_F"
+WestRefineryLevel4 = "Land_FuelStation_Build_F"
+WestBaseLevel1 = "Land_Slum_House01_F"
+WestBaseLevel2 = "Land_Cargo_House_V1_F"
+WestBaseLevel3 =  "Land_Cargo_Patrol_V1_F"
+WestBaseLevel4 =  "Land_Cargo_HQ_V1_F"
+
+
+EastRefineryLevel1 ="Land_cmp_Tower_F"
+EastRefineryLevel2 = "Land_ReservoirTank_Airport_F"
+EastRefineryLevel3 = "Land_FuelStation_Feed_F"
+EastRefineryLevel4 ="Land_FuelStation_Build_F"
+EastBaseLevel1 = "Land_Slum_House02_F"
+EastBaseLevel2 =  "Land_Cargo_House_V3_F"
+EastBaseLevel3 = "Land_Cargo_Patrol_V3_F"
+EastBaseLevel4 =   "Land_Cargo_HQ_V1_F"
+
+rscBldTypesWest = [WestRefineryLevel1,WestRefineryLevel2,WestRefineryLevel3,WestRefineryLevel4,WestBaseLevel1,WestBaseLevel2,WestBaseLevel3,WestBaseLevel4]
+rscBldTypesEast = [EastRefineryLevel1,EastRefineryLevel2,EastRefineryLevel3,EastRefineryLevel4,EastBaseLevel1,EastBaseLevel2,EastBaseLevel3,EastBaseLevel4]
+rscBldTypesAll = rscBldTypesWest + rscBldTypesEast
+
+repairTruckWest = "B_Truck_01_Repair_F"
+ammoTruckWest = "B_Truck_01_ammo_F"
+
+repairTruckEast = "O_Truck_03_repair_F"
+ammoTruckEast = "O_Truck_03_ammo_F"
+
+#CrewTypes
+;;Crews Manned Vehicles
+WestArmorCrewType = WestTankCrew Select 0 Select 0
+EastArmorCrewType = EastTankCrew Select 0 Select 0
+
+WestAirCrewType = WestAirCrew Select 0 Select 0
+EastAirCrewType = EastAirCrew Select 0 Select 0
+
+
+rts_arrays_initialized = TRUE
+
+[] exec "upgrades\rts-client-upgradeMonitor.sqs"
+
+;;rts_hq sideChat "Unit Arrays Initialized"
+
+Exit

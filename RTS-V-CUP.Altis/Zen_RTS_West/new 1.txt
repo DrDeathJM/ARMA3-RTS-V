@@ -1,0 +1,3702 @@
+MenDiver
+Men
+
+
+
+
+
+
+MenDiver
+Top of Page
+
+EAST
+
+ displayName -: Assault Diver
+ vehicletype -: O_Soldier_diver_base_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_Rook40_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellRed","SmokeShellRed","Chemlight_red","Chemlight_red","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Assault Diver
+ vehicletype -: O_diver_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_Rook40_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellRed","SmokeShellRed","Chemlight_red","Chemlight_red","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Team Leader
+ vehicletype -: O_diver_TL_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_Rook40_snds_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellRed","SmokeShellRed","Chemlight_red","Chemlight_red","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Explosive Specialist
+ vehicletype -: O_diver_exp_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_Rook40_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","30Rnd_556x45_Stanag_green","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellRed","SmokeShellRed","Chemlight_red","Chemlight_red","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+WEST
+
+ displayName -: Assault Diver
+ vehicletype -: B_Soldier_diver_base_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_P07_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellBlue","SmokeShellBlue","Chemlight_blue","Chemlight_blue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Assault Diver
+ vehicletype -: B_diver_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_P07_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellBlue","SmokeShellBlue","Chemlight_blue","Chemlight_blue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Team Leader
+ vehicletype -: B_diver_TL_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_P07_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellBlue","SmokeShellBlue","Chemlight_blue","Chemlight_blue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Explosive Specialist
+ vehicletype -: B_diver_exp_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_P07_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_red","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShellBlue","SmokeShellBlue","Chemlight_blue","Chemlight_blue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+RESISTANCE
+
+ displayName -: Assault Diver
+ vehicletype -: I_Soldier_diver_base_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_ACPC2_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShellGreen","SmokeShellGreen","Chemlight_green","Chemlight_green","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Assault Diver
+ vehicletype -: I_diver_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_ACPC2_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShellGreen","SmokeShellGreen","Chemlight_green","Chemlight_green","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Explosive Specialist
+ vehicletype -: I_diver_exp_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_ACPC2_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShellGreen","SmokeShellGreen","Chemlight_green","Chemlight_green","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Diver Team Leader
+ vehicletype -: I_diver_TL_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_diver_s
+ weapons driver -: ["arifle_SDAR_F","hgun_ACPC2_snds_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","20Rnd_556x45_UW_mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShellGreen","SmokeShellGreen","Chemlight_green","Chemlight_green","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+
+
+
+
+Men
+Top of Page
+
+OTHER
+
+ displayName -: Man
+ vehicletype -: Man
+ side -: 4
+ nameSound -: veh_infantry_s
+ threat -: [1,0.8,0.2]
+
+ displayName -: Man
+ vehicletype -: CAManBase
+ side -: 4
+ nameSound -: veh_infantry_s
+ threat -: [1,0.05,0.05]
+
+EAST
+
+ displayName -: Rifleman
+ vehicletype -: SoldierEB
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Chose Ibanez
+ vehicletype -: D2_RCM03_Civilian1
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Armando Guglos
+ vehicletype -: D2_RCM03_Civilian2
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: O_G_Soldier_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: O_G_Soldier_lite_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: O_G_Soldier_SL_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","hgun_ACPC2_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: O_G_Soldier_TL_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_GL_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: O_G_Soldier_AR_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["LMG_Mk200_BI_F","Throw","Put"]
+ magazines driver -: ["200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Combat Life Saver
+ vehicletype -: O_G_medic_F
+ faction -: OPF_G_F
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_Mk20_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Engineer
+ vehicletype -: O_G_engineer_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: O_G_Soldier_exp_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: O_G_Soldier_GL_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_GL_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: O_G_Soldier_M_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_MRCO_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: O_G_Soldier_LAT_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_TRG21_F","launch_RPG32_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","RPG32_F","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: O_G_Soldier_A_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: O_G_officer_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_TRG21_MRCO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: o_g_soldier_unarmed_f
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: o_g_survivor_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: O_Soldier_base_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: O_Soldier_02_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: O_Soldier_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: O_officer_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_Katiba_C_ACO_F","hgun_Pistol_heavy_02_Yorris_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","6Rnd_45ACP_Cylinder","6Rnd_45ACP_Cylinder","6Rnd_45ACP_Cylinder","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: O_Soldier_lite_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: O_Soldier_GL_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_GL_ACO_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: O_Soldier_AR_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["LMG_Zafir_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["150Rnd_762x54_Box","150Rnd_762x54_Box","150Rnd_762x54_Box","150Rnd_762x54_Box","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Squad Leader
+ vehicletype -: O_Soldier_SL_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ARCO_pointer_F","hgun_Rook40_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer","30Rnd_65x39_caseless_green_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","O_IR_Grenade","O_IR_Grenade","SmokeShell","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: O_Soldier_TL_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_GL_ARCO_pointer_F","hgun_Rook40_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green_mag_Tracer","30Rnd_65x39_caseless_green_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: O_soldier_M_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_01_DMS_BI_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","10Rnd_762x54_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: O_Soldier_LAT_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Katiba_ACO_F","launch_RPG32_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","RPG32_F","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.7,0.3]
+
+ displayName -: Combat Life Saver
+ vehicletype -: O_medic_F
+ faction -: OPF_F
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_Katiba_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Repair Specialist
+ vehicletype -: O_soldier_repair_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_C_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: O_soldier_exp_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_C_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Helicopter Pilot
+ vehicletype -: O_helipilot_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["SMG_02_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: O_Soldier_A_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Missile Specialist (AT)
+ vehicletype -: O_Soldier_AT_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Katiba_C_ACO_pointer_F","launch_O_Titan_short_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","Titan_AT","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,1,0.8]
+
+ displayName -: Missile Specialist (AA)
+ vehicletype -: O_Soldier_AA_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Katiba_C_ACO_pointer_F","launch_O_Titan_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","Titan_AA","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,1,0.8]
+
+ displayName -: Engineer
+ vehicletype -: O_engineer_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_C_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Crewman
+ vehicletype -: O_crew_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_C_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: O_Pilot_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["SMG_02_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","30Rnd_9x21_Green_Mag","SmokeShell","SmokeShellRed","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Helicopter Crew
+ vehicletype -: O_helicrew_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["arifle_Katiba_C_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","SmokeShellRed","SmokeShellOrange","SmokeShellYellow","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Para Trooper
+ vehicletype -: O_soldier_PG_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: UAV Operator
+ vehicletype -: O_soldier_UAV_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: o_soldier_unarmed_f
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [0.1,0.1,0.1]
+
+ displayName -: Sharpshooter
+ vehicletype -: O_Sharpshooter_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_05_KHS_LP_F","hgun_Rook40_F","Throw","Put","Binocular"]
+ magazines driver -: ["10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","10Rnd_93x64_DMR_05_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Heavy Gunner
+ vehicletype -: O_HeavyGunner_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["MMG_01_hex_ARCO_LP_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["150Rnd_93x64_Mag","150Rnd_93x64_Mag","150Rnd_93x64_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sharpshooter
+ vehicletype -: O_G_Sharpshooter_F
+ faction -: OPF_G_F
+ side -: 0
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_06_camo_khs_F","Throw","Put"]
+ magazines driver -: ["20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AI
+ vehicletype -: O_UAV_AI
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_pilot_s
+ threat -: [1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: o_survivor_F
+ faction -: OPF_F
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: o_soldier_universal_f
+ faction -: OPF_F
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Katiba_ACO_pointer_F","hgun_Rook40_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","30Rnd_65x39_caseless_green","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellRed","Chemlight_red","Chemlight_red"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: o_g_soldier_universal_f
+ faction -: OPF_G_F
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_O_INS_Soldier_Base
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_O_INS_Soldier
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AK-74)
+ vehicletype -: CUP_O_INS_Soldier_AK74
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_O_INS_Soldier_GL
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: CUP_O_INS_Officer
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74_pso","Binocular","Throw","Put","CUP_hgun_Makarov"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Commander
+ vehicletype -: CUP_O_INS_Commander
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Medic
+ vehicletype -: CUP_O_INS_Medic
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","SmokeShellOrange"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_O_INS_Soldier_AR
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_O_INS_Soldier_MG
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.8]
+
+ displayName -: AT Specialist
+ vehicletype -: CUP_O_INS_Soldier_AT
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKM","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_PG7VL_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_O_INS_Soldier_AA
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKS","CUP_launch_9K32Strela","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_Strela_2_M"]
+ threat -: [1,0.5,0.9]
+
+ displayName -: Sniper
+ vehicletype -: CUP_O_INS_Sniper
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_SVD_pso","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellOrange"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sapper
+ vehicletype -: CUP_O_INS_Soldier_Exp
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_Mine_M","CUP_Mine_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Saboteur
+ vehicletype -: CUP_O_INS_Saboteur
+ faction -: CUP_O_ChDKZ
+ side -: 0
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_AKS74UN_kobra_snds","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_PipeBomb_M","CUP_PipeBomb_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_O_RU_Soldier_Base
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_O_RU_Soldier
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Saiga)
+ vehicletype -: CUP_O_RU_Soldier_Saiga
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_sgun_Saiga12K","Throw","Put"]
+ magazines driver -: ["CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_8Rnd_B_Saiga12_74Slug_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_O_RU_Soldier_GL
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK107_GL_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier (unarmed)
+ vehicletype -: CUP_O_RU_Soldier_Light
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: CUP_O_RU_Officer
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: CUP_O_RU_Soldier_SL
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK107_pso","Binocular","Throw","Put","CUP_hgun_Makarov"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell","SmokeShellOrange","SmokeShellBlue","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_O_RU_Soldier_TL
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK107_GL_kobra","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShellOrange","SmokeShellBlue","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_SMOKE_GP25_M","CUP_1Rnd_SMOKE_GP25_M","CUP_FlareWhite_M203","CUP_FlareRed_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: General
+ vehicletype -: CUP_O_RU_Commander
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_O_RU_Soldier_MG
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_Pecheneg_PScope","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.8]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_O_RU_Soldier_AR
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.4]
+
+ displayName -: Rifleman (RPG-18)
+ vehicletype -: CUP_O_RU_Soldier_LAT
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","CUP_launch_RPG18","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_RPG18_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: Rifleman (RPG-7)
+ vehicletype -: CUP_O_RU_Soldier_AT
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_PG7VR_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: AT Specialist (Metis)
+ vehicletype -: CUP_O_RU_Soldier_HAT
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","CUP_launch_Metis","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_AT13_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_O_RU_Soldier_AA
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK107_kobra","CUP_launch_Igla","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_Igla_M"]
+ threat -: [1,0.5,0.9]
+
+ displayName -: Sniper
+ vehicletype -: CUP_O_RU_Sniper
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_SVD_wdl_ghillie","Throw","Put","Binocular","CUP_hgun_PB6P9_snds"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellOrange","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Sniper (KSVK)
+ vehicletype -: CUP_O_RU_Sniper_KSVK
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_ksvk_PSO3","CUP_hgun_PB6P9_snds","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellOrange","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M","CUP_8Rnd_9x18_MakarovSD_M"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Spotter
+ vehicletype -: CUP_O_RU_Spotter
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_AK107_pso","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellOrange"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Marksman (SVD)
+ vehicletype -: CUP_O_RU_Soldier_Marksman
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_SVD_pso","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Medic
+ vehicletype -: CUP_O_RU_Medic
+ faction -: CUP_O_RU
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","SmokeShellOrange"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_O_RU_Pilot
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShellOrange","SmokeShellBlue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_O_RU_Crew
+ faction -: CUP_O_RU
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: CUP_O_TK_INS_Soldier_Base
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militiaman (AK-74)
+ vehicletype -: CUP_O_TK_INS_Soldier
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militiaman (RPG ammo)
+ vehicletype -: CUP_O_TK_INS_Soldier_AAT
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militiaman (AK-74 GL)
+ vehicletype -: CUP_O_TK_INS_Soldier_GL
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militiaman (Lee-Enfield)
+ vehicletype -: CUP_O_TK_INS_Soldier_Enfield
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_LeeEnfield","Throw","Put"]
+ magazines driver -: ["CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militiaman (FN FAL)
+ vehicletype -: CUP_O_TK_INS_Soldier_FNFAL
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_FNFAL","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_O_TK_INS_Soldier_AA
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_launch_9K32Strela","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_Strela_2_M"]
+ threat -: [1,0.1,0.7]
+
+ displayName -: Militiaman (RPG-7)
+ vehicletype -: CUP_O_TK_INS_Soldier_AT
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK74","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_O_TK_INS_Soldier_TL
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShell","SmokeShellBlue","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sniper
+ vehicletype -: CUP_O_TK_INS_Sniper
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74_pso","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShell","SmokeShellBlue"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_O_TK_INS_Soldier_AR
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_O_TK_INS_Soldier_MG
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Bonesetter
+ vehicletype -: CUP_O_TK_INS_Guerilla_Medic
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_srifle_LeeEnfield","Throw","Put"]
+ magazines driver -: ["CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Warlord
+ vehicletype -: CUP_O_TK_INS_Commander
+ faction -: CUP_O_TK_MILITIA
+ side -: 0
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellBlue"]
+ threat -: [1,0.1,0.1]
+
+WEST
+
+ displayName -: Rifleman
+ vehicletype -: SoldierWB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: B_Soldier_base_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman 2
+ vehicletype -: B_Soldier_02_f
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman 3
+ vehicletype -: B_Soldier_03_f
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman 4
+ vehicletype -: B_Soldier_04_f
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman 5
+ vehicletype -: B_Soldier_05_f
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: B_Soldier_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Range Master
+ vehicletype -: B_RangeMaster_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: B_Soldier_lite_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: B_Soldier_GL_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_GL_ACO_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: B_soldier_AR_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["arifle_MX_SW_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Squad Leader
+ vehicletype -: B_Soldier_SL_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_Hamr_pointer_F","hgun_P07_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","B_IR_Grenade","B_IR_Grenade","SmokeShell","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: B_Soldier_TL_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_GL_Hamr_pointer_F","hgun_P07_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: B_soldier_M_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MXM_Hamr_LP_BI_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: B_soldier_LAT_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","launch_NLAW_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","NLAW_F","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.7,0.3]
+
+ displayName -: Combat Life Saver
+ vehicletype -: B_medic_F
+ faction -: BLU_F
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_MX_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Repair Specialist
+ vehicletype -: B_soldier_repair_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_Holo_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: B_soldier_exp_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MXC_Holo_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Helicopter Pilot
+ vehicletype -: B_Helipilot_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["SMG_01_Holo_F","Throw","Put"]
+ magazines driver -: ["30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: B_Soldier_A_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Missile Specialist (AT)
+ vehicletype -: B_soldier_AT_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_MXC_Holo_pointer_F","launch_B_Titan_short_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","Titan_AT","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,1,0.8]
+
+ displayName -: Missile Specialist (AA)
+ vehicletype -: B_soldier_AA_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_MXC_Holo_pointer_F","launch_B_Titan_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","Titan_AA","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,1,0.8]
+
+ displayName -: Engineer
+ vehicletype -: B_engineer_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MXC_Holo_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Crewman
+ vehicletype -: B_crew_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MXC_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: B_officer_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_MXC_Aco_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Competitor
+ vehicletype -: B_Competitor_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: B_Pilot_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["SMG_01_Holo_F","Throw","Put"]
+ magazines driver -: ["30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","SmokeShell","SmokeShellBlue","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Helicopter Crew
+ vehicletype -: B_helicrew_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["arifle_MXC_Holo_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","SmokeShellGreen","SmokeShellBlue","SmokeShellOrange","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Para Trooper
+ vehicletype -: B_soldier_PG_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: UAV Operator
+ vehicletype -: B_soldier_UAV_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: b_soldier_unarmed_f
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [0.1,0.1,0.1]
+
+ displayName -: Survival Fatigues
+ vehicletype -: b_soldier_survival_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: B_G_Soldier_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: B_G_Soldier_lite_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: B_G_Soldier_SL_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","hgun_ACPC2_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: B_G_Soldier_TL_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_GL_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: B_G_Soldier_AR_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["LMG_Mk200_BI_F","Throw","Put"]
+ magazines driver -: ["200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Combat Life Saver
+ vehicletype -: B_G_medic_F
+ faction -: BLU_G_F
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_Mk20_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Engineer
+ vehicletype -: B_G_engineer_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: B_G_Soldier_exp_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: B_G_Soldier_GL_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_GL_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: B_G_Soldier_M_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_MRCO_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: B_G_Soldier_LAT_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_TRG21_F","launch_RPG32_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","RPG32_F","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: B_G_Soldier_A_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: B_G_officer_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_TRG21_MRCO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: b_g_soldier_unarmed_f
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [0.1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: b_g_survivor_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sharpshooter
+ vehicletype -: B_Sharpshooter_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_03_tan_AMS_LP_F","hgun_P07_F","Throw","Put","Binocular"]
+ magazines driver -: ["20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Heavy Gunner
+ vehicletype -: B_HeavyGunner_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["MMG_02_sand_RCO_LP_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["130Rnd_338_Mag","130Rnd_338_Mag","130Rnd_338_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sharpshooter
+ vehicletype -: B_G_Sharpshooter_F
+ faction -: BLU_G_F
+ side -: 1
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_06_camo_khs_F","Throw","Put"]
+ magazines driver -: ["20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AI
+ vehicletype -: B_UAV_AI
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ threat -: [1,0.1,0.1]
+
+ displayName -: TEST: Underwear
+ vehicletype -: Underwear_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ threat -: [1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: b_survivor_F
+ faction -: BLU_F
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: b_soldier_universal_f
+ faction -: BLU_F
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_MX_ACO_pointer_F","hgun_P07_F","Throw","Put"]
+ magazines driver -: ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","HandGrenade","HandGrenade"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: b_g_soldier_universal_f
+ faction -: BLU_G_F
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_BAF_Soldier_base
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_BAF_Soldier_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_B_BAF_Soldier_GL_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_GL_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Rifleman (night)
+ vehicletype -: CUP_B_BAF_Soldier_Night_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_L85A2_CWS_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Rifleman (light)
+ vehicletype -: CUP_B_BAF_Soldier_Light_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_SUSAT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Rifleman (backpack)
+ vehicletype -: CUP_B_BAF_Soldier_Backpack_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. Automatic Rifleman
+ vehicletype -: CUP_B_BAF_Soldier_AAR_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. Machineguner
+ vehicletype -: CUP_B_BAF_Soldier_AMG_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. AT Specialist
+ vehicletype -: CUP_B_BAF_Soldier_AAT_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. AT Specialist (Javelin)
+ vehicletype -: CUP_B_BAF_Soldier_AHAT_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. AA Specialist
+ vehicletype -: CUP_B_BAF_Soldier_AAA_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Officer
+ vehicletype -: CUP_B_BAF_Officer_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","CUP_hgun_Colt1911","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","smokeshellyellow","smokeshellpurple","smokeshellgreen","smokeshell","smokeshellred","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Section Leader
+ vehicletype -: CUP_B_BAF_Soldier_SL_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","SmokeShell","SmokeShell","SmokeShellRed","SmokeShellGreen","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_B_BAF_Soldier_TL_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_GL_Holo_laser","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","SmokeShell","CUP_HandGrenade_L109A1_HE","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_SmokeRed_M203","CUP_1Rnd_SmokeGreen_M203"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_B_BAF_Soldier_AR_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_L110A1_Aim_Laser","Throw","Put"]
+ magazines driver -: ["CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1","CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1","CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1","CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_B_BAF_Soldier_MG_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_L7A2","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: AT Specialist
+ vehicletype -: CUP_B_BAF_Soldier_AT_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_launch_NLAW","CUP_arifle_L85A2_SUSAT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_NLAW_M","CUP_NLAW_M"]
+ threat -: [1,0.8,0.1]
+
+ displayName -: AT Specialist (Javelin)
+ vehicletype -: CUP_B_BAF_Soldier_HAT_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put","CUP_launch_Javelin"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_Javelin_M"]
+ threat -: [1,1,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_B_BAF_Soldier_AA_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put","CUP_launch_FIM92Stinger"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_Stinger_M"]
+ threat -: [1,0.1,1]
+
+ displayName -: Marksman (LSW)
+ vehicletype -: CUP_B_BAF_Soldier_Marksman_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L86A2_ACOG","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell","SmokeShellRed"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman (LRR)
+ vehicletype -: CUP_B_BAF_Soldier_scout_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_srifle_AWM_des_SBPMII","Throw","Put","CUP_Vector21Nite","CUP_hgun_Colt1911"]
+ magazines driver -: ["CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","smokeshell","smokeshellred","smokeshellgreen","CUP_HandGrenade_L109A1_HE"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sniper (LRR)
+ vehicletype -: CUP_B_BAF_Sniper_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_AWM_des_SBPMII","Throw","Put","CUP_Vector21Nite","CUP_hgun_Colt1911"]
+ magazines driver -: ["CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_5Rnd_86x70_L115A1","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","smokeshell","smokeshellred","smokeshellgreen"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Sniper (AS50)
+ vehicletype -: CUP_B_BAF_Sniper_AS50_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_AS50_SBPMII","Throw","Put","CUP_Vector21Nite","CUP_hgun_Colt1911"]
+ magazines driver -: ["CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","smokeshell","smokeshellred","smokeshellgreen"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Sniper (AS50 TWS)
+ vehicletype -: CUP_B_BAF_Sniper_AS50_TWS_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_AS50_AMPAS13c2","Throw","Put","CUP_Vector21Nite","CUP_hgun_Colt1911"]
+ magazines driver -: ["CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_5Rnd_127x99_as50_M","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","smokeshell","smokeshellred","smokeshellgreen"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Spotter
+ vehicletype -: CUP_B_BAF_Spotter_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_L85A2_ACOG_Laser","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Spotter (night)
+ vehicletype -: CUP_B_BAF_Spotter_L85TWS_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_L85A2_CWS_Laser","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Pilot
+ vehicletype -: CUP_B_BAF_Pilot_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_L85A2_Holo_laser","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Crewman
+ vehicletype -: CUP_B_BAF_Crew_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_SUSAT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Medic
+ vehicletype -: CUP_B_BAF_Medic_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_L85A2_SUSAT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Joint Terminal Attack Controller
+ vehicletype -: CUP_B_BAF_Soldier_JTAC_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_GL_Holo_laser","Throw","Put","CUP_SOFLAM"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","SmokeShell","CUP_HandGrenade_L109A1_HE","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_SmokeRed_M203","CUP_1Rnd_SmokeGreen_M203","Laserbatteries","Laserbatteries"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Engineer
+ vehicletype -: CUP_B_BAF_Engineer_MTP
+ faction -: CUP_B_GB
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_L85A2_SUSAT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_L109A1_HE","CUP_HandGrenade_L109A1_HE","SmokeShell","CUP_PipeBomb_M"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_CDF_Soldier_Base
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_CDF_Soldier
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier (unarmed)
+ vehicletype -: CUP_B_CDF_Soldier_Light
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_B_CDF_Soldier_GL
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Militia
+ vehicletype -: CUP_B_CDF_Militia
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Medic
+ vehicletype -: CUP_B_CDF_Medic
+ faction -: CUP_B_CDF
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","SmokeShellOrange"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sniper
+ vehicletype -: CUP_B_CDF_Sniper
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_SVD_pso","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellOrange"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Spotter
+ vehicletype -: CUP_B_CDF_Spotter
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_AKS74UN_kobra_snds","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShellOrange","SmokeShell"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Marksman
+ vehicletype -: CUP_B_CDF_Soldier_Marksman
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74_pso","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShellOrange","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AT Specialist
+ vehicletype -: CUP_B_CDF_Soldier_LAT
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK74","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_PG7VL_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_B_CDF_Soldier_AA
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AK74","CUP_launch_9K32Strela","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_Strela_2_M"]
+ threat -: [1,0.5,0.9]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_B_CDF_Soldier_AR
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.4]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_B_CDF_Soldier_MG
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.8]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_B_CDF_Soldier_TL
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74_kobra","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell","SmokeShellOrange","SmokeShellBlue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: CUP_B_CDF_Officer
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: General
+ vehicletype -: CUP_B_CDF_Commander
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_B_CDF_Pilot
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShellOrange","SmokeShellBlue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_B_CDF_Crew
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Engineer
+ vehicletype -: CUP_B_CDF_Engineer
+ faction -: CUP_B_CDF
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_Mine_M","CUP_Mine_M"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Soldier CZ
+ vehicletype -: CUP_B_CZ_Soldier_base
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_M4A1","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: CUP_B_CZ_Soldier_SL_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","Throw","Put","CUP_Vector21Nite","CUP_hgun_glock17_flashlight"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_CZ_Soldier_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (backpack)
+ vehicletype -: CUP_B_CZ_Soldier_Backpack_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Medic
+ vehicletype -: CUP_B_CZ_Medic_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. Machinegunner
+ vehicletype -: CUP_B_CZ_Soldier_AMG_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: CUP_B_CZ_Soldier_AT_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Sa58V_Aim_Laser","CUP_launch_MAAWS_Scope","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.8,0.1]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_B_CZ_Soldier_MG_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_UK59","CUP_hgun_Phantom_Flashlight","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Officer
+ vehicletype -: CUP_B_CZ_Officer_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_Sa58V","Throw","Put","CUP_Vector21Nite","CUP_hgun_glock17_flashlight"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","B_IR_Grenade","SmokeShellRed","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier (light)
+ vehicletype -: CUP_B_CZ_Soldier_Light_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58P","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_B_CZ_Pilot
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_Sa58V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Sniper
+ vehicletype -: CUP_B_CZ_Sniper
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_SVD_des_ghillie_pso","Throw","Put","CUP_Vector21Nite","CUP_hgun_glock17_flashlight"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","smokeshellred","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17","CUP_17Rnd_9x19_glock17"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Rifleman (CZ805)
+ vehicletype -: CUP_B_CZ_Soldier_805_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_CZ805_A1","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_B_CZ_Soldier_805_GL_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_CZ805_GL","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_B_CZ_Crew_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_smg_EVO_MRad_Flashlight","CUP_hgun_Compact","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact","CUP_10Rnd_9x19_Compact"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (RPG)
+ vehicletype -: CUP_B_CZ_Soldier_RPG_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Sa58V","CUP_hgun_Duty_M3X","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_PG7VR_M","CUP_PG7VL_M","CUP_PG7VL_M","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Engineer
+ vehicletype -: CUP_B_CZ_Engineer_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_smg_EVO_MRad_Flashlight","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_30Rnd_9x19_EVO","CUP_Mine_M","CUP_Mine_M","CUP_HandGrenade_M67","SmokeShell","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Spotter
+ vehicletype -: CUP_B_CZ_Spotter
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_CZ805_A2_ZDDot_Flashlight_Snds","CUP_hgun_Phantom_Flashlight_snds","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_30Rnd_556x45_G36","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","smokeshellred","CUP_18Rnd_9x19_Phantom","CUP_18Rnd_9x19_Phantom","CUP_18Rnd_9x19_Phantom","CUP_18Rnd_9x19_Phantom"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Asst. AT Specialist
+ vehicletype -: CUP_B_CZ_Soldier_ARPG_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Sa58V","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_30Rnd_Sa58_M","CUP_PG7VR_M","CUP_PG7VL_M","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman (CUP_srifle_SVD_pso)
+ vehicletype -: CUP_B_CZ_Soldier_Marksman_DES
+ faction -: CUP_B_CZ
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_SVD_pso","CUP_hgun_Duty_M3X","Throw","Put"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_US_Soldier_Base
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_B_US_Soldier
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (backpack)
+ vehicletype -: CUP_B_US_Soldier_Backpack
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. Machinegunner
+ vehicletype -: CUP_B_US_Soldier_AMG
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. Auto Rifleman
+ vehicletype -: CUP_B_US_Soldier_AAR
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. AT Specialist (Javelin)
+ vehicletype -: CUP_B_US_Soldier_AHAT
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. AT Specialist
+ vehicletype -: CUP_B_US_Soldier_AAT
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier (light)
+ vehicletype -: CUP_B_US_Soldier_Light
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_B_US_Soldier_GL
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC_EGLM_Holo_Laser_mfsup","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShell","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: CUP_B_US_Officer
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC","CUP_hgun_Colt1911","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","B_IR_Grenade","SmokeShellRed","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: CUP_B_US_Soldier_SL
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_EGLM_ANPAS13c1_Laser_mfsup","Throw","Put","CUP_Vector21Nite","CUP_hgun_M9"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellGreen","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_SmokeGreen_M203","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9","CUP_15Rnd_9x19_M9"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_B_US_Soldier_TL
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_EGLM_ACOG_Laser","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","B_IR_Grenade","SmokeShellRed","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_Smoke_M203","CUP_1Rnd_SmokeRed_M203","CUP_1Rnd_SmokeRed_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AT Specialist
+ vehicletype -: CUP_B_US_Soldier_AT_Base
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.8,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: CUP_B_US_Soldier_LAT
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC_SFG_Holo","Throw","Put","CUP_launch_M136"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_M136_M"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: AT Specialist
+ vehicletype -: CUP_B_US_Soldier_AT
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC_SFG_Holo","Throw","Put","CUP_launch_MAAWS_Scope"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_MAAWS_HEAT_M","CUP_MAAWS_HEDP_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.8,0.1]
+
+ displayName -: AT Specialist (Javelin)
+ vehicletype -: CUP_B_US_Soldier_HAT
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC_SFG_Holo","Throw","Put","CUP_launch_Javelin"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_Javelin_M"]
+ threat -: [1,1,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_B_US_Soldier_AA
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","CUP_launch_FIM92Stinger","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_Stinger_M"]
+ threat -: [1,0.1,1]
+
+ displayName -: Medic
+ vehicletype -: CUP_B_US_Medic
+ faction -: CUP_B_US
+ side -: 1
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_Holo_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_B_US_Soldier_AR
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_M249_Laser","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_100Rnd_TE4_Green_Tracer_556x45_M249","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_B_US_Soldier_MG
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_lmg_M240_ElcanM143","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Spotter
+ vehicletype -: CUP_B_US_Spotter
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_EGLM_ANPAS13c1_Laser_mfsup","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","smokeshellYellow","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_SmokeYellow_M203","CUP_1Rnd_SmokeYellow_M203"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Sniper
+ vehicletype -: CUP_B_US_Sniper
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_M110_ANPVS10","CUP_hgun_Colt1911","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_HandGrenade_M67","CUP_HandGrenade_M67","smokeshell","smokeshellgreen","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Sniper (TWS)
+ vehicletype -: CUP_B_US_Sniper_M110_TWS
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_M110_ANPAS13c2","CUP_hgun_Colt1911","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_HandGrenade_M67","CUP_HandGrenade_M67","smokeshell","smokeshellgreen","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Sniper (M107)
+ vehicletype -: CUP_B_US_Sniper_M107
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_M107_LeupoldVX3","CUP_hgun_Colt1911","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_10Rnd_127x99_M107","CUP_HandGrenade_M67","CUP_HandGrenade_M67","smokeshell","smokeshellgreen","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"]
+ threat -: [1,0.6,0.6]
+
+ displayName -: Marksman
+ vehicletype -: CUP_B_US_Soldier_Marksman
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_srifle_M110_ANPVS10","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_20Rnd_762x51_B_M110","CUP_HandGrenade_M67","CUP_HandGrenade_M67","B_IR_Grenade","SmokeShellRed"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Engineer
+ vehicletype -: CUP_B_US_Engineer
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_STD_FG_LeupoldMk4CQT_Laser","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_Mine_M","CUP_Mine_M","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_B_US_Pilot
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_B_US_Crew
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_Mk16_CQC","CUP_hgun_Colt1911","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911","CUP_7Rnd_45ACP_1911"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot (light)
+ vehicletype -: CUP_B_US_Pilot_Light
+ faction -: CUP_B_US
+ side -: 1
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+RESISTANCE
+
+ displayName -: Rifleman
+ vehicletype -: SoldierGB
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: I_G_Soldier_base_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: I_G_Soldier_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: I_G_Soldier_lite_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Squad Leader
+ vehicletype -: I_G_Soldier_SL_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","hgun_ACPC2_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: I_G_Soldier_TL_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_GL_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: I_G_Soldier_AR_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["LMG_Mk200_BI_F","Throw","Put"]
+ magazines driver -: ["200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Combat Life Saver
+ vehicletype -: I_G_medic_F
+ faction -: IND_G_F
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_Mk20_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Engineer
+ vehicletype -: I_G_engineer_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","MiniGrenade","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: I_G_Soldier_exp_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_ACO_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: I_G_Soldier_GL_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_GL_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: I_G_Soldier_M_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_MRCO_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: I_G_Soldier_LAT_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_TRG21_F","launch_RPG32_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","RPG32_F","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: I_G_Soldier_A_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG20_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: I_G_officer_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_TRG21_MRCO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","SmokeShellRed","SmokeShellBlue","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: i_g_soldier_unarmed_f
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [0.1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: i_g_survivor_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: I_Soldier_base_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman 2
+ vehicletype -: I_Soldier_02_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: I_Soldier_03_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: I_Soldier_04_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: I_soldier_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Light)
+ vehicletype -: I_Soldier_lite_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Ammo Bearer
+ vehicletype -: I_Soldier_A_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: I_Soldier_GL_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_GL_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokePurple_Grenade_shell"]
+ threat -: [1,0.3,0.1]
+
+ displayName -: Autorifleman
+ vehicletype -: I_Soldier_AR_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["LMG_Mk200_LP_BI_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","200Rnd_65x39_cased_Box","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Squad Leader
+ vehicletype -: I_Soldier_SL_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_MRCO_pointer_F","hgun_ACPC2_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","I_IR_Grenade","I_IR_Grenade","SmokeShell","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: I_Soldier_TL_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_GL_MRCO_pointer_F","hgun_ACPC2_F","Throw","Put","Binocular"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag_Tracer_Yellow","30Rnd_556x45_Stanag_Tracer_Yellow","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokePurple_Grenade_shell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Marksman
+ vehicletype -: I_Soldier_M_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_EBR_MRCO_LP_BI_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AT)
+ vehicletype -: I_Soldier_LAT_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","launch_NLAW_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","NLAW_F","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.7,0.3]
+
+ displayName -: Missile Specialist (AT)
+ vehicletype -: I_Soldier_AT_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Mk20C_ACO_pointer_F","launch_I_Titan_short_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","Titan_AT","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.7,0.3]
+
+ displayName -: Missile Specialist (AA)
+ vehicletype -: I_Soldier_AA_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["arifle_Mk20C_ACO_pointer_F","launch_I_Titan_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","Titan_AA","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.7,0.3]
+
+ displayName -: Combat Life Saver
+ vehicletype -: I_medic_F
+ faction -: IND_F
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["arifle_Mk20_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShell","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Repair Specialist
+ vehicletype -: I_Soldier_repair_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Explosive Specialist
+ vehicletype -: I_Soldier_exp_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Engineer
+ vehicletype -: I_engineer_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Crewman
+ vehicletype -: I_crew_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20C_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Helicopter Pilot
+ vehicletype -: I_helipilot_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["hgun_PDW2000_Holo_F","Throw","Put"]
+ magazines driver -: ["30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: I_pilot_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["hgun_PDW2000_Holo_F","Throw","Put"]
+ magazines driver -: ["30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","30Rnd_9x21_Yellow_Mag","SmokeShell","SmokeShellGreen","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Helicopter Crew
+ vehicletype -: I_helicrew_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["arifle_Mk20C_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: I_officer_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["arifle_Mk20C_ACO_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","SmokeShellGreen","SmokeShellOrange","SmokeShellPurple","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: UAV Operator
+ vehicletype -: I_soldier_UAV_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (Unarmed)
+ vehicletype -: i_soldier_unarmed_f
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [0.1,0.1,0.1]
+
+ displayName -: Sharpshooter
+ vehicletype -: I_G_Sharpshooter_F
+ faction -: IND_G_F
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["srifle_DMR_06_camo_khs_F","Throw","Put"]
+ magazines driver -: ["20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AI
+ vehicletype -: I_UAV_AI
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ threat -: [1,0.1,0.1]
+
+ displayName -: Survivor
+ vehicletype -: i_survivor_F
+ faction -: IND_F
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: i_soldier_universal_f
+ faction -: IND_F
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_Mk20_ACO_pointer_F","hgun_ACPC2_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","9Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellGreen","Chemlight_green","Chemlight_green"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier
+ vehicletype -: i_g_soldier_universal_f
+ faction -: IND_G_F
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_s
+ weapons driver -: ["arifle_TRG21_F","Throw","Put"]
+ magazines driver -: ["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellGreen","Chemlight_blue","Chemlight_blue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_I_GUE_Soldier_Base
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AKSU)
+ vehicletype -: CUP_I_GUE_Soldier_AKSU
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (AKM)
+ vehicletype -: CUP_I_GUE_Soldier_AKM
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_I_GUE_Soldier_AKS74
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Grenadier
+ vehicletype -: CUP_I_GUE_Soldier_GL
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Commander
+ vehicletype -: CUP_I_GUE_Officer
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Warlord
+ vehicletype -: CUP_I_GUE_Commander
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (RPG-7)
+ vehicletype -: CUP_I_GUE_Soldier_AT
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKM","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_PG7VL_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: Rifleman (Stinger)
+ vehicletype -: CUP_I_GUE_Soldier_AA
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKS","CUP_launch_FIM92Stinger","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_Stinger_M"]
+ threat -: [1,0.5,0.9]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_I_GUE_Soldier_AR
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.4]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_I_GUE_Soldier_MG
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.8]
+
+ displayName -: Hunter
+ vehicletype -: CUP_I_GUE_Sniper
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_SVD_pso","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","Smokeshell","Smokeshell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Saboteur
+ vehicletype -: CUP_I_GUE_Saboteur
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_SF_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_PipeBomb_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Scout
+ vehicletype -: CUP_I_GUE_Soldier_Scout
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_arifle_AKS74UN_kobra_snds","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Medic
+ vehicletype -: CUP_I_GUE_Medic
+ faction -: CUP_I_NAPA
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_I_GUE_Pilot
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","smokeshellBlue","smokeshellOrange"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_I_GUE_Crew
+ faction -: CUP_I_NAPA
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_I_PMC_Soldier_Base
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Carbine","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Security Contractor (M8)
+ vehicletype -: CUP_I_PMC_Soldier
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Carbine","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Security Contractor (M4A3)
+ vehicletype -: CUP_I_PMC_Soldier_M4A3
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_M4A3_desert_Aim_Flashlight","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Field Technician
+ vehicletype -: CUP_I_PMC_Engineer
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Compact","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_PipeBomb_M","CUP_Mine_M","CUP_HandGrenade_M67","SmokeShell"]
+ threat -: [1,0.5,0.1]
+
+ displayName -: Tactical Driver
+ vehicletype -: CUP_I_PMC_Crew
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Compact","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Field Medic
+ vehicletype -: CUP_I_PMC_Medic
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_arifle_XM8_Compact","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","SmokeShell","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Team Coordinator
+ vehicletype -: CUP_I_PMC_Soldier_TL
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Carbine","Throw","Put","CUP_Vector21Nite"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","I_IR_Grenade","SmokeShellRed","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Tactical Pilot
+ vehicletype -: CUP_I_PMC_Pilot
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_XM8_Compact","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShellRed"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Field Specialist (M8-Auto)
+ vehicletype -: CUP_I_PMC_Soldier_MG
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_xm8_SAW","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_556x45_BetaCMag","CUP_100Rnd_556x45_BetaCMag","CUP_100Rnd_556x45_BetaCMag","CUP_100Rnd_556x45_BetaCMag","CUP_100Rnd_556x45_BetaCMag","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Field Specialist (PKM)
+ vehicletype -: CUP_I_PMC_Soldier_MG_PKM
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Defensive Marksman
+ vehicletype -: CUP_I_PMC_Sniper
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_arifle_xm8_sharpshooter","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","smokeshell","smokeshellgreen"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Tactical Specialist (KSVK)
+ vehicletype -: CUP_I_PMC_Sniper_KSVK
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_ksvk_PSO3","CUP_Vector21Nite","Throw","Put"]
+ magazines driver -: ["CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_5Rnd_127x108_KSVK_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","smokeshell","smokeshellgreen"]
+ threat -: [1,0.6,0.6]
+
+ displayName -: Security Contractor (M8-GL)
+ vehicletype -: CUP_I_PMC_Soldier_GL
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_XM8_Carbine_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShell","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Security Contractor (M16A2-GL)
+ vehicletype -: CUP_I_PMC_Soldier_GL_M16A2
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_M16A2_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShell","SmokeShell","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Bodyguard (M4A1)
+ vehicletype -: CUP_I_PMC_Bodyguard_M4
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_M4A1","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShellRed","SmokeShell"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Bodyguard (AA-12)
+ vehicletype -: CUP_I_PMC_Bodyguard_AA12
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_sgun_AA12","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_20Rnd_B_AA12_Pellets","CUP_HandGrenade_M67","CUP_HandGrenade_M67","SmokeShellRed","SmokeShell"]
+ threat -: [1,0.2,0.1]
+
+ displayName -: Tactical Specialist (Stinger)
+ vehicletype -: CUP_I_PMC_Soldier_AA
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_FNFAL","CUP_launch_FIM92Stinger","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_Stinger_M"]
+ threat -: [1,0.1,1]
+
+ displayName -: Field Specialist (RPG-18)
+ vehicletype -: CUP_I_PMC_Soldier_AT
+ faction -: CUP_I_PMC_ION
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_FNFAL","CUP_launch_RPG18","Throw","Put"]
+ magazines driver -: ["CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_20Rnd_762x51_FNFAL_M","CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_RPG18_M"]
+ threat -: [1,0.9,0.1]
+
+ displayName -: Soldier
+ vehicletype -: CUP_I_TK_GUE_Soldier_Base
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["Throw","Put","ItemMap","ItemCompass","ItemWatch","ItemRadio"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (AK-47)
+ vehicletype -: CUP_I_TK_GUE_Soldier
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (RPG ammo)
+ vehicletype -: CUP_I_TK_GUE_Soldier_AAT
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKM","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (AK-47S)
+ vehicletype -: CUP_I_TK_GUE_Soldier_AK_47S
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (M16A2)
+ vehicletype -: CUP_I_TK_GUE_Soldier_M16A2
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_M16A2","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (M16A2 GL)
+ vehicletype -: CUP_I_TK_GUE_Soldier_GL
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_M16A2_GL","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203","CUP_1Rnd_HEDP_M203"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla (Lee-Enfield)
+ vehicletype -: CUP_I_TK_GUE_Guerilla_Enfield
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_srifle_LeeEnfield","Throw","Put"]
+ magazines driver -: ["CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: AA Specialist
+ vehicletype -: CUP_I_TK_GUE_Soldier_AA
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKM","CUP_launch_FIM92Stinger","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_Stinger_M"]
+ threat -: [1,0.1,1]
+
+ displayName -: Guerilla (RPG-7)
+ vehicletype -: CUP_I_TK_GUE_Soldier_AT
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKM","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Guerilla (Dragon)
+ vehicletype -: CUP_I_TK_GUE_Soldier_HAT
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_M16A2","CUP_launch_M47","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_Dragon_EP1_M"]
+ threat -: [1,0.8,0.1]
+
+ displayName -: Team Leader
+ vehicletype -: CUP_I_TK_GUE_Soldier_TL
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","SmokeShell","SmokeShellBlue"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guerilla Sniper
+ vehicletype -: CUP_I_TK_GUE_Sniper
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_sniper_s
+ weapons driver -: ["CUP_srifle_SVD_pso","Throw","Put","Binocular"]
+ magazines driver -: ["CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","CUP_10Rnd_762x54_SVD_M","SmokeShell","SmokeShellBlue"]
+ threat -: [1,0.3,0.3]
+
+ displayName -: Automatic Rifleman
+ vehicletype -: CUP_I_TK_GUE_Soldier_AR
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_arifle_RPK74","Throw","Put"]
+ magazines driver -: ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"]
+ threat -: [1,0.1,0.3]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_I_TK_GUE_Soldier_MG
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Bonesetter
+ vehicletype -: CUP_I_TK_GUE_Guerilla_Medic
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ Medic -: 1
+ nameSound -: veh_infantry_medic_s
+ weapons driver -: ["CUP_srifle_LeeEnfield","Throw","Put"]
+ magazines driver -: ["CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M","CUP_10x_303_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Warlord
+ vehicletype -: CUP_I_TK_GUE_Commander
+ faction -: CUP_I_TK_GUE
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M","CUP_30Rnd_762x39_AK47_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_I_UN_CDF_Soldier_Base
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman
+ vehicletype -: CUP_I_UN_CDF_Soldier
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (backpack)
+ vehicletype -: CUP_I_UN_CDF_Soldier_Backpack
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. AT Rifleman
+ vehicletype -: CUP_I_UN_CDF_Soldier_AAT
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Asst. Machinegunner
+ vehicletype -: CUP_I_UN_CDF_Soldier_AMG
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AK74_GL_kobra","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M","CUP_1Rnd_HE_GP25_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Rifleman (RPG-7)
+ vehicletype -: CUP_I_UN_CDF_Soldier_AT
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_AT_s
+ weapons driver -: ["CUP_arifle_AKS74_kobra","CUP_launch_RPG7V","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_PG7VL_M","CUP_PG7VL_M","CUP_PG7VL_M"]
+ threat -: [1,0.6,0.1]
+
+ displayName -: Machinegunner
+ vehicletype -: CUP_I_UN_CDF_Soldier_MG
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_MG_s
+ weapons driver -: ["CUP_lmg_PKM","Throw","Put"]
+ magazines driver -: ["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.6]
+
+ displayName -: Squad Leader
+ vehicletype -: CUP_I_UN_CDF_Soldier_SL
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74_pso","Throw","Put","CUP_hgun_Makarov"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","SmokeShell","SmokeShellRed","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Officer
+ vehicletype -: CUP_I_UN_CDF_Officer
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74U","CUP_hgun_Makarov","Binocular","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShell","SmokeShellRed","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M","CUP_8Rnd_9x18_Makarov_M"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Guard
+ vehicletype -: CUP_I_UN_CDF_Guard
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_officer_s
+ weapons driver -: ["CUP_arifle_AKS74","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Pilot
+ vehicletype -: CUP_I_UN_CDF_Pilot
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_pilot_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","SmokeShell","SmokeShellRed","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Crewman
+ vehicletype -: CUP_I_UN_CDF_Crew
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5"]
+ threat -: [1,0.1,0.1]
+
+ displayName -: Soldier (light)
+ vehicletype -: CUP_I_UN_CDF_Soldier_Light
+ faction -: CUP_I_UN
+ side -: 2
+ nameSound -: veh_infantry_s
+ weapons driver -: ["CUP_arifle_AKS74U","Throw","Put"]
+ magazines driver -: ["CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]
+ threat -: [1,0.1,0.1]
+
+CIVILIAN
+
+ displayName -: Civilian
+ vehicletype -: Civilian
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+
+ displayName -: BOSS
+ vehicletype -: civil_nprem2
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+
+ displayName -: BOSS TRANSPARENT
+ vehicletype -: civil_nprem2_NoGeom
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+
+ displayName -: Civilian
+ vehicletype -: Civilian_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian
+ vehicletype -: C_man_1
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Commoner 1
+ vehicletype -: C_man_1_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Commoner 2
+ vehicletype -: C_man_1_2_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Commoner 3
+ vehicletype -: C_man_1_3_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 1
+ vehicletype -: C_man_polo_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 2
+ vehicletype -: C_man_polo_2_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 3
+ vehicletype -: C_man_polo_3_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 4
+ vehicletype -: C_man_polo_4_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 5
+ vehicletype -: C_man_polo_5_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Civilian 6
+ vehicletype -: C_man_polo_6_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Fugitive
+ vehicletype -: C_man_p_fugitive_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Beggar
+ vehicletype -: C_man_p_beggar_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Worker
+ vehicletype -: C_man_w_worker_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Scientist
+ vehicletype -: C_scientist_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Hunter (green)
+ vehicletype -: C_man_hunter_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Fugitive (shorts)
+ vehicletype -: C_man_p_shorts_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Commoner (shorts)
+ vehicletype -: C_man_shorts_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Surfer 1
+ vehicletype -: C_man_shorts_2_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Surfer 2
+ vehicletype -: C_man_shorts_3_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Surfer 3
+ vehicletype -: C_man_shorts_4_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Pilot
+ vehicletype -: C_man_pilot_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Journalist
+ vehicletype -: C_journalist_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver (Fuel)
+ vehicletype -: C_Driver_1_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver (Bluking)
+ vehicletype -: C_Driver_2_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver (Redstone)
+ vehicletype -: C_Driver_3_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver (Vrana)
+ vehicletype -: C_Driver_4_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_random_base_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_black_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_blue_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_green_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_red_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_white_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_yellow_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Driver
+ vehicletype -: C_Driver_1_orange_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put"]
+
+ displayName -: Marshal
+ vehicletype -: C_Marshal_F
+ faction -: CIV_F
+ side -: 3
+ nameSound -: veh_infantry_civilian_s
+ weapons driver -: ["Throw","Put","hgun_Pistol_Signal_F"]
+ magazines driver -: ["6Rnd_GreenSignal_F","6Rnd_RedSignal_F","6Rnd_GreenSignal_F","6Rnd_RedSignal_F"]
+ threat -: [1,0.1,0.1]
+
+
+Top of Page

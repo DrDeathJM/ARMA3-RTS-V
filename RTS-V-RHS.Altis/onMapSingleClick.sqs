@@ -1,0 +1,12 @@
+_pos = _this select 0
+_units = _this select 1
+_shift = _this select 2
+_alt = _this select 3
+
+
+?_shift && !_alt && mapDebug : {vehicle _x setPos _pos} foreach _units
+
+?Count _units != 0 : Exit
+
+?!_alt && !_shift : "wp1" setMarkerPosLocal _pos
+?_alt && !_shift && mapDebug : vehicle Player setPos _pos

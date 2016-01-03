@@ -1,0 +1,363 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Zks_Revive_Camera">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,632.637329,-1176.968506,722.637085,-1126.968506,0.000000,"START"};
+item1[] = {"player_var",4,4314,632.982544,-870.144287,722.982727,-820.144226,0.000000,"player" \n "var"};
+item2[] = {"not_server",4,218,1135.601685,-1176.672119,1225.601563,-1126.672363,1.000000,"not server"};
+item3[] = {"end",1,250,1134.531006,-964.773499,1224.530762,-914.773438,0.000000,"end"};
+item4[] = {"arrays",2,250,633.895630,-764.868042,723.895691,-714.868042,0.000000,"arrays"};
+item5[] = {"alive",4,218,863.867371,-965.516418,953.867371,-915.516418,2.000000,"alive"};
+item6[] = {"camera_view_1",4,218,431.503510,-764.873718,521.503662,-714.873718,0.000000,"camera" \n "view" \n "1"};
+item7[] = {"camera_view_2",4,218,430.825409,-666.081970,520.825806,-616.081970,0.000000,"camera" \n "view" \n "2"};
+item8[] = {"camera_view_3",4,218,533.720215,-665.800171,623.720215,-615.800171,0.000000,"camera" \n "view" \n "3"};
+item9[] = {"camera_view_4",4,218,811.033081,-765.271912,901.033081,-715.271912,0.000000,"camera" \n "view" \n "4"};
+item10[] = {"mouse_loop",2,250,810.988770,-666.300720,900.988770,-616.300720,0.000000,"mouse" \n "loop"};
+item11[] = {"stop_mouse",4,218,663.744690,-665.294861,753.744690,-615.294861,1.000000,"stop" \n "mouse"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {4,7};
+link7[] = {4,8};
+link8[] = {4,9};
+link9[] = {5,3};
+link10[] = {6,4};
+link11[] = {7,4};
+link12[] = {8,4};
+link13[] = {9,10};
+link14[] = {10,9};
+link15[] = {10,11};
+link16[] = {11,4};
+globals[] = {0.000000,0,0,0,0,640,480,2,239,6316128,1,-184.270737,1624.687866,18.643867,-1314.273071,950,700,1};
+window[] = {0,-1,-1,-1,-1,1060,272,1964,229,1,967};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Zks_Revive_Camera";
+  class States
+  {
+    /*%FSM<STATE "START">*/
+    class START
+    {
+      name = "START";
+      init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+       "" \n
+       "_obj = _this select 0;" \n
+       "" \n
+       "					_move  = {" \n
+       "						_angv = _this select 0;" \n
+       "						_angh = _this select 1;" \n
+       "" \n
+       "						_deltah = (0.5 - (MouseCoord select 0))*(10/0.2);" \n
+       "						_deltav = (0.5 - (MouseCoord select 1))*(10/0.2);" \n
+       "						_angv = (_angv + _deltav);" \n
+       "						_angh = (_angh + _deltah);" \n
+       "						_angv = _angv max 0;			" \n
+       "						_angv = _angv min 89;						" \n
+       "					};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "not_server">*/
+        class not_server
+        {
+          priority = 1.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!(local _obj) or (isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "player_var">*/
+        class player_var
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((local _obj) && !(isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "_side = _this select 1;" \n
+           "" \n
+           "disableserialization;" \n
+           "DeathCamRelPos = [0,0,4];" \n
+           "_RealRelPos = [0,0,4];" \n
+           "viewon = 0;" \n
+           "_camtime = time;" \n
+           "DeathCamCineViewSpecial = 2;" \n
+           "_pos = [0,0,0];" \n
+           "_delay = 0.05;" \n
+           "_camtarget = objnull;" \n
+           "_campos = 0;" \n
+           "_DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+           "//DeathCam camSetTarget DeathCamCurTarget;" \n
+           "_angh = getDir DeathCamCurTarget;" \n
+           "_angv = 45;" \n
+           "_vehtype = typeOf _DeathCamCurTarget; " \n
+           "_timeout = time;" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "end">*/
+    class end
+    {
+      name = "end";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "arrays">*/
+    class arrays
+    {
+      name = "arrays";
+      init = /*%FSM<STATEINIT""">*/"_timeout = time;" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "alive">*/
+        class alive
+        {
+          priority = 2.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((""HEALTHY"" ==  lifeState _obj) or (""DEAD"" ==  lifeState _obj) or !(dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "camera_view_2">*/
+        class camera_view_2
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(((DeathCamCurTarget != _camtarget) or (_vehtype != typeOf vehicle DeathCamCurTarget) or (DeathCamCineViewSpecial != _campos)) && (DeathCamCineViewSpecial == 2) && (time > (_camtime + _delay)) && (viewon != 2))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"if (viewon != 2) then " \n
+           "{" \n
+           "ctrlEnable [10001, true];" \n
+           "ctrlEnable [10002, false];" \n
+           "ctrlEnable [10003, true];" \n
+           "ctrlEnable [10004, true];" \n
+           "};" \n
+           "" \n
+           "_DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+           "DeathCam camSetTarget _DeathCamCurTarget;" \n
+           "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "_DeathCamCurTarget switchCamera ""EXTERNAL"";" \n
+           "DeathCam camCommit 0;" \n
+           "" \n
+           "viewon = 2;" \n
+           "_camtarget = DeathCamCurTarget;" \n
+           "_campos = DeathCamCineViewSpecial;" \n
+           "_vehtype = typeOf _DeathCamCurTarget; " \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "camera_view_3">*/
+        class camera_view_3
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(((DeathCamCurTarget != _camtarget) or (_vehtype != typeOf vehicle DeathCamCurTarget) or (DeathCamCineViewSpecial != _campos)) && (DeathCamCineViewSpecial == 3) && (time > (_camtime + _delay)) && (viewon != 3))" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "" \n
+           "if (viewon != 3) then " \n
+           "{" \n
+           "ctrlEnable [10001, true];" \n
+           "ctrlEnable [10002, true];" \n
+           "ctrlEnable [10003, false];" \n
+           "ctrlEnable [10004, true];" \n
+           "};" \n
+           "" \n
+           "" \n
+           "_DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+           "DeathCam camSetTarget _DeathCamCurTarget;" \n
+           "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "_DeathCamCurTarget switchCamera ""GUNNER"";" \n
+           "DeathCam camCommit 0;" \n
+           "" \n
+           "viewon = 3;" \n
+           "_camtarget = DeathCamCurTarget;" \n
+           "_campos = DeathCamCineViewSpecial;" \n
+           "_vehtype = typeOf _DeathCamCurTarget; " \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "camera_view_4">*/
+        class camera_view_4
+        {
+          priority = 0.000000;
+          to="mouse_loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((DeathCamCineViewSpecial == 4) && (time > (_camtime + _delay)))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "camera_view_1">*/
+        class camera_view_1
+        {
+          priority = 0.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(((DeathCamCurTarget != _camtarget) or (_vehtype != typeOf vehicle DeathCamCurTarget) or (DeathCamCineViewSpecial != _campos)) && (DeathCamCineViewSpecial == 1) && (time > (_camtime + _delay)) && (viewon != 1))" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "if (viewon != 1) then " \n
+           "{" \n
+           "ctrlEnable [10001, false];" \n
+           "ctrlEnable [10002, true];" \n
+           "ctrlEnable [10003, true];" \n
+           "ctrlEnable [10004, true];" \n
+           "};" \n
+           "" \n
+           "_DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+           "DeathCam camSetTarget _DeathCamCurTarget;" \n
+           "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "_DeathCamCurTarget switchCamera ""INTERNAL"";" \n
+           "DeathCam camCommit 0;" \n
+           "" \n
+           "viewon = 1;" \n
+           "_camtarget = DeathCamCurTarget;" \n
+           "_campos = DeathCamCineViewSpecial;" \n
+           "_vehtype = typeOf _DeathCamCurTarget; " \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "mouse_loop">*/
+    class mouse_loop
+    {
+      name = "mouse_loop";
+      init = /*%FSM<STATEINIT""">*/"DeathCamCurTarget = (vehicle DeathCamCurTarget);" \n
+       "" \n
+       "if (viewon != 4) then " \n
+       "{" \n
+       "Deathcam camSetTarget DeathCamCurTarget;" \n
+       "DeathCam CameraEffect [""Terminate"",""Back""];" \n
+       "DeathCamCurTarget switchCamera ""EXTERNAL"";" \n
+       "" \n
+       "		ctrlEnable [2501, true];" \n
+       "		_angh = (getDir _DeathCamCurTarget) - 180; " \n
+       "		_angv = 45;" \n
+       "		range_to_unit = 15;" \n
+       "		DeathCam cameraeffect [""internal"", ""back""];" \n
+       "" \n
+       "" \n
+       "" \n
+       "ctrlEnable [10001, true];" \n
+       "ctrlEnable [10002, true];" \n
+       "ctrlEnable [10003, true];" \n
+       "ctrlEnable [10004, false];" \n
+       "" \n
+       "DeathCam camPrepareTarget DeathCamCurTarget;" \n
+       "DeathCam camPreparePos position DeathCamCurTarget; " \n
+       "DeathCam camSetPos position DeathCamCurTarget; " \n
+       "DeathCam camSetTarget DeathCamCurTarget;" \n
+       "DeathCam camCommit 0;" \n
+       "};" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "				if (MouseButtons select 1) then " \n
+       "				{" \n
+       "[_angv,_angh] call _move;" \n
+       "" \n
+       "/*" \n
+       "					if (((MouseCoord select 0) >= 0) && ((MouseCoord select 0) <= 1) &&" \n
+       "					((MouseCoord select 1) >= 0) && ((MouseCoord select 1) <= 1)) then" \n
+       "					{" \n
+       "						_angv = _this select 0;" \n
+       "						_angh = _this select 1;" \n
+       "" \n
+       "						_deltah = (0.5 - (MouseCoord select 0))*(10/0.2);" \n
+       "						_deltav = (0.5 - (MouseCoord select 1))*(10/0.2);" \n
+       "						_angv = (_angv + _deltav);" \n
+       "						_angh = (_angh + _deltah);" \n
+       "						_angv = _angv max 0;			" \n
+       "						_angv = _angv min 89;						" \n
+       "					};" \n
+       "" \n
+       "*/" \n
+       "" \n
+       "" \n
+       "				};" \n
+       "" \n
+       "			_cpos = [(getpos DeathCamCurTarget select 0) + sin(_angh)*range_to_unit, (getpos DeathCamCurTarget select 1) + cos(_angh)*range_to_unit, (getpos DeathCamCurTarget select 2) + range_to_unit*sin(_angv)];" \n
+       "" \n
+       "			DeathCam camSetPos _cpos; " \n
+       "			DeathCam camCommit (_delay + 0.001);" \n
+       "" \n
+       "_vehtype = typeOf DeathCamCurTarget; " \n
+       "_campos = DeathCamCineViewSpecial;" \n
+       "viewon = 4;" \n
+       "_camtime = time;" \n
+       "DeathCamtype = ""INTERNAL"";" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "stop_mouse">*/
+        class stop_mouse
+        {
+          priority = 1.000000;
+          to="arrays";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((DeathCamCineViewSpecial != 4) or !(dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"DeathCam CameraEffect [""Terminate"",""Back""];" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "hint ""exit"";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "camera_view_4">*/
+        class camera_view_4
+        {
+          priority = 0.000000;
+          to="mouse_loop";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((DeathCamCineViewSpecial == 4) && (time > (_camtime + _delay)))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="START";
+  finalStates[] =
+  {
+    "end",
+  };
+};
+/*%FSM</COMPILE>*/

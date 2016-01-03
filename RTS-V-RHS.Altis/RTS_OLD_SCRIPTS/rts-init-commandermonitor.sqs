@@ -1,0 +1,138 @@
+;;Exec'd from init.sqs
+
+?!Local Server : Exit
+#init
+
+@rts_arrays_initialized
+
+;;@(Count  WestList > 0) && (Count  EastList > 0)
+
+WestAI = FALSE; PublicVariable "WestAI"
+EastAI = FALSE; PublicVariable "EastAI"
+
+#Initial Assignment
+_WestComm = "West1"
+WestCommander = call compile _WestComm
+WestCommanderName = Name WestCommander
+PublicVariable "WestCommander"
+CommandNumW = 0
+
+_EastComm = "East1"
+EastCommander = call compile _EastComm
+EastCommanderName = Name EastCommander
+PublicVariable "EastCommander"
+
+CommandNumE = 0
+
+?Local WestCommander && WestCommander != Player : WestAI = TRUE; PublicVariable "WestAI"
+?Local EastCommander && EastCommander != Player : EastAI = TRUE; PublicVariable "EastAI"
+
+?!Dedicated : _serverType = "Hosted"
+?Dedicated : _serverType = "Dedicated"
+
+rts_CommanderMonitor_Initialized = TRUE
+
+titletext[Format["Server is %1.\n%4: %2\n%4: %3",_serverType,WestCommanderName,EastCommanderName],"PLAIN"]
+
+#Start
+~1
+@((!WestAI && (!Alive WestCommander OR (Local WestCommander && WestCommander != Player))) OR (WestAI && !Alive WestCommander)) OR ((!EastAI && (!Alive EastCommander OR  (Local EastCommander && EastCommander != Player))) OR (EastAI && !Alive EastCommander)) || ((call compile _WestComm != WestCommander) || (call compile _EastComm != EastCommander))
+
+
+?!Alive WestCommander : _comm = _WestComm; _side = West; goto "Reassign"
+?!Alive EastCommander : _comm = _EastComm; _side = East; goto "Reassign"
+?(!WestAI && (Local WestCommander && WestCommander != Player)) : _comm = _WestComm; _side = West; Goto "Reassign"
+?(!EastAI && (Local EastCommander && EastCommander != Player)) : _comm = _EastComm; _side = East; Goto "Reassign"
+?call compile _WestComm != WestCommander : _side = West; goto "GetNew"
+?call compile _EastComm != EastCommander : _side = East; goto "GetNew"
+
+
+#Reassign
+~1
+_unit = call compile _comm
+?!Alive _unit && _comm != "null" : goto "Reassign"
+
+_aiVar = call compile format ["%1AI",_side]
+
+[_side,"HQ"] sideChat format ["Reassigning %1 as %2 Commander",Name _unit,_side]
+
+?!_aiVar && Local _unit && _unit != Player : goto "NewCommander"
+
+Goto "SetCommand"
+
+#NewCommander
+rts_hq sideChat format ["%1 is AI and AI Comms = %2.  Finding a replacement.",Name _unit,_aiVar]
+[_side,"HQ"] sideChat format ["%1 is AI for %2 and AI Comms = %3.  Finding a replacement.",Name _unit,_side,_aiVar]
+
+_array = call compile format ["%1Players",_side]
+
+_x = 0
+
+#Search
+
+_unitStr = _array select _x
+_unit = call compile _unitStr
+
+;;Reassign After Player Commander Drops from Dedicated Server
+?!IsNull _unit && Local _unit && _unit != Player && !_aiVar : Goto "Skip"
+?!IsNull _unit && Local _unit && _unit != Player && _aiVar : Goto "Continue"
+?!IsNull _unit && Local _unit && _unit == Player : Goto "Continue"
+
+;;Reassign After Player Commander Drops from Hosted Server
+?!IsNull _unit && !Local _unit : Goto "Continue"
+
+Goto "Skip"
+
+
+#Skip
+_x = _x + 1
+?_x < Count _array : Goto "Search"
+Goto "NotFound"
+
+#Continue
+
+format ["_%1comm = %2",_side,_unitStr]
+
+#SetCommand
+
+call compile format ["%1Commander = _unit; publicVariable ""%1Commander""",_side];
+
+rts_hq sideChat format ["WestComm = %1",_WestComm]
+
+~1
+
+Goto "start"
+
+#NotFound
+~1
+call compile format ["%1AI = TRUE; publicVariable ""%1AI""",_side]
+_msg = Format["No Human players found for %1 Commander.  Setting AI Var to TRUE",_side]; rts_hq sideChat _msg
+
+Goto "Start"
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Commander Assigned by Player
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#GetNew
+
+_newComm = call compile format ["%1Commander",_side]
+
+rts_hq sideChat format ["%1 has been assigned commander by the previous commander.",Name _newComm]
+
+_array = call compile format ["%1Players",_side]
+
+_x = 0
+
+#NewCommSearch
+
+_unitStr = _array select _x
+_unit = call compile _unitStr
+
+?_unit == _newComm : call compile format ["_%1comm = _unitStr",_side]; rts_hq sideChat format ["%1",_WestComm]; goto "Start"
+
+_x = _x + 1
+?_x < Count _array : Goto "NewCommSearch"
+Goto "NotFound"

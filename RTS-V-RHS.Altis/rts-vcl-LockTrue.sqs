@@ -1,0 +1,12 @@
+_vcl=_this Select 0;
+_unit=_this Select 1;
+_actionid=_this Select 2;
+
+
+_vcl Lock TRUE
+
+_vcl RemoveAction _actionid
+
+_unlock=_vcl AddAction ["[UNLOCK]","rts-vcl-LockFalse.sqs"]
+
+Exit

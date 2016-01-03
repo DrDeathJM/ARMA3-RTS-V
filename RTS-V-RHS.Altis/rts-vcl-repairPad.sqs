@@ -1,0 +1,149 @@
+;;Exec'd from rts-territoryMonitor.sqs
+
+?!Local Player : Exit
+
+_string = _this
+_flagNum = call compile _string
+_flagName = call compile format ["Flag%1Name",_string]
+_pad = call compile format ["RepairPadFlag%1",_string]
+
+rts_padRepairList = ["Land","Air"]
+
+_oldObj = objNull
+
+
+#CheckLoop
+~3
+_x = 0
+
+#SearchLoop
+~1
+_class = rts_padRepairList Select _x
+_obj = NearestObject [_pad,_class]
+
+?!isNull _oldObj && _oldObj distance _pad > 10 || (getPos _oldObj select 2) > 3 : _oldObj = objNull
+
+?!Isnull _obj : Goto "Continue"
+Goto "Skip"
+
+
+#Continue
+;;hint format ["%1\n%2",_obj,_pad distance _obj]
+_type = typeOf _obj
+?_obj == _oldObj : goto "Skip"
+?_pad Distance _obj < 10 && Alive _obj && (getPos _obj select 2) < 2 && Local _obj && count crew _obj > 0 : Goto "CheckSide"
+
+#Skip
+_x = _x + 1
+?_x < Count rts_padRepairList : Goto "SearchLoop"
+
+goto "CheckLoop"
+
+
+#CheckSide
+_oldObj = _obj
+
+_flagSide = call compile format ["SideFlag%1",_string]
+_teamName = call compile format ["%1TeamName",_flagSide]
+?SIDE _obj != call compile _flagSide : _msg = format["%1 is under %2 Control.  You cannot use this repair pad.",_flagName,_teamName]; goto "Denied"
+
+
+#Found
+_name = getText (configFile >> "CfgVehicles" >> _type >> "displayName");
+
+?_obj isKindOf "Man" :  goto "HealMan"
+
+;;Limit repairing msg to local unit
+?damage _obj > .01 && local _obj : titletext [format ["Repairing %1",_name],"PLAIN"]
+
+#RepairLoop
+~.02
+_obj setDamage (Damage _obj - .001)
+
+?_obj distance _pad > 10 || (getPos _obj select 2) > 2 : _msg = "Repair Aborted"; goto "Denied"
+?damage _obj > .005 : goto "RepairLoop"
+
+?!(_obj isKindOf "Man") : {_x setdamage 0} foreach crew _obj
+
+?fuel _obj < 1 && local _obj : titletext [format ["Refueling %1",_name],"PLAIN"]
+
+#FuelLoop
+~.02
+_obj setFuel 1;
+
+?_obj distance _pad > 10 || (getPos _obj select 2) > 2 : _msg = "Refuel Aborted"; goto "Denied"
+?fuel _obj < .99 : goto "FuelLoop"
+
+
+#Rearm
+
+_weapons = weapons _obj
+_cMags = magazines _obj
+?count _weapons < 1 : goto "EndArm"
+?count _weapons == 1 && _weapons select 0 in ["CarHorn", "BikeHorn","TruckHorn","SportCarHorn"] : goto "EndArm"
+
+
+?local _obj : titletext [format ["Rearming %1",_name],"PLAIN"]
+
+?!local _obj : goto "EndArm"
+
+{_obj removeMagazine _x} foreach _cMags
+~1
+{_obj removeWeapon _x} foreach _weapons
+~1
+{_obj addWeapon _x} foreach _weapons
+
+_x = 0
+
+?_obj distance _pad > 10 || (getPos _obj select 2) > 2 : _msg = "Repair Aborted"; goto "Denied"
+
+#GetMagazines
+~2
+
+_w = _weapons select _x
+
+_mags = getArray (configFile >> "CfgWeapons" >> _w >> "magazines");
+_veh setVehicleAmmo 1;
+;;?_type in ["AH1W","UH60","Mi17"] && _w == "FFARLauncher" : _mags = ["38RND_FFAR"]
+;;?_type in ["AH6","AH6_RACS"] && _w == "FFARLauncher" : _mags = ["14Rnd_FFAR"]
+
+_wName = getText (configFile >> "CfgWeapons" >> _w >> "displayName");
+
+player groupChat format ["Reloading %1",_wName]
+~1
+{_obj addMagazine _x} foreach _mags
+
+_x = _x + 1
+
+?_obj distance _pad > 10 || (getPos _obj select 2) > 2 : _msg = "Repair Aborted"; goto "Denied"
+?_x < count _weapons : goto "GetMagazines"
+
+~.5
+
+?local _obj : titletext [format ["%1 is ready to go.",_name],"PLAIN"]
+
+#EndArm
+
+~1
+
+goto "CheckLoop"
+
+#HealMan
+?damage _obj >= .01 && local _obj : titletext [format ["Healing %1",_name],"PLAIN"]; _obj playMove "AinvPknlMstpSlayWrflDnon_medic"
+?damage _obj < .01 : goto "CheckLoop"
+
+#HealLoop
+~.05
+_obj setDamage 0;
+
+?_obj distance _pad > 10 || (getPos _obj select 2) > 2 : _msg = "Heal Aborted"; goto "Denied"
+?damage _obj > .005 : goto "HealLoop"
+
+goto "CheckLoop"
+
+#Denied
+
+player groupChat _msg
+?Local _obj : titletext [_msg,"plain down"]
+
+goto "CheckLoop"

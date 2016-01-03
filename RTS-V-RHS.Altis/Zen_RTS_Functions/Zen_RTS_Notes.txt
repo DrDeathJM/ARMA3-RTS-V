@@ -1,0 +1,216 @@
+Strategic
+    // MP working data
+    // Split data
+    // Remove Cost parameter, use 'Cost: ' from description
+    // Use correct time delay
+    // player local queues
+
+    Features
+        // build for squad
+        // custom squads
+        // Custom crew count for manned vehicles
+        // CJ/MCU vehicle recycling and repairing
+            // Correct CJ, MCU, player recycle repair abilities
+            // Make sure there is no crew
+            // repair dead objects
+                // assets
+                // buildings
+                // run building/asset constructor equivalent
+                // CJ repair menu action
+        // AI automated recycle/repair
+            // recyclers use CJ
+            // clean dead AI
+            // player claim/release CJ control
+            // AI repair destroyed buildings
+        AI fire on buildings and unmanned vehicles
+        Building Hacking
+            // hacked actions and variable
+            y/n menu with dynamic timer
+
+    Assets
+        // constructor macros
+        // constructors placement
+        // custom assets check building upgrades
+        // upgrades for commander only
+        // check building destroyed while waiting
+        // CJ, with repair and recycle
+            // placement for assets
+            // AI recycler gets AI owned CJ with spawn
+            limit 5 each repairers and recyclers
+        // charge per crew member
+        // hint on asset spawn
+        // asset spawn grid
+        auto tank
+            tracked vehicles
+        base-in-a-box
+
+    Buildings
+        // Delete building
+        // HQ and building upgrades
+        // check commander in vehicle while placing
+        // Improve building placement checks
+        // MCU recycle building destructor
+        // handle destroyed buildings
+            // remove strategic building
+            // mark ruin as recyclable clutter, include value
+            // no purchasing from building
+            // shown as offline in RTS menu
+        // force HQ first
+            // wait for full construction
+            // only allow within 200m of HQ (except naval)
+        // buildings come out of ground
+        // update to current level when rebuilding
+        // handle building destroyed while constructing
+        // hint on building upgrade
+        // building placement shows full building
+        // building placement allows for asset spawn grid
+        CJ asset placement direction dialog
+        tweak building heights
+
+        Barracks
+            // Level 1: standard infantry (rifleman, AR, etc.)
+            // Level 2: special weapons infantry (MG, AT, AA)
+            // Level 3: SOF, snipers
+        // Vehicle Factory
+            // Level 1: unarmed utility, transport vehicles, MG pick-up truck
+            // Level 2: armed MRAP's
+            // Level 3: APC's, IFV's, AAA/SAM vehicles
+            // Level 4: MBT's, heavy artillery (force short range)
+        // Aircraft Factory
+            // Level 1: transport helicopters
+            // Level 2: utility/multi-purpose helicopters, unarmed aircraft
+            // Level 3: attack helicopters
+            // Level 4: attack aircraft
+        Naval
+            // Level 1: Transport
+            // Level 2: Armed Patrol boats
+            Level 3: ??
+        // Support
+        HQ
+            // Research upgrades to all factories, CJ, and Radar (Commander only)
+            FOB upgrade
+            Research special technologies: (Individual only)
+                // HALO
+                Build enemy units (only at Level 4 Air/Tank factory)
+                VTOL
+                auto-tank
+                FOB
+                Faster/cheaper building of units ??
+        Radar
+            Level 1: 1km, 200m floor
+            Level 2: 2km, 150m floor
+            Level N: etc.
+        Repair/Recycler Plant
+            // Repair worker for Buildings
+            // Recycle worker for assets
+            Level 1: X_1 workers limit, Y_1 repair speed
+            Level 2: X_2 workers limit, Y_2 repair speed
+            Level N: etc.
+        Fortification
+            Houses, H-barriers
+        CJ
+            // build from tank factory
+            // parallel queued placement
+            // MP fix, CJ placement needs to be RE on client and pass position back to server.
+            // medical
+            // static MG
+            // ammo crate
+            // barbed wire
+            beacons (tracker)
+            hacking
+            // Level 1: Unarmed, small fortifications
+            // Level 2: Static weapons, MG, etc.
+Territory
+    // anyone can cap
+    // faster capping
+    Sub-Territory System
+        Zen_RTS_SubTerritoryRemove
+    FOB
+        // spawn FOB template
+        // spawn AI defenders on capture
+        capping with certain vehicles gives fob
+        each flag upgraded individually by FOB vehicle
+        explosive barrels
+RTS menus
+    // view distance fix
+    // building unit dialog called from action per building
+    // only allow unit purchase within radius from building
+    // Disband unit
+    // No CJ status
+    // Fix unit group list text
+    // Fix blinking
+    // Cancel asset button refunds
+    // Refresh button
+    // Repair/Recycle y/n menu with $$
+    // Give money to another player
+    // cannot open MCU build menu while placing a building
+    HQ build menu show next level # in queue field
+    Alpha menu show building max after current level
+    HQ build menu give next upgrade level
+    Test AI fly height
+    Use radial menu GUI for actions
+Revive/Respawn/JIP
+    // rewrite rts-init-SetRandomPos.sqs in SQF
+    // Get correct respawn positions
+Economy
+    // Territories have resource value
+    // total team resource value gives money increase
+    // rewrite rts-moneyMonitor.sqs in SQF
+    building and asset build time affected by resources
+        miners
+        3% overall speed increase per cap
+        buildings: 320 to 120 seconds
+        assets: 120 to 45 second
+        60% resource return cut-off
+        resources = (resource per flag) * (flag count)  + (resource per territory) * (territory count) + (number of miners) * (resource per second per miner) * (1 second)
+        time = (max time) - resources / (resources maximum) * (max time - min time) ??
+    add JIP player to money data
+    handle respawned player money data
+AI
+    // rewrite rts-init-commandermonitor.sqs in SQF
+    // Chain of command selection queue
+        // Fix commander selection after respawn
+    On player death
+    commander
+    individual
+    human commander gives orders/units/money
+Misc
+    Ranking
+    Explosive placement (see RWT)
+Supports
+    AI extraction/insertion from action menu (see ZK)
+    Artillery vehicles
+Loadouts
+    // Use framework custom loadouts
+        // Loadout dialog displays custom loadouts
+    // Use RHS equipment
+    // Default RHS loadout on mission start
+    need east RHS loadouts:
+        sapper
+        SOF
+        sniper
+    assign money value
+Known MP Issues
+    // Add more debug
+    Logic Issues
+        // AI recycle tasking
+        // AI Repair activation
+        // Respawn may not use all correct/possible positions as the mission progress?
+        'Build enemy units' technology disappears
+    Synch Issues
+        // Asset crew join group
+        // CJ remote actions missing
+        // Commander definition synch
+        // 20 second init delay
+        buildings coming out of the ground don't sync
+            create local building for every client ??
+    JIP
+        auto tank
+Variants
+    RHS - CUP File Differences
+        mission.sqm
+        Zen_RTS_East
+        Zen_RTS_West
+        Zen_RTS_Functions\Zen_RTS_CustomLoadouts
+    Map Variant File Differences
+        mission.sqm

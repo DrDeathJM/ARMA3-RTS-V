@@ -1,0 +1,19 @@
+;;--------------------------------------------------------------------------------------------------------
+;;Dedicated Server execs only this section
+;;--------------------------------------------------------------------------------------------------------
+
+?!Local server : Exit
+
+#Init
+
+rts_buildArray = ""
+
+#Monitor
+~.02
+?rts_buildArray =="" : goto "Monitor"
+
+_array = call compile rts_buildArray
+
+_array exec "rts-build-serverSideUnits.sqs"
+
+goto "Init"

@@ -1,0 +1,25 @@
+
+#start
+~1
+;;?StopShowScore : goto "end"
+?ShowStats : goto "Stats"
+Goto "Start"
+
+#Stats
+
+_msg = format["West Stats:\n Owned: %1\n Oil: %2\nEnergy: %3\nOre: %4\n East Stats:\n Owned: %5\n Oil: %6\nEnergy: %7\n Ore: %8",WestFC,oilWest,energyWest,oreWest,EastFC,oilEast,energyEast,oreEast]
+
+Hint _msg
+
+?param1 < 9000 : TimeRemain=(Timeremain+.05)-((TimeRemain+.05) mod 1)
+?param1 < 9000 : _timemessage=Format["%1 minutes remaining",TimeRemain]
+?param1 < 9000 : Hint _timemessage
+
+ShowStats = false
+
+goto "start"
+
+#End
+Exit
+
+;;END CHShowMsg.sqs

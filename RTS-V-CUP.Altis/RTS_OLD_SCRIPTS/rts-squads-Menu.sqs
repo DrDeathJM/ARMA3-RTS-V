@@ -1,0 +1,138 @@
+
+closeDialog 0;
+~.01
+
+createDialog "dlgSquads"
+
+_idListUnits = 4005
+_idListSquad = 4010
+_idListCustom = 4015
+
+_indexUnits = 0
+_indexSquad = 0
+_indexCustoms = 0
+
+_side = Side Player
+
+
+?!(_side in [East,West,Independent,CIVILIAN]) : _msg = format ["Side %1 is not authorized for this interface.",_side]; goto "Denied"
+
+
+;;Set Button names
+;;ctrlSetText [_idbuild, "Deploy"]
+;;ctrlSetText [_idbuildyou, "Deploy Manned"]
+;;ctrlSetText [_idbuildsquad, "Deploy for Squad"]
+;;ctrlSetText [_idtitle, _bldName]
+
+#AvailableUnits
+;;Clear the unit list to repopulate
+lbclear _idListUnits
+lbClear _idListCustom
+
+_array = call compile format ["%1soldiers + %1Heavy1 + %1Light1 + %1Transport1 + %1AAA",_side]
+_x = 0
+_c = count _array
+
+#ArrayLoop
+_mA = _array Select _x
+
+_type = _mA Select 0
+_name = _mA select 1
+_pic = getText (configFile >> "CfgVehicles" >> _type >> "picture")
+
+
+_info = Format["%1", _name]
+_index = lbadd [_idListUnits, _info]
+lbSetData [_idListUnits, _index, STR _mA]
+lbSetValue [_idListUnits, _index, _x]
+lbSetPicture [_idListUnits, _index, _pic]
+
+_x = _x + 1
+?_x < _c : Goto "ArrayLoop"
+
+lbSetCurSel [_idListUnits, _indexUnits]
+
+#CustomSquadsList
+
+_customArray = customSquadArray
+
+_x = 0
+_c = count _customArray
+
+#CustomLoop
+_mA = _customArray select _x
+
+_name = _mA select 0
+_listArray = _mA select 1
+_colorStr = _mA select 2
+_color = call compile _colorStr
+
+_info = format ["%1",_name]
+_index = lbadd [_idListCustom, _info]
+lbSetData [_idListCustom, _index, _listArray]
+lbSetColor [_idListCustom, _index, _color]
+
+;;player groupchat format ["%1",call compile _listarray]
+
+_x = _x + 1
+?_x < _c : goto "CustomLoop"
+
+lbSetCurSel [_idListCustom, _indexCustoms]
+
+#CreateSquadList
+
+lbClear _idListSquad
+
+_index = lbCurSel _idListCustom
+_name = lbText [_idListCustom, _index]
+_stringArray = lbData [_idListCustom, _index]
+
+_array = call compile _stringArray
+_x = 0
+_c = count _array
+
+;;hint format ["%1",_array]
+
+? (_c == 0) : goto "SkipSquadLoop"
+
+#SquadLoop
+_mA = _array Select _x
+_type = _mA Select 0
+_name = _mA select 1
+_pic = getText (configFile >> "CfgVehicles" >> _type >> "picture")
+?format ["%1",_name] == undefined_var : _name = ""
+
+
+_info = Format["%1", _name]
+_index = lbadd [_idListSquad, _info]
+lbSetData [_idListSquad, _index, STR _mA]
+lbSetValue [_idListSquad, _index, _x]
+lbSetPicture [_idListSquad, _index, _pic]
+
+_x = _x + 1
+?_x < _c : Goto "SquadLoop"
+
+#SkipSquadLoop
+
+lbSetCurSel [_idListSquad, _indexSquad]
+
+_indexSquad = lbCurSel _idListSquad
+_curIndexCustoms = lbCurSel _idListCustom
+_customArray = call compile lbData [_idListCustom,_curIndexCustoms]
+_c = count _customArray
+
+#RefreshWait
+~.01
+
+_indexSquad = lbCurSel _idListSquad
+_customArray = call compile lbData [_idListCustom,_curIndexCustoms]
+
+? (!(ctrlVisible _idListSquad) or !(Alive Player)): exit
+? (isNil "_customArray"): goto "RefreshWait"
+?count _customArray != _c : goto "CreateSquadList"
+
+?_curIndexCustoms != lbCursel _idListCustom : goto "CreateSquadList"
+
+?ctrlVisible _idListSquad && Alive Player : goto "RefreshWait"
+
+

@@ -1,0 +1,112 @@
+;;BEGIN EndMission.sqs
+;;by KaRRiLLioN
+;;INSRUCTIONS:  In the mission editor, place a trigger with this info:
+;;Text: EndGame
+;;Type: End #1
+;;Condition: EndGame
+;;OnActivation: ForceEnd
+;;
+;;This small script is only for detecting whether the mission is over according to the time limit or score limits
+;;that are defined in the description.ext file.  Once one of these is satisfied, it will trigger the
+;;Outro scene for whichever team won.  You can also have this done by in-game triggers.
+;;This also stops the ShowScore script when activate so the score won't pop up during the Outro.
+
+#Init
+_countdown = 5
+rts_EastReady = FALSE
+rts_WestReady = FALSE
+
+#start
+~5
+?!isNull EastLightFac && !rts_EastReady : rts_EastReady = TRUE; rts_hq sideChat "East team initialized."
+?!isNull WestLightFac && !rts_WestReady : rts_WestReady = TRUE; rts_hq sideChat "West team initialized."
+
+ ?EastFC < 4 && rts_EastReady && !Alive EastLightFac && !Alive EastHeavyFac && !Alive EastAirFac && !Alive EastBarracks: _side = West; _reason = "annihilation"; goto "GameOver"
+ ?WestFC < 4 && rts_WestReady && !Alive WestLightFac && !Alive WestHeavyFac && !Alive WestAirFac && !Alive WestBarracks: _side = East; _reason = "annihilation"; goto "GameOver"
+
+@!(isNil "rts_vpTickerEast")
+@!(isNil "rts_vpTickerWest")
+?param3 > 0 && rts_vpTickerEast < 1 && rts_EastReady : _side = West; _reason = "victory point control"; goto "GameOver"
+?param3 > 0 && rts_vpTickerWest < 1 && rts_WestReady : _side = East; _reason = "victory point control"; goto "GameOver"
+
+?EastFC >= flagNumber : _side = East; goto "CountDown"
+?WestFC >= flagNumber : _side = West; goto "CountDown"
+
+
+
+Goto "start"
+
+#CountDown
+_team = call compile format ["%1TeamName",_side]
+_msg=Format["%1 Forces have captured all territories.\nThey must hold them for %2 seconds to win.",_team,_countdown]
+titletext[_msg,"PLAIN"]
+
+_looptime = _countdown
+~2
+#CountDownLoop
+~1
+?_side == West && WestFC < FlagNumber : Goto "Averted"
+?_side == East && EastFC < FlagNumber : Goto "Averted"
+_looptime=_looptime-1
+
+?_loopTime <= 0 : _reason = "Domination"; goto "GameOver"
+
+?_looptime == 90:_msg=Format["%1 Seconds until %2 Domination.",_looptime,_team]; titletext[_msg,"PLAIN"]
+?_looptime == 60:_msg=Format["%1 Seconds until %2 Domination.",_looptime,_team]; titletext[_msg,"PLAIN"]
+?_looptime == 30:_msg=Format["%1 Seconds until %2 Domination.",_looptime,_team]; titletext[_msg,"PLAIN"]
+?_looptime <= 10:_msg=Format["%1 Seconds until %2 Domination.",_looptime,_team]; titletext[_msg,"PLAIN"]
+
+Goto "CountDownLoop"
+
+#Averted
+
+_msg=Format["%1 Forces no longer control all territories.\nEndGame Averted.",_team]
+titletext[_msg,"PLAIN"]
+Hint _msg
+
+Goto "Start"
+
+
+#GameOver
+
+_team = call compile format ["%1TeamName",_side]
+
+0 fadeMusic .6
+playMusic "atrack2"
+
+ch_run = FALSE
+publicVariable "ch_run"
+
+enableRadio false
+_cam = "camera" camcreate [0,0,0]
+_cam cameraEffect ["internal","back"]
+
+_cam camSetTarget Getpos Flag1
+_cam camSetRelPos [0,6,-2]
+_cam camSetFOV 01.00
+_cam camCommit 0
+;;titlecut ["","BLACK IN",2]
+~2
+_msg = format["%1 team wins by %2:\n\nFinal Territories:\nWest %3 | East %4",_team,_reason,WestFC,EastFC,FlagNumber]
+titletext [_msg,"PLAIN"]
+~20
+titletext ["","PLAIN"]
+_cam cameraeffect ["terminate", "back"]
+camdestroy _cam
+
+; fade back in over 2 seconds
+titlecut ["","BLACK IN",1]
+
+enableRadio true
+
+EndGame=True
+~12
+PublicVariable "EndGame"
+Goto "end"
+
+
+#End
+Exit
+
+;;END EndMission.sqs
+

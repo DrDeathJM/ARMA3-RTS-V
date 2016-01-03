@@ -1,0 +1,4 @@
+
+
+
+_nil = this execVM "ZKS\Revive\INIT_Start.sqf";

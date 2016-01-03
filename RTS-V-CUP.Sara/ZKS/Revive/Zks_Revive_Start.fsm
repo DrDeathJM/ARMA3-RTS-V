@@ -1,0 +1,437 @@
+/*%FSM<COMPILE "scriptedFSM.cfg, Zks_Revive_Start">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,628.422241,-1175.282471,718.421997,-1125.282471,0.000000,"START"};
+item1[] = {"respawn",4,218,632.982544,-870.144287,722.982727,-820.144226,0.000000,"respawn"};
+item2[] = {"Is_server",4,218,627.678528,-1054.853760,717.678467,-1004.853882,0.000000,"Is server"};
+item3[] = {"not_server",4,218,1135.601685,-1176.672119,1225.601563,-1126.672363,1.000000,"not server"};
+item4[] = {"time_start",2,250,630.723755,-965.496033,720.723938,-915.496155,0.000000,"time start"};
+item5[] = {"end",1,250,1134.531006,-964.773499,1224.531006,-914.773499,0.000000,"end"};
+item6[] = {"weapons",2,4346,633.140320,-773.807922,723.140381,-723.807922,0.000000,"weapons"};
+item7[] = {"commited_cam",4,218,633.873413,-683.885498,723.873535,-633.885559,0.000000,"commited" \n "cam"};
+item8[] = {"left_game",4,218,863.867371,-965.516418,953.867371,-915.516418,0.000000,"left" \n "game"};
+item9[] = {"cam_2",2,250,851.128296,-684.816223,941.128296,-634.816223,0.000000,"cam" \n "2"};
+item10[] = {"commited_cam_2",4,218,1135.405762,-685.523071,1225.405762,-635.523071,0.000000,"commited" \n "cam" \n "2"};
+item11[] = {"dead_loop",4,218,503.374786,-967.618774,593.374878,-917.618774,1.000000,"dead" \n "loop"};
+item12[] = {"water_check",2,250,630.615479,-591.371582,720.615479,-541.371582,0.000000,"water" \n "check"};
+item13[] = {"land",4,218,852.285278,-590.310974,942.285278,-540.310974,0.000000,"land"};
+item14[] = {"water",4,218,629.554871,-498.036987,719.554871,-448.036987,0.000000,"water"};
+link0[] = {0,2};
+link1[] = {0,3};
+link2[] = {1,6};
+link3[] = {2,4};
+link4[] = {3,5};
+link5[] = {4,1};
+link6[] = {4,8};
+link7[] = {4,11};
+link8[] = {6,7};
+link9[] = {7,12};
+link10[] = {8,5};
+link11[] = {9,10};
+link12[] = {10,5};
+link13[] = {11,4};
+link14[] = {12,13};
+link15[] = {12,14};
+link16[] = {13,9};
+link17[] = {14,12};
+globals[] = {0.000000,0,0,0,0,640,480,2,221,6316128,1,42.358841,1673.721191,109.401497,-1459.123413,674,634,1};
+window[] = {0,-1,-1,-1,-1,806,26,1404,26,1,692};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "Zks_Revive_Start";
+        class States
+        {
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+                         "" \n
+                         "_timeout = time;" \n
+                         "Target = 0;" \n
+                         "Autoview = 0;" \n
+                         "_player = _this select 0;" \n
+                         "PLAYER_RESPAWN = 0;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_Uclass =  Uniform _player;" \n
+                         "_Vclass = Vest _player;" \n
+                         "_BPclass = backpack _player;" \n
+                         "_Hclass = headgear _player;" \n
+                         "_IArray = assignedItems _player;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "not_server">*/
+                                class not_server
+                                {
+                                        itemno = 3;
+                                        priority = 1.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!(isplayer (_this select 0)) or (isDedicated))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Is_server">*/
+                                class Is_server
+                                {
+                                        itemno = 2;
+                                        priority = 0.000000;
+                                        to="time_start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((isplayer (_this select 0)) && !(isDedicated) && (time > (_timeout + 2)))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"titleCut ["""",""BLACK OUT"", .5];" \n
+                                         "" \n
+                                         "closedialog 1900000;" \n
+                                         "closedialog 170964;" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "_body = _this select 0;" \n
+                                         "_thiskiller = _this select 1;" \n
+                                         "_string = format[""%1"",_body];" \n
+                                         "_obj = player;// call compile format [""%1"", _string];" \n
+                                         "_killer = name _thiskiller;" \n
+                                         "_name = name _obj;" \n
+                                         "unassignVehicle _obj; " \n
+                                         "" \n
+                                         "if (_killer == ""Error: No Vehicle"") then {_killer = ""an Explosion""};" \n
+                                         "if (_killer == ""error: no unit"") then {_killer = ""Someone""};" \n
+                                         "if (_killer == """") then {_killer = ""an AI Player""};" \n
+                                         "" \n
+                                         "_RevivedText = """";" \n
+                                         "_RevivedText = ""You Have Been hurt by "" + _killer + ""."";" \n
+                                         "[_RevivedText] execVM ""ZKS\Revive\Dialogs\RESPAWN_Dialog3.sqf"";" \n
+                                         "" \n
+                                         "_compass = 0;" \n
+                                         "_gps = 0;" \n
+                                         "_notepad = 0;" \n
+                                         "_radio = 0;" \n
+                                         "_watch = 0;" \n
+                                         "//pickup = 0;" \n
+                                         "_loop = 0;" \n
+                                         "" \n
+                                         "if (showncompass) then {_compass = 1};" \n
+                                         "if (shownGPS) then {_gps = 1};" \n
+                                         "if (shownPad) then {_notepad = 1};" \n
+                                         "if (shownRadio) then {_radio = 1};" \n
+                                         "if (shownWatch) then {_watch = 1};" \n
+                                         "" \n
+                                         "showGPS false;" \n
+                                         "showCompass false;" \n
+                                         "showPad false;" \n
+                                         "showRadio false;" \n
+                                         "showWatch false;" \n
+                                         "" \n
+                                         "_timeout = time;" \n
+                                         "keypressed = [0,0];" \n
+                                         "finddisplay(46) displayseteventhandler [""KeyDown"",""keypressed = _this""];" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "time_start">*/
+                class time_start
+                {
+                        name = "time_start";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = time;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "dead_loop">*/
+                                class dead_loop
+                                {
+                                        itemno = 11;
+                                        priority = 1.000000;
+                                        to="time_start";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!(alive _obj) && (time > (_timeout + .5)))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_obj = player;// call compile format [""%1"", _string];" \n
+                                         "_loop = _loop + 1;" \n
+                                         "_timeout = (time + 1);"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "left_game">*/
+                                class left_game
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!(alive _obj) && (_loop > 30)) "/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"titleCut ["""",""BLACK IN"", 3.5];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "respawn">*/
+                                class respawn
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="weapons";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((alive _obj) && (time > (_timeout + .1)))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end">*/
+                class end
+                {
+                        name = "end";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "weapons">*/
+                class weapons
+                {
+                        name = "weapons";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "titleCut ["""",""BLACK IN"", 4.5];" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "while {rating _obj < 1} do" \n
+                         "{" \n
+                         "_obj addRating 100;" \n
+                         "};" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_loop = 0;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "deleteMarker str(_obj);" \n
+                         "_obj setVariable [str(_obj), nil, false];" \n
+                         "" \n
+                         "" \n
+                         "_obj allowDamage false; " \n
+                         "" \n
+                         "" \n
+                         "	if (_obj != _thiskiller) then {DeathCamCurTarget = _thiskiller} else {DeathCamCurTarget = _obj};" \n
+                         "	if (_killer == ""Someone"") then {DeathCamCurTarget = _obj};" \n
+                         "	if (_killer == ""an Explosion"") then {DeathCamCurTarget = _obj};" \n
+                         "" \n
+                         "_camstart = DeathCamCurTarget;" \n
+                         "" \n
+                         "if (_obj == _camstart) then {_camstart = _body};" \n
+                         "" \n
+                         "Deathcam = ""camera"" camCreate [(getPos _camstart select 0),(getPos _camstart select 1),(getPos _camstart select 2) + 1.5];" \n
+                         "Deathcam cameraEffect [""internal"",""front""];" \n
+                         "Deathcam camSetTarget _body;" \n
+                         "Deathcam camSetPos [(getPos _body select 0),(getPos _body select 1),(getPos _body select 2) + 1.5];" \n
+                         "Deathcam camSetFOV 0.976;" \n
+                         "Deathcam camCommand ""inertia on"";" \n
+                         "Deathcam camCommit 4;" \n
+                         "showCinemaBorder false;" \n
+                         "" \n
+                         "_pain = ""AinjPpneMstpSnonWrflDnon"";" \n
+                         "_obj switchMove _pain;" \n
+                         "_obj setVariable [""HURT"", 1, true];" \n
+                         "_obj setUnconscious true;" \n
+                         "_obj setdamage .5;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_side = _obj getVariable ""side"";" \n
+                         "[_side] execVM ""ZKS\Revive\RESPAWN_Options.sqf"";" \n
+                         "_obj setcaptive true;" \n
+                         "//_obj selectWeapon primaryWeapon _obj;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "commited_cam">*/
+                                class commited_cam
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="water_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"camCommitted DeathCam"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_dir = getdir _body;" \n
+                                         "_pos = getposATL _body;" \n
+                                         "" \n
+                                         "deletevehicle _body;" \n
+                                         "_watercheckdone = 0;" \n
+                                         "_waterpos = _pos;" \n
+                                         "_idir = 0;" \n
+                                         "_idis = 20;" \n
+                                         "_inwatermsg = 0;" \n
+                                         "_timeout = time;" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "cam_2">*/
+                class cam_2
+                {
+                        name = "cam_2";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"_obj setdir _dir;" \n
+                         "_obj setposATL _pos; " \n
+                         "" \n
+                         "Deathcam CameraEffect [""Terminate"",""Back""];" \n
+                         "Deathcam camSetTarget vehicle DeathCamCurTarget;" \n
+                         "DeathCamCurTarget switchCamera ""EXTERNAL"";" \n
+                         "" \n
+                         "Deathcam camSetFOV 0.976;" \n
+                         "Deathcam camCommit 5;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "_marker = format[""%1"",_name];" \n
+                         "_marker = createMarkerLocal [_marker, position _obj];" \n
+                         "_marker setMarkerShapeLocal ""ICON"";" \n
+                         "_marker setMarkerTypeLocal ""mil_dot"";" \n
+                         "_marker setMarkerSizeLocal [.5,.5];" \n
+                         "_marker setmarkercolorLocal ""Colorblack"";" \n
+                         "_marker setMarkerTextLocal name player;" \n
+                         "" \n
+                         "[_marker,_obj] spawn " \n
+                         "{" \n
+                         "_marker = _this select 0;" \n
+                         "_obj = _this select 1;" \n
+                         "" \n
+                         "waituntil {((isnil {_marker}) or (isnull _obj) or (isnil {(_obj GetVariable ""HURT"")}))};" \n
+                         "if (!isnil {_marker}) then {deletemarker _marker};" \n
+                         "};" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "(group _obj) selectLeader _obj;" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "commited_cam_2">*/
+                                class commited_cam_2
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"camCommitted DeathCam"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"" \n
+                                         "[_obj,_compass,_gps,_notepad,_radio,_watch,_marker,_side] execFSM ""ZKS\Revive\Zks_Revive_Loop.fsm"";" \n
+                                         "_obj setcaptive true;" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "water_check">*/
+                class water_check
+                {
+                        name = "water_check";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "water">*/
+                                class water
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="water_check";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(surfaceIsWater _waterpos)" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_watercheckdone = 1;" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "_NextBodyX = (_pos Select 0) + ((Sin _idir) * _idis);" \n
+                                         "_NextBodyY = (_pos Select 1) + ((Cos _idir) * _idis);" \n
+                                         "_waterpos = [_NextBodyX,_NextBodyY,0];" \n
+                                         "_idir = _idir + 15;" \n
+                                         "if (_idir > 345) then {_idis = _idis + 50;_idir = 0};" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "if (_inwatermsg == 0) then" \n
+                                         "{" \n
+                                         "titleCut ["""",""BLACK OUT"", .5];" \n
+                                         "_inwatermsg = 1;" \n
+                                         "titletext[format [""%1"",""Looking For The Nearest Land !\n\nIf Your A Long Way Out It May Take A Little Time!""], ""Plain"" , 1];" \n
+                                         "};" \n
+                                         "" \n
+                                         "" \n
+                                         "if (time > (_timeout + 10)) then" \n
+                                         "{" \n
+                                         "_mydis = _pos distance _waterpos;" \n
+                                         "titletext[format [""%1 %2 %3"",""Still Looking For The Nearest Land !\n\nYou Are A Long Way Out!\n\nDistance Looked So Far Is\n\n"",_mydis,"" Meters""], ""Plain"" , 1];" \n
+                                         "_timeout = time;" \n
+                                         "};"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "land">*/
+                                class land
+                                {
+                                        itemno = 13;
+                                        priority = 0.000000;
+                                        to="cam_2";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!(surfaceIsWater _waterpos)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"" \n
+                                         "if (_watercheckdone == 1) then" \n
+                                         "{" \n
+                                         "titleCut ["""",""BLACK IN"", 6];" \n
+                                         "_pos = _waterpos;" \n
+                                         "_pain = ""AinjPpneMstpSnonWrflDnon"";" \n
+                                         "_obj switchMove _pain; " \n
+                                         "};" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+                "end",
+        };
+};
+/*%FSM</COMPILE>*/

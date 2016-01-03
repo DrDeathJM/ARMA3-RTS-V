@@ -1,0 +1,44 @@
+_vcl = _this select 0
+
+_type = typeOf _vcl
+
+_side = SIDE Player
+
+?_type in ["O_Truck_03_ammo_F","O_Truck_03_repair_F","O_Truck_03_fuel_F"] : _side = East
+
+?_type in ["B_Truck_01_ammo_F","B_Truck_01_Repair_F","B_Truck_01_fuel_F"] : _side = West
+
+
+?!(_side in [West,East]) : _player groupChat format ["Side %1 Not Recognized.  Invalid credentials:  Access Denied",SIDE _player]; Exit
+
+?ammoBox : rts_hq sideChat "You must wait 30 seconds before placing another ammo crate."; Exit
+?format ["%1",ammobox] == undefined_var : ammoBox = FALSE
+~1
+ammoBox = TRUE
+
+_crateType = format ["WeaponBox%1",_side]
+
+_pos = getPos _vcl
+_dir = getDir _vcl
+
+_dist = -10
+_posX = (_pos select 0) + _dist * sin _dir
+_posY = (_pos select 1) + _dist * cos _dir
+
+
+_crate = _crateType vehicle [_posX,_posY]
+
+rts_newvehicle = _crate
+publicVariable "rts_newvehicle"
+
+player groupChat format ["%1 d.",_crateType]
+
+player reveal _crate
+
+~30
+
+ammoBox = FALSE
+
+rts_hq sideChat "Ammo  Queue Ready."
+
+Exit

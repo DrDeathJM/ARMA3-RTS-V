@@ -1,0 +1,31 @@
+_vcl = _this select 0
+~2
+
+?isNull driver _vcl : goto "end"
+
+_vcl Setpos [(Getpos _vcl Select 0),(Getpos _vcl Select 1),1000]
+
+Goto "End"
+
+_vcl Setpos [(Getpos _vcl Select 0),(Getpos _vcl Select 1),1]
+
+_factor = .02
+
+_vTime = _time + 10
+
+#Vertical
+_xThrust = (_factor*(sin getDir _vcl))+(velocity _vcl select 0)
+_yThrust = (_factor*(cos getDir _vcl))+(velocity _vcl select 1)
+
+_vcl setVelocity [_xThrust,_yThrust, 15]
+
+?_time > _vTime : goto "end"
+
+?(getpos _vcl select 2) < 500 && Speed _vcl < 200 : goto "vertical"
+
+
+
+
+
+#End
+Exit

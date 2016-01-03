@@ -1,0 +1,118 @@
+;;This script loops on client side and updates the Asset arrays when each upgrade is completed.
+Eastbarrackslevel = Eastbarrackslevel + 1; Eastlightfaclevel = Eastlightfaclevel + 1; Eastheavyfaclevel = Eastheavyfaclevel + 1; Eastairfaclevel = Eastairfaclevel + 1
+Westbarrackslevel = Westbarrackslevel + 1; Westlightfaclevel = Westlightfaclevel + 1; Westheavyfaclevel = Westheavyfaclevel + 1; Westairfaclevel = Westairfaclevel + 1
+~5
+?!Local Player : Exit
+
+_side = STR Side Player
+#Monitor
+~1
+_currentBarracksLevel = call compile format ["%1BarracksLevel",_side]
+_currentLightFacLevel = call compile format ["%1LightFacLevel",_side]
+_currentHeavyFacLevel = call compile format ["%1HeavyFacLevel",_side]
+_currentAirFacLevel = call compile format ["%1AirFacLevel",_side]
+
+
+?_currentBarracksLevel != call compile format ["%1BarracksLevel",_side] : _bld = "barracks"; goto _bld
+?_currentLightFacLevel != call compile format ["%1LightFacLevel",_side] : _bld = "LightFac"; goto _bld
+?_currentHeavyFacLevel != call compile format ["%1HeavyFacLevel",_side] : _bld = "HeavyFac"; goto _bld
+?_currentAirFacLevel != call compile format ["%1AirFacLevel",_side] : _bld = "AirFac"; goto _bld
+
+   
+?updbg : Eastbarrackslevel = Eastbarrackslevel + 1; Eastlightfaclevel = Eastlightfaclevel + 1; Eastheavyfaclevel = Eastheavyfaclevel + 1; Eastairfaclevel = Eastairfaclevel + 1
+updbg = false
+
+?updbg : Westbarrackslevel = Westbarrackslevel + 1; Westlightfaclevel = Westlightfaclevel + 1; Westheavyfaclevel = Westheavyfaclevel + 1; Westairfaclevel = Westairfaclevel + 1 
+updbg = false
+
+
+goto "Monitor"
+
+
+#Barracks
+_level = call compile format ["%1%2Level",_side,_bld]
+_name = call compile format ["%1%2Name",_side,_bld]
+
+rts_hq sideChat format ["%1 upgraded to level %2",_name,_level]
+
+_currentBarracksLevel = call compile format ["%1%2Level",_side,_bld]
+
+?_level == 0 : call compile format ["%1BarracksArray = %1Men0",_side,_level]
+?_level == 1 : call compile format ["%1BarracksArray = %1Men0 + %1Men1",_side,_level]
+?_level == 2 : call compile format ["%1BarracksArray = %1Men0 + %1Men1 + %1Men2",_side,_level]
+?_level == 3 : call compile format ["%1BarracksArray = %1Men0 + %1Men1 + %1Men2 + %1Men3",_side,_level]
+
+call compile format ["%1Assets set [0,[%1BarracksName,1,%1BarracksArray,""%1Barracks""]]",_side]
+
+goto "UpdateTerritories"
+
+
+#LightFac
+_level = call compile format ["%1%2Level",_side,_bld]
+_name = call compile format ["%1%2Name",_side,_bld]
+
+rts_hq sideChat format ["%1 upgraded to level %2",_name,_level]
+
+_currentLightFacLevel = call compile format ["%1%2Level",_side,_bld]
+
+?_level == 1 : call compile format ["%1LightFacArray = %1Light0 + %1Light1",_side,_level]
+?_level == 2 : call compile format ["%1LightFacArray = %1Light0 + %1Light1 + %1Light2",_side,_level]
+?_level == 3 : call compile format ["%1LightFacArray = %1Light0 + %1Light1 + %1Light2 + %1Light3",_side,_level]
+
+call compile format ["%1Assets set [1,[%1LightFacName,1,%1LightFacArray,""%1LightFac""]]",_side]
+
+goto "UpdateTerritories"
+
+
+#HeavyFac
+_level = call compile format ["%1%2Level",_side,_bld]
+_name = call compile format ["%1%2Name",_side,_bld]
+
+rts_hq sideChat format ["%1 upgraded to level %2",_name,_level]
+
+_currentHeavyFacLevel = call compile format ["%1%2Level",_side,_bld]
+
+?_level == 1 : call compile format ["%1HeavyFacArray = %1Heavy0 + %1Heavy1",_side,_level]
+?_level == 2 : call compile format ["%1HeavyFacArray = %1Heavy0 + %1Heavy1 + %1Heavy2",_side,_level]
+?_level == 3 : call compile format ["%1HeavyFacArray = %1Heavy0 + %1Heavy1 + %1Heavy2 + %1Heavy3",_side,_level]
+
+call compile format ["%1Assets set [2,[%1HeavyFacName,1,%1HeavyFacArray,""%1HeavyFac""]]",_side]
+
+goto "UpdateTerritories"
+
+#AirFac
+_level = call compile format ["%1%2Level",_side,_bld]
+_name = call compile format ["%1%2Name",_side,_bld]
+
+rts_hq sideChat format ["%1 upgraded to level %2",_name,_level]
+
+_currentAirFacLevel = call compile format ["%1%2Level",_side,_bld]
+
+?_level == 1 : call compile format ["%1AirFacArray = %1Air0 + %1Air1",_side,_level]
+?_level == 2 : call compile format ["%1AirFacArray = %1Air0 + %1Air1 + %1Air2",_side,_level]
+?_level == 3 : call compile format ["%1AirFacArray = %1Air0 + %1Air1 + %1Air2 + %1Air3",_side,_level]
+
+call compile format ["%1Assets set [3,[%1AirFacName,1,%1AirFacArray,""%1AirFac""]]",_side]
+
+goto "UpdateTerritories"
+
+
+#UpdateTerritories
+
+_sld = alive call compile format ["%1Barracks",_side]
+_light = alive call compile format ["%1LightFac",_side]
+_heavy = alive call compile format ["%1HeavyFac",_side]
+_air = alive call compile format ["%1AirFac",_side]
+
+
+player groupchat format ["B: %1, L: %2, H: %3, A: %4",_sld,_light,_heavy,_air]
+
+call compile format ["%1ForwardBaseArray1 = %1BarracksArray",_side]
+?_light : call compile format ["%1ForwardBaseArray2 = %1ForwardBaseArray1 + %1LightFacArray",_side]
+?_light && _heavy : call compile format ["%1ForwardBaseArray3 = %1ForwardBaseArray3 + %1HeavyFacArray",_side]
+?_light && _heavy : call compile format ["%1ForwardBaseArray4 = %1ForwardBaseArray3 + %1HeavyFacArray",_side]
+
+
+goto "Monitor"
+
+

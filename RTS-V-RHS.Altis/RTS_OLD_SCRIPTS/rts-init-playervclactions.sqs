@@ -1,0 +1,27 @@
+_player = _this Select 0
+
+
+#Start
+~1
+?(Vehicle _player != _player) : Goto "InVcl"
+?!(Alive _player) : Exit
+Goto "Start"
+
+#InVcl
+_vcl = Vehicle _player
+
+_act = format ["",Vehicle _player]
+Vehicle _player addAction ["<t color='#e3ce4d'>" + _act + "</t>","rts-alpha-menu.sqs"]
+#Vcl
+~1
+?(Vehicle _player == _player) : Goto "OutVcl"
+?!(Alive _player) : Exit
+Goto "Vcl"
+
+
+#OutVcl
+_player removeAction 0
+
+
+
+Goto "Start"

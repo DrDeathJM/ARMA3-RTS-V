@@ -1,0 +1,33 @@
+;;titletext[format["%1",_this],"PLAIN"]
+
+_bld = _this select 0;
+_kill = _this select 1;
+_p1 = getPos _bld;
+
+_leader = leader _kill;
+
+_check = _kill isKindOf "building";
+
+rts_hq sideChat format ["%1 %2  %3",typeOf _kill,name _kill, alive _kill];
+
+?!_check : call compile format ["XP%1 = XP%1 + 4; publicVariable ""XP%1""",_leader];
+
+_side = side Player;
+? !(_side in [East, West]): player sideChat ("rts-event-resourceKilled.sqs at " + str time + " with " + str _this + " : invalid player side");  
+  
+_wait = Time + 10;
+_pause = 5;
+
+_pos = getPos _bld;
+_bldType = typeOf _bld;
+?Local _bld : _pause = 5;
+?Local _bld : deleteVehicle _bld;
+waituntil = _time+(_pause) ;
+;;~_pause
+@isNull _bld || Time > _wait;
+
+?_bldType in call compile format ["rscBldTypes%1",_side] : [_side,"HQ"] sideChat "A resource fortification has been destroyed.";
+
+
+
+exit

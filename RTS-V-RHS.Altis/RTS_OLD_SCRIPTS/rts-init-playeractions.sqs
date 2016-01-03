@@ -1,0 +1,51 @@
+
+_playerunit = _this select 0
+_unit = _this select 1
+_unitname = Name _unit
+_oldactionid = _this select 2
+@!(isNil "rts_Initialized")
+@(rts_Initialized AND rts_arrays_initialized)
+
+#UnitCheck
+
+_msg = Format["COMMUNICATIONS ESTABLISHED"]
+
+rts_hq sideChat _msg
+Hint _msg
+
+
+
+;; _playerunit addAction ["<t color='#00d9ff'>RTS Player Menu</t>", "rts-alpha-menu.sqs", [], -1, false, false, ""]; 
+_playerunit addAction ["<t color='#00d9ff'>RTS Player Menu</t>", Zen_RTS_AlphaMenu, [], -1, false, false, ""]; 
+
+_sidelabel = Format["%1", Side _unit]
+Goto _sidelabel
+
+#West
+_msg = "Checking command status"
+rts_hq sideChat _msg
+
+~2
+@!(IsNull WestCommander) AND (Alive WestCommander)
+_name = Name WestCommander
+Goto "CommandInfo"
+
+#East
+_msg = "Checking command status"
+rts_hq sideChat _msg
+
+~2
+@!(IsNull EastCommander) AND (Alive EastCommander)
+_name = Name EEastCommander
+Goto "CommandInfo"
+
+#CommandInfo
+_msg = Format["%1 is your commander.",_name]
+rts_hq sideChat _msg
+
+
+#Skip
+
+
+#End
+Exit

@@ -1,0 +1,75 @@
+#include "Zen_FrameworkFunctions\Zen_DialogSystem\Zen_Dialog.hpp"
+class CfgNotifications {
+    #include "Zen_FrameworkFunctions\Zen_TaskSystem\Zen_TaskNotifications.hpp"
+};
+class CfgCommunicationMenu {
+    #include "Zen_FrameworkFunctions\Zen_FireSupportSystem\Zen_FireSupportMenu.hpp"
+};
+
+respawn = 3;
+respawndelay = 3;
+respawnDialog = false;
+author = "Dr Death jm |*| Zenophon";
+overviewText = "DEV-Update 092615.";
+overviewPicture = "pictures\rtsload.paa";
+onLoadName = "RTS V : Arma3 Edition";
+onLoadMission = "Warfare Unleashed: WarGames";
+loadScreen = "pictures\rtsload.paa";
+saving = 0;
+
+briefing = 1;
+debriefing = 1;
+aiKills = 0;
+disabledAI = 0;
+showUAVFeed = 1;
+showGroupIndicator = 0;
+enableDebugConsole = 1;
+showHUD = 1;
+
+class Header {
+    gameType = CTI;
+    minPlayers = 2;
+    maxPlayers = 26;
+};
+
+
+class TAG {
+    class MyMission {
+        class showOSD { file = "functions\fnc_showOSD.sqf"; };
+   };
+};
+
+#include "param\description.ext"
+
+#include "menus\rtsdefine.hpp"
+#include "menus\RTSV_COLOR.EXT"
+#include "menus\intro.hpp"
+#include "menus\dlgRscRTSMenus.hpp"
+#include "menus\dlgRscHelp.hpp"
+
+#include "R3F_LOG\desc_include.h"
+#include "digitalLoadout\defines.hpp"
+#include "digitalLoadout\dialog.hpp"
+
+class CfgSounds {
+    sounds[] = {NoSound,jump8,death};
+
+    class NoSound {
+        name = "NoSound";
+        sound[] = {"", 0, 1};
+        titles[] = {};
+    };
+
+    class jump8 {
+        name="jump8";
+        sound[]={"sound\EN\holyshite.ogg",2,1,50};
+        titles[]={};
+    };
+    class death {
+        name="death";
+        sound[]={\sound\EN\fucke.ogg,2,1,50};
+        titles[]={};
+    };
+
+    #include "menus\Sounds.hpp"
+};

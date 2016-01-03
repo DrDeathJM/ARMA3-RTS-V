@@ -1,0 +1,20 @@
+_bld = _this
+
+
+#Monitor
+~.02
+
+?isNull _bld : Exit
+?!Alive _bld : Exit
+
+_unit = nearestObject [_bld,"helicopter"]
+
+?!isNull _unit && alive _unit && speed _unit > 24 && _unit distance _bld < 25 : _p1 = getPos _unit; _unit setPos [_p1 select 0,_p1 select 1, 35]
+
+?!Alive _unit : deletevehicle _unit
+
+?!isNull _unit : player groupchat format ["%1",typeOf _unit]
+
+
+
+goto "Monitor"

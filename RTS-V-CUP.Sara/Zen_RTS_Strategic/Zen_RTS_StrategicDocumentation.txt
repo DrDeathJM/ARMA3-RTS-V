@@ -1,0 +1,215 @@
+The Zen RTS Strategic System
+by Zenophon
+for RTS V
+
+Provides abstract data management in an OO style for buildings and assets.  Offers building-centered organization of invoking assets using an automatic queue thread.  All constructors, destructors, and upgrade functions must be defined on all machines before creating an abstract type.  All functions can be called from any machine; building constructors will be called locally.  The main queue thread runs server-only and executes assets there.
+
+Index
+    Zen_RTS_StrategicAssetCreate
+    Zen_RTS_StrategicAssetGetData
+    Zen_RTS_StrategicAssetInvoke
+    Zen_RTS_StrategicAssetRemove
+    Zen_RTS_StrategicAssetUpdate
+    Zen_RTS_StrategicBuildingCreate
+    Zen_RTS_StrategicBuildingDestroy
+    Zen_RTS_StrategicBuildingInvoke
+    Zen_RTS_StrategicBuildingObjectGetDataGlobal
+    Zen_RTS_StrategicBuildingObjectGetDataLocal
+    Zen_RTS_StrategicBuildingQueueAdd
+    Zen_RTS_StrategicBuildingQueueClear
+    Zen_RTS_StrategicBuildingQueueManager
+    Zen_RTS_StrategicBuildingQueueRemove
+    Zen_RTS_StrategicBuildingRemove
+    Zen_RTS_StrategicBuildingTypeGetData
+    Zen_RTS_StrategicBuildingTypeUpdate
+    Zen_RTS_StrategicBuildingUpgrade
+
+
+Zen_RTS_StrategicAssetCreate
+
+Registers a new asset type that can be invoked.
+Usage : Call
+Params: 1. String, constructor function
+        2. String, name
+        3. String, description
+ (opt.) 4. String, access, 'All', 'Commander', (default: 'All')
+Return: String, unique identifier
+
+Zen_RTS_StrategicAssetGetData
+
+Returns all data of asset (1).
+Usage : Call
+Params: 1. String, identifier
+Return: Array:
+            1. String, identifier
+            2. String, constructor function
+            3. String, name
+            4. String, description
+            5. String, access, 'All', 'Commander'
+
+Zen_RTS_StrategicAssetInvoke
+
+Puts (2)'s constructor on (1)'s queue.
+Usage : Call
+Params: 1. String, building object identifier
+        2. String, asset identifier
+ (opt.) 3. Object, the instantiating unit, (default: player)
+ (opt.) 4. Any, arbitrary arguments for the constructor, (default: [])
+Return: Void
+
+Zen_RTS_StrategicAssetRemove
+
+Deletes all data of asset (1).  That asset can no longer be invoked.
+Usage : Call
+Params: 1. String, identifier
+Return: Void
+
+Zen_RTS_StrategicAssetUpdate
+
+Sets the data of asset (1) to the new values.
+Checks that given constructor exists.  Use '0' to skip (2,4) and (6).
+Use -1 to skip (5).  This will not affect invoked assets of this type.
+Usage : Call
+Params: 1. String, identifier
+        2. String, constructor function
+ (opt.) 3. String, name, (default: 0)
+ (opt.) 4. String, description, (default: 0)
+ (opt.) 5. String, access, 'All', 'Commander', (default: 0)
+Return: Void
+
+Zen_RTS_StrategicBuildingCreate
+
+Registers a new building type.
+Usage : Call
+Params: 1. String, constructor function
+        2. String, destructor function
+        3. Array of strings, upgrade functions
+        4. String, name
+        5. String, description
+Return: String, unique identifier
+
+Zen_RTS_StrategicBuildingDestroy
+
+Removes the object data of (1) and calls the destructor.
+Usage : Call
+Params: 1. String, identifier
+Calls : 1. (1)'s destructor
+            1. Array, reference to (1)'s data
+Return: Void
+
+Zen_RTS_StrategicBuildingInvoke
+
+Instantiates a building of type (1), creates its object data,
+calls its constructor, and starts its queue.
+Usage : Call
+Params: 1. String, type identifier
+        2. Any, constructor arguments
+Calls : 1. (1)'s constructor
+            1. Array, reference to the new object data
+            2. (2)
+Return: String, object identifier
+
+Zen_RTS_StrategicBuildingObjectGetDataGlobal
+
+Returns all global data of building object (1).
+Usage : Call
+Params: 1. String, building object identifier
+Return: Array:
+            1. String, type identifier
+            2. String, object identifier
+            3. Object, the building
+            4. Scalar, building level
+            5. Array of strings, available assets
+
+Zen_RTS_StrategicBuildingObjectGetDataLocal
+
+Returns all local data of building object (1).
+Usage : Call
+Params: 1. String, building object identifier
+Return: Array:
+            1. String, object identifier
+            2. Array of strings, available assets
+            3. Scalar, number of usages
+
+Zen_RTS_StrategicBuildingQueueAdd
+
+Puts (2)'s data and (3) on (1)'s queue for automatic processing.
+Usage : Call
+Params: 1. String, building object identifier
+        2. String, asset identifier
+        3. Object, the instantiating unit
+Return: Void
+
+Zen_RTS_StrategicBuildingQueueClear
+
+Deletes all assets from (1)'s queue.  Stops the currently running constructor.
+Usage : Call
+Params: 1. String, building object identifier
+Return: Void
+
+Zen_RTS_StrategicBuildingQueueManager
+
+Automatically manages the build queue of (1).  Spawns each constructor
+and waits for them to finish.  This will run only on the server.
+Do not spawn multiple threads for the same building.
+Usage : Spawn
+Params: 1. String, building object identifier
+Calls : 1. Asset Constructors
+            1. Array, a reference to (1)'s data
+            2. Array, a reference to the asset's data
+            3. Object, the instantiating unit
+     (opt.) 4. Any, arbitrary arguments for the constructor, (default: [])
+Return: Void
+
+Zen_RTS_StrategicBuildingQueueRemove
+
+Deletes the asset at (2), indexed from 0, in (1)'s queue.
+Use 0 to stop the current constructor.
+Usage : Call
+Params: 1. String, building object identifier
+        2. Scalar, the index
+Return: Void
+
+Zen_RTS_StrategicBuildingRemove
+
+Deletes all data of building type (1).  Existing objects of that type
+will fail to function properly.
+Usage : Call
+Params: 1. String, identifier
+Return: Void
+
+Zen_RTS_StrategicBuildingTypeGetData
+
+Returns all type data of building (1).
+Usage : Call
+Params: 1. String, identifier
+Return: Array:
+            1. String, identifier
+            2. String, constructor function
+            3. String, destructor function
+            4. Array of strings, upgrade functions
+            5. String, name
+            6. String, description
+
+Zen_RTS_StrategicBuildingTypeUpdate
+
+Sets the data of building type (1) to the new values.
+Checks that given functions exist.  Use '0' to skip (2,6).
+This will affect existing building objects of this type.
+Usage : Call
+Params: 1. String, identifier
+        2. String, constructor function
+ (opt.) 3. String, destructor function, (default: 0)
+ (opt.) 4. Array of strings, upgrade functions, (default: 0)
+ (opt.) 5. String, name, (default: 0)
+ (opt.) 6. String, description, (default: 0)
+Return: Void
+
+Zen_RTS_StrategicBuildingUpgrade
+
+Upgrades (1) using the next upgrade function for (1)'s type.
+Usage : Call
+Params: 1. String, object identifier
+Calls : 1. (1) current level upgrade function
+            1. Array, reference to (1)'s data
+Return: Any, the return value of the upgrade function

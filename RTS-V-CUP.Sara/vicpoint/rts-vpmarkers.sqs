@@ -1,0 +1,46 @@
+_string = _this select 0
+~1
+
+_marker = format ["MarkerVP%1",_string]
+_icon = format ["IconVP%1",_string]
+_flag = call compile  format ["vp%1",_string]
+_flagName = call compile format ["nameVP%1",_string]
+
+#setMarkers
+~2
+_marker setMarkerShapeLocal "ELLIPSE";
+_marker setMarkerSizeLocal [100,100];
+_marker setMarkerDirLocal _angle;
+_marker setMarkerColorLocal ColorIndependent;
+
+_icon setMarkerShapeLocal "ICON";
+_icon setMarkerColorLocal ColorIndependent;
+_icon setMarkerTypeLocal "FLAG"
+_icon setMarkerSizeLocal [1,1];
+
+#MarkerMonitor
+~1
+_flagSide = call compile format ["SideVP%1",_string]
+
+_threat = call compile format ["threatVP%1",_string]
+
+?_threat && _flagSide == str side player : player say "victoryPointThreat"; call compile format ["threatVP%1 = FALSE",_string]
+?_threat && _flagSide != str side player : call compile format ["threatVP%1 = FALSE",_string]
+
+?!isNull rts_vpTaken && rts_vpTaken == _flag && _flagSide == str side player : player say "objSecured"
+?!isNull rts_vpTaken && rts_vpTaken == _flag : [side player,"hq"] sidechat format ["%1 has taken %2",_flagside,_flagName]; rts_vpTaken = objNull
+
+_color = call compile format ["Color%1",_flagSide]
+_flagTexture = call compile format ["Texture%1",_flagSide]
+
+;;_sector setMarkerColor _color
+_marker setMarkerColorLocal _color
+_icon setMarkerColorLocal _color
+_flag setFlagTexture _flagTexture
+
+;;player sideChat _flagside
+
+;;player sidechat format ["%1: %2 %3, %4",_string,_flagside,_marker,_color]
+
+goto "MarkerMonitor"
+

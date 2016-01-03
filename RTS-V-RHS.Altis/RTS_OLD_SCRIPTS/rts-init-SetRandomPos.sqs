@@ -1,0 +1,75 @@
+?!(Local Server) : Exit
+
+_num = 1
+_total = 13
+
+WestList = [West1,West2,West3,West4,West5,West6,West7,West8,West9,West10,West11,West12,West13]
+EastList = [East1,East2,East3,East4,East5,East6,East7,East8,East9,East10,East11,East12,East13]
+
+#Loop
+~.2
+
+?_num < _total : _num = _num + 1; goto "Loop"
+
+#init
+PlayerCount = 0
+
+PosNumber = Random 1.2
+;;PosNumber=(PosNumber+.05)-((PosNumber+.05) mod 1)
+;; _msg=Format["%1",PosNumber]; TitleText[_msg,"PLAIN"]
+
+;;PosNumber = .09
+
+?(PosNumber >= 0) && (PosNumber < .1) : _wpos = getMarkerPos "pos1a"; _epos = getMarkerPos "pos1b"
+?(PosNumber >= .1) && (PosNumber < .2) : _wpos = getMarkerPos "pos2a"; _epos = getMarkerPos "pos2b"
+?(PosNumber >= .2) && (PosNumber < .3) : _wpos = getMarkerPos "pos3a"; _epos = getMarkerPos "pos3b"
+?(PosNumber >= .3) && (PosNumber < .4) : _wpos = getMarkerPos "pos4a"; _epos = getMarkerPos "pos4b"
+?(PosNumber >= .4) && (PosNumber < .5) : _wpos = getMarkerPos "pos5a"; _epos = getMarkerPos "pos5b"
+?(PosNumber >= .5) && (PosNumber < .6) : _wpos = getMarkerPos "pos6a"; _epos = getMarkerPos "pos6b"
+?(PosNumber >= .6) && (PosNumber < .7) : _wpos = getMarkerPos "pos1b"; _epos = getMarkerPos "pos1a"
+?(PosNumber >= .7) && (PosNumber < .8) : _wpos = getMarkerPos "pos2b"; _epos = getMarkerPos "pos2a"
+?(PosNumber >= .8) && (PosNumber < .9) : _wpos = getMarkerPos "pos3b"; _epos = getMarkerPos "pos3a"
+?(PosNumber >= .9) && (PosNumber < 1) : _wpos = getMarkerPos "pos4b"; _epos = getMarkerPos "pos4a"
+?(PosNumber >= 1) && (PosNumber < 1.1) : _wpos = getMarkerPos "pos5b"; _epos = getMarkerPos "pos5a"
+?(PosNumber >= 1.1) && (PosNumber <= 1.2) : _wpos = getMarkerPos "pos6b"; _epos = getMarkerPos "pos6a"
+
+WestTruck Setpos _wpos
+EastTruck Setpos _epos
+
+_wposX=(_wpos Select 0)+10
+_wposY=(_wpos Select 1)+10
+_wposZ=(_wpos Select 2)
+
+_eposX=(_epos Select 0)+10
+_eposY=(_epos Select 1)+10
+_eposZ=(_epos Select 2)
+
+~1
+
+#CountPlayers
+
+@(Count  WestList > 0) && (Count  EastList > 0)
+
+_array =  WestList +  EastList
+
+#Continue
+_numberHosts = 0
+_numberPlayers = 0
+_numberHosts = {_x == Player} count _array
+
+?(_numberhosts == 0) : Dedicated = TRUE; PublicVariable "Dedicated"; Hosted = FALSE; PublicVariable "Hosted"
+?(_numberhosts >= 1) : Dedicated = FALSE; PublicVariable "Dedicated"; Hosted = TRUE; PublicVariable "Hosted"
+
+;;[]exec "rts-init-commandermonitor.sqs"
+
+_numberPlayers = {!Local _x} count _array
+
+PlayerCount = _numberHosts + _numberPlayers
+
+PublicVariable "PlayerCount"
+
+#Finish
+
+
+#End
+Exit

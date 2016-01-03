@@ -1,0 +1,179 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Zks_Revive_Players">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,628.422241,-1175.282471,718.421997,-1125.282471,0.000000,"START"};
+item1[] = {"awake",4,4314,842.763672,-967.202942,932.763672,-917.202942,2.000000,"awake"};
+item2[] = {"Is_server",4,218,627.678528,-1054.853760,717.678467,-1004.853882,0.000000,"Is server"};
+item3[] = {"not_server",4,218,1135.601685,-1176.672119,1225.601563,-1126.672363,1.000000,"not server"};
+item4[] = {"time_start",2,250,630.723755,-965.496033,720.723938,-915.496155,0.000000,"time start"};
+item5[] = {"end",1,250,1134.531006,-964.773499,1224.531006,-914.773499,0.000000,"end"};
+item6[] = {"loop_1",4,218,446.504272,-970.883423,536.504272,-920.883423,1.000000,"loop" \n "1"};
+item7[] = {"loop",4,218,630.773682,-845.289124,720.773682,-795.289124,0.000000,"loop"};
+link0[] = {0,2};
+link1[] = {0,3};
+link2[] = {1,5};
+link3[] = {2,4};
+link4[] = {3,5};
+link5[] = {4,1};
+link6[] = {4,6};
+link7[] = {4,7};
+link8[] = {6,4};
+link9[] = {7,4};
+globals[] = {0.000000,0,0,0,0,640,480,2,220,6316128,1,787.038635,1519.079346,-630.189819,-1172.020996,772,649,1};
+window[] = {0,-1,-1,-1,-1,934,154,1742,154,1,789};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Zks_Revive_Players";
+  class States
+  {
+    /*%FSM<STATE "START">*/
+    class START
+    {
+      name = "START";
+      init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "not_server">*/
+        class not_server
+        {
+          priority = 1.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!(local player) or (isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Is_server">*/
+        class Is_server
+        {
+          priority = 0.000000;
+          to="time_start";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((local player) && !(isDedicated))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_side = _this select 0;" \n
+           "_obj = _this select 1;" \n
+           "_soldier = [_obj];" \n
+           "plr = 0;" \n
+           "viewplr = 0;" \n
+           "_timeout = time;" \n
+           "_num = count _soldier;" \n
+           "{if ((_side == side _x) && !(_x == _obj))  then {_soldier set [_num, _x];_num = _num + 1}} foreach playableUnits;" \n
+           "" \n
+           "_plr = plr;" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "time_start">*/
+    class time_start
+    {
+      name = "time_start";
+      init = /*%FSM<STATEINIT""">*/"_health = 0.195;" \n
+       "" \n
+       "" \n
+       "_num = count _soldier;" \n
+       "" \n
+       "if (plr >= _num) then {plr = 0};" \n
+       "if (plr < 0) then {plr = (_num - 1)};" \n
+       "_plr = plr;" \n
+       "_myuser = _soldier select plr;" \n
+       "" \n
+       "if ((playerview == 1) && (autoview == 1)) then {_myuser = DeathCamCurTarget};" \n
+       "" \n
+       "_dis = _myuser distance _obj;" \n
+       "_dis = _dis - (_dis mod 1);" \n
+       "" \n
+       "_dam = damage _myuser;" \n
+       "_health = _health - ((_dam * 2) / 10);" \n
+       "" \n
+       "ctrlSetText [1047005,name _myuser]; " \n
+       "ctrlSetText [1047003,str(_dis)];" \n
+       "" \n
+       "if (!isnil {(_myuser GetVariable ""HURT"")}) then " \n
+       "{" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlSetBackgroundColor [0, 0, 1, 1];" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlSetPosition [SafeZoneX + 0.01, 0.68 + SafeZoneY, _health ,0.02];" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlCommit 0;" \n
+       "}" \n
+       "else" \n
+       "{" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlSetBackgroundColor [0, 1, 0, 1];" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlSetPosition [SafeZoneX + 0.01, 0.68 + SafeZoneY, _health ,0.02];" \n
+       "((findDisplay 170964) displayCtrl 1047001) ctrlCommit 0;" \n
+       "};" \n
+       "" \n
+       "if (viewplr == 1) then {DeathCamCurTarget = (_soldier select plr); viewon = 0; viewplr = 0};" \n
+       "" \n
+       "_looptime = (time + 1);" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "awake">*/
+        class awake
+        {
+          priority = 2.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((""HEALTHY"" ==  lifeState _obj) or !(dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "loop_1">*/
+        class loop_1
+        {
+          priority = 1.000000;
+          to="time_start";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_plr != plr)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_soldier = [_obj];" \n
+           "_num = count _soldier;" \n
+           "{if ((_side == side _x) && (name _x != ""error: no unit"") && (!isnull _x) && (name _x != ""error: no vehicle"") && !(_x == _obj))  then {_soldier set [_num, _x];_num = _num + 1;}} foreach playableUnits;" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "loop">*/
+        class loop
+        {
+          priority = 0.000000;
+          to="time_start";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time > _looptime) && (dialog))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "end">*/
+    class end
+    {
+      name = "end";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="START";
+  finalStates[] =
+  {
+    "end",
+  };
+};
+/*%FSM</COMPILE>*/

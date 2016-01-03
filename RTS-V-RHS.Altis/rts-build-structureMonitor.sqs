@@ -1,0 +1,29 @@
+
+_bld = _this
+_string = str _bld
+
+
+#Init
+call compile format ["%1Dead = FALSE", _bld]
+
+
+#Monitor
+~.5
+?call compile format ["%1Dead", _bld] : goto "Destroy"
+?Alive _bld : goto "Monitor"
+
+#Msg
+call compile format ["%1Dead = TRUE; publicVariable ""%1Dead""", _bld]
+
+
+#RepairWait
+~1
+?!alive _bld : goto "repairWait"
+
+goto "Init"
+
+
+#Destroy
+_bld setDammage 1
+
+goto "RepairWait"

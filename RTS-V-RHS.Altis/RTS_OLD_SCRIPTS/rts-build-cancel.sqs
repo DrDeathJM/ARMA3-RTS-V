@@ -1,0 +1,8 @@
+Hint "Canceling Order"
+
+_string = _this select 0
+
+call compile format ["Cancel%1 = TRUE", _string]
+
+
+Exit

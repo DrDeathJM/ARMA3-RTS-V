@@ -1,0 +1,22 @@
+~5
+#Init
+_oldTickerWest = rts_vpTickerWest
+_oldTickerEast = rts_vpTickerEast
+
+
+#Monitor
+~1
+
+?rts_vpTickerWest <= _oldTickerWest - 25 : _oldTickerWest = rts_vpTickerWest; goto "showScore"
+?rts_vpTickerEast <= _oldTickerEast - 25 : _oldTickerEast = rts_vpTickerEast; goto "showScore"
+?showVPScore : showVPScore = false; goto "showScore"
+
+goto "Monitor"
+
+
+#ShowScore
+
+hint format ["West Victory Points:  %1\n East Victory Points:  %2",rts_vpTickerWest,rts_vpTickerEast]
+
+
+goto "Monitor"

@@ -1,0 +1,291 @@
+;;This is for double click on MCU build menu to re-route it
+?typeOf ActionUnit in ["B_MRAP_01_F","O_MRAP_02_F"] : 2000 exec "rts-build-structures.sqs"; Exit
+
+_idc = _this select 0
+_idc2 = _this select 1
+_manned = _this select 2
+_forSquad = _this select 3
+
+?!_forSquad : _buildFor = Activator
+
+?_idc2 == 2030 : _ind = lbCurSel _idc2; _squadName = lbText [_idc2, _ind]; _customArray = lbData [_idc2, _ind]; _num = lbValue [_idc2, _ind]
+
+?Rating Activator < 0 : Activator addRating ((rating player * -1))
+
+_side = Side Activator
+
+_bld = call compile rts_tmpstring
+_bldString = rts_tmpString
+
+?call compile format ["%1QNum < 0",_bldString] : call compile format ["%1QNum = 0",_bldString]
+
+?call compile format ["%1QNum >= rts_maxQueueSize", _bldString] : _msg = "Deployment queue is full, try again after current order is complete."; Player groupChat _msg; Exit
+
+player groupChat _bldString
+
+_index = lbCurSel _idc
+_text = lbText [_idc, _index]
+_type = lbData [_idc, _index]
+_available = lbValue [_idc, _index]
+
+#AddQueue
+call compile format ["%1QNum = %1QNum + 1", _bldString]
+_qnum = call compile format ["%1QNum", _bldString]
+_qName = call compile format ["%1Name", _bldString]
+
+Player groupChat format ["Queueing %1 %2 unit(s) queued at %3", _text, _qnum, _qName];
+
+#QueueWait
+~1
+?!Alive _bld : _msg = format ["%1 is Offline.  Unit build Aborted.", _qName]; goto "Denied"
+?call compile format ["%1QActive", _bldString] : goto "QueueWait"
+
+_var1 = call compile format ["%1QNum", _bldString]
+_var2 = call compile format ["%1QActive", _bldString]
+;;player groupchat format ["ReduceA: _qnum: %1, QNum: %2, QActive?: %3, bldstring: %4", _qnum, _var1, _var2, _bldString];
+
+#QueueReduce
+_qnum = _qnum - 1
+?_qnum > 1 : goto "QueueWait"
+
+call compile format ["%1QActive = TRUE", _bldString];
+call compile format ["%1QNum = %1QNum - 1", _bldString];
+
+_var1 = call compile format ["%1QNum", _bldString];
+_var2 = call compile format ["%1QActive", _bldString];
+;;player groupchat format ["ReduceB: _qnum: %1, QNum: %2, QActive?: %3, _text: %4", _qnum, _var1, _var2, _text];
+
+_player = Activator
+_playerName = Name _player
+_actionunit = ActionUnit
+
+?_type == "none" : _msg = "This asset automatically activates certain abilities.  Nothing is built here"; goto "Denied"
+
+#MannedBuildInfo
+
+_index2 = lbCurSel _idc2
+_text2 = lbText [_idc2, _index2]
+_unitNum = lbValue [_idc2, _index2]
+
+_array = call compile format ["%1Players", _side]
+
+;;_array = _array - [_player]
+
+#Start
+_vArray = vArray
+_countArray = Count _vArray
+_bldName = BName
+
+;;This will show queue status when enabled
+_cString = "None"
+?_bldName in [EastBarracksName,WestBarracksName] : _qTextID = 1030; _qButtonID = 1031; _cString = "Sld"
+?_bldName in [EastLightFacName,WestLightFacName] : _qTextID = 1032; _qbuttonID = 1033; _cString = "Vcl"
+?_bldName in [EastHeavyFacName,WestHeavyFacName] : _qTextID = 1034; _qButtonID = 1035; _cString = "Vcl"
+?_bldName in [EastAirFacName,WestAirFacName] : _qTextID = 1036; _qButtonID = 1039; _cString = "Air"
+
+;;?_bldName in [EastHQFacName,WestHQFacName] : _qTextID = 2036; _qButtonID = 2037; _cString = "Air"
+
+call compile format ["Cancel%1 = FALSE",_cString]
+
+ctrlSetText [_qTextID, "Empty"]
+;;buttonSetAction [_qButtonID, "_bldString exec ""rts-build-cancel.sqs"""]
+
+_x = 0
+#ArrayLoop
+_mA = _vArray Select _x
+
+_unitType = _mA Select 0
+
+
+?_unitType == _type : Goto "CollectInfo"
+
+_x = _x + 1
+?_x < _countArray : Goto "arrayLoop"
+
+Hint "Not Found"
+player groupChat format ["Build Type:  %1, CheckType:  %2", _type, _unitType]
+Goto "End"
+
+#CollectInfo
+
+_type = _mA Select 0
+_name = _mA select 1
+_class = _mA Select 2
+_bTime = _mA select 3
+_oil = _mA select 4
+_ore = _mA select 5
+_energy = _mA select 6
+_credits = _mA select 7
+
+;;?param1 == 1 : _oil = round (_oil/2)
+;;?param1 == 1 : _ore = round (_ore/2)
+
+_bTimeBase = _btime/3
+
+_teamSupplyFactor = call compile format ["%1SupplyFactor", _side]
+
+?rts_debug : _oil = 0; _ore = 0; _energy = 0; _credits = 0
+
+?_idc2 == 2030 : _oil = 0;_ore = 0; _energy = 2; _credits = 10
+
+#PreConditions
+AICount = (Count Units Group _player) - 1
+?(_class == "troop" && AICount >= AILimit) || _idc2 == 2030 && AICount >= AILimit : _msg = Format["Limit of %1 Soldiers is already reached.  You can train more if one dies.", AILimit]; Goto "Denied"
+?_manned && AICount >= AILimit : _msg = Format["Limit of %1 Soldiers is already reached.  You can train more if one perishes horribly.", AILimit]; Goto "Denied"
+
+?playerMoney < _credits : _msg = format ["Insufficient funds.  %1 Cancelled.",_name]; Goto "Denied"
+
+#Position
+_pos = getPos _bld
+_dir = getDir _bld
+
+_dist = -30
+?rts_name in [EastAirFacName, WestAirFacName] : _dist = -50 - random 30
+_posX = (_pos select 0) + _dist * sin _dir
+_posY = (_pos select 1) + _dist * cos _dir
+
+?rts_debug : _btime = 3
+
+?_idc2 == 2030 : [_posX, _posY, _dir-180, _squadName, _customArray, _num] exec "rts-build-squad.sqs"; _msg = ""; Exit
+
+_qTime = Time
+_wait = Time + _bTime
+
+
+rts_hq sideChat format ["Building %1, %2 Seconds remaining.  $%3 deducted.", _name, _bTime, _credits]
+
+playerMoney = playerMoney - _credits
+_info = Format["%1 ready in %2 seconds.", _name, _bTime];
+
+#WaitLoop
+~1
+_timeLeft = _wait - Time
+_timeLeft = (_timeLeft + .01)-((_timeLeft + .01) mod 1)
+?_qTime < Time : _info = Format["%1 - %2 seconds.", _name, _timeLeft]; _qTime = Time + 1
+ctrlSetText [_qTextID, _info]
+?!Alive _bld : _msg = format ["%1 is Offline.  %2 Aborted.", _bldName, _name]; goto "Refund"
+?call compile format ["Cancel%1", _cString] : _msg = format ["%1 Aborted.", _bldName, _name]; goto "Refund"
+
+?Time < _wait : goto "WaitLoop"
+
+ctrlSetText [_qTextID, _info]
+
+?!_manned : goto "Build"
+
+#MannedBuild
+
+?!_forSquad : Goto "Build"
+_buildFor = call compile (_array Select _unitNum)
+_msg = Format["Activating unit for %1's group", Name _buildfor]; [SIDE _buildfor, "HQ"] Sidechat _msg
+
+;;_debug = Format["DEBUG :  unit num: %1 - idc : %2", _unitNum, _idc2]; _player Sidechat _debug
+
+#Build
+
+?_class == "troop" : _manned = false; _sType = _type; Goto "BuildSoldier"
+
+_vcl = _type createVehicle [_posX, _posY]
+_vcl setDir _dir - 180
+player reveal _vcl
+
+;;Vcl will delete after certain time if not manned
+_vcl exec "rts-vcl-timedDelete.sqs"
+
+_vcl addEventHandler rts_killedSld
+
+?!_manned : _vcl Lock TRUE; _vcl AddAction ["[UNLOCK]", "rts-vcl-LockFalse.sqs"];
+
+rts_newvehicle = _vcl
+rts_newVehicleName = _name
+publicVariable "rts_newvehicleName"
+publicVariable "rts_newvehicle"
+
+#Direction
+
+_vcl addEventHandler rts_killedSld
+
+?_manned && _buildFor != _player : call compile format ["BuildFor%1 = _buildfor; Vcl%1 = _vcl; publicVariable ""BuildFor%1""; publicVariable ""Vcl%1""", _side];
+
+?_vcl isKindOf "Air" : _sType = call compile format ["%1AirCrewType", _side];
+?_vcl isKindOf "Tank" : _sType = call compile format ["%1ArmorCrewType", _side];
+?_vcl isKindOf "Car" : _sType = call compile format ["%1ArmorCrewType", _side];
+?_vcl isKindOf "Ship" : _sType = call compile format ["%1ArmorCrewType", _side];
+
+?_manned && _buildfor == _player : Goto "BuildSoldier"
+
+_msg = format ["%1 moved to active duty.", _name];
+[_side, "HQ"] sideChat _msg
+
+Goto "Finish"
+
+#BuildSoldier
+
+_init = "newSoldier = _this"
+_skill = 1
+_rank = "CORPORAL"
+
+_group = Group _buildFor
+
+_newSoldier = _group createUnit [_sType, [_posX, _posY], [], 0, "FORM"];
+
+_newSoldier exec "rts-unit-markers.sqs"
+
+player reveal _newsoldier
+
+?_buildfor == _player && _class == "troop" : _msg=Format["%2 moved to active duty.  You Command %1 Soldiers",(Count Units Group _player) -1, _name]; Hint _msg; [SIDE _buildfor, "HQ"] Sidechat _msg
+
+?_class == "troop" : _newSoldier addEventHandler rts_killedSld; Goto "Finish"
+
+#MannedforPlayer
+?_manned : _soldier = _newsoldier
+
+_hasDriver = getNumber (configFile >> "CfgVehicles" >> _type >> "hasDriver");
+_hasGunner = getNumber (configFile >> "CfgVehicles" >> _type >> "hasGunner");
+_hasCommdr = getNumber (configFile >> "CfgVehicles" >> _type >> "hasCommander");
+
+_soldier addEventHandler rts_killedSld
+_soldier moveInDriver _vcl
+;;_soldier2 addEventHandler rts_killedSld
+;;_soldier2 moveInGunner _vcl
+;;_soldier3 addEventHandler rts_killedSld
+;;_soldier3 moveInCommander _vcl
+~.5
+?_hasGunner == 1 : _soldier = _group createUnit [_sType, [_posX, _posY], [], 0, "FORM"]; _soldier addEventHandler rts_killedSld; _soldier moveInGunner _vcl; _soldier exec "rts-unit-markers.sqs"
+_soldier moveInGunner _vcl; _soldier exec "rts-unit-markers.sqs"
+~.5
+?_hasCommdr == 1 : _soldier = _group createUnit [_sType, [_posX, _posY], [], 0, "FORM"]; _soldier addEventHandler rts_killedSld; _soldier moveInCommander _vcl; _soldier exec "rts-unit-markers.sqs"
+_soldier moveInCommander _vcl; _soldier exec "rts-unit-markers.sqs"
+~.5
+?_manned && _vcl isKindOf "plane" : [_vcl] exec "rts-vcl-aiplanetakeoff.sqs"
+
+doStop _vcl;
+
+?_buildfor == _player : _msg=Format["%2 moved to active duty.  You Command %1 Soldiers", (Count Units Group _player) -1, _name]; Hint _msg; [SIDE _buildfor, "HQ"] Sidechat _msg
+
+posX = _posX; posY = _posY
+
+Goto "Finish"
+
+
+#Finish
+
+? !(isNil "_vcl") : _vcl setVelocity [0, 0, 0]
+
+call compile format ["%1QActive = FALSE",_bldString]
+hint "Deployment queue ready."
+
+
+#End
+call compile format ["%1QActive = FALSE",_bldString]
+Exit
+
+#Refund
+playerMoney = playerMoney + _credits
+
+#Denied
+Player groupChat _msg
+call compile format ["%1QActive = FALSE", _bldString]
+call compile format ["%1QNum = %1QNum - 1", _bldString]
+ctrlSetText [_qTextID, _info]
+Exit
+

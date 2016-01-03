@@ -1,0 +1,272 @@
+/*%FSM<COMPILE "scriptedFSM.cfg, Zks_Revive_Spawn">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,628.422241,-1175.282471,718.421997,-1125.282471,0.000000,"START"};
+item1[] = {"player_var",4,4314,630.972595,-1072.141602,720.972778,-1022.141602,0.000000,"player" \n "var"};
+item2[] = {"not_server",4,218,1135.601685,-1176.672119,1225.601563,-1126.672363,1.000000,"not server"};
+item3[] = {"end",1,250,1134.531006,-964.773499,1224.530762,-914.773438,0.000000,"end"};
+item4[] = {"arrays",2,250,631.885681,-966.865479,721.885742,-916.865479,0.000000,"arrays"};
+item5[] = {"alive",4,218,863.867371,-965.516418,953.867371,-915.516418,1.000000,"alive"};
+item6[] = {"respawn",4,218,631.657043,-867.665649,721.656860,-817.665649,0.000000,"respawn"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,4};
+link3[] = {2,3};
+link4[] = {4,5};
+link5[] = {4,6};
+link6[] = {5,3};
+link7[] = {6,4};
+globals[] = {0.000000,0,0,0,0,640,480,2,240,6316128,1,329.555847,1116.384888,-539.666748,-1229.627197,861,755,1};
+window[] = {0,-1,-1,-1,-1,1031,130,1690,130,1,879};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "Zks_Revive_Spawn";
+        class States
+        {
+                /*%FSM<STATE "START">*/
+                class START
+                {
+                        name = "START";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+                         "" \n
+                         "_obj = _this select 0;" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "not_server">*/
+                                class not_server
+                                {
+                                        itemno = 2;
+                                        priority = 1.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(!(local _obj) or (isDedicated))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "player_var">*/
+                                class player_var
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="arrays";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"((local _obj) && !(isDedicated))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"private [""_pos"",""_mk""];" \n
+                                         "" \n
+                                         "" \n
+                                         "_side = _this select 1;" \n
+                                         "" \n
+                                         "_pos = [0,0,0];" \n
+                                         "_oldpos = [0,0,0];" \n
+                                         "" \n
+                                         "if !(isnil ""mk"") then {deletemarker mk};" \n
+                                         "" \n
+                                         "_mk = name _obj + ""mk"";" \n
+                                         "mk = createMarkerlocal [_mk, _pos]; " \n
+                                         "onMapSingleClick ""mk setmarkerpos _pos"";" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "_timeout = time;" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "my_markers = [];" \n
+                                         "" \n
+                                         "" \n
+                                         "[_obj,_side] spawn {" \n
+                                         "_obj = _this select 0;" \n
+                                         "_side = _this select 1;" \n
+                                         "" \n
+                                         "_str = """";" \n
+                                         "_myhospitalarray = (nearestObjects [(position _obj),Spawn_Places,RespawnArea]);" \n
+                                         "" \n
+                                         "{if (_x getVariable ""side"" == _side) then {" \n
+                                         "" \n
+                                         "" \n
+                                         "	switch (typeof _x) do " \n
+                                         "	{" \n
+                                         "	case (Spawn_Houses select 0) : {_str = ""Barracks""};" \n
+                                         "	case (Spawn_Houses select 1) : {_str = ""TankFactory""};" \n
+                                         "	case (Spawn_Houses select 2) : {_str = ""AirFactory""};" \n
+                                         "	case (Spawn_Houses select 3) : {_str = ""HQ""};" \n
+                                         "      case (Spawn_Houses select 4) : {_str = ""SupportFactory""};" \n
+                                         "      case (Spawn_Houses select 5) : {_str = ""NavalFactory""};" \n
+                                         "	};" \n
+                                         "" \n
+                                         "" \n
+                                         "_hos = str(_x);" \n
+                                         "_hos = createMarkerLocal [_hos, position _x];" \n
+                                         "_hos setMarkerShapeLocal ""ICON"";" \n
+                                         "_hos setMarkerTypeLocal ""mil_dot"";" \n
+                                         "_hos setMarkerSizeLocal [.5,.5];" \n
+                                         "" \n
+                                         "" \n
+                                         "if (_x iskindof ""HOUSE"") then" \n
+                                         "{" \n
+                                         "_hos setmarkercolorLocal ""ColorBlue"";" \n
+                                         "_hos setMarkerTextLocal _str;" \n
+                                         "}else{" \n
+                                         "_hos setmarkercolorLocal ""ColorGreen"";" \n
+                                         "_hos setMarkerTextLocal ""MCU"";" \n
+                                         "};" \n
+                                         "" \n
+                                         "my_markers = my_markers + [_hos];" \n
+                                         "" \n
+                                         "}} foreach _myhospitalarray;" \n
+                                         "" \n
+                                         "" \n
+                                         "};" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end">*/
+                class end
+                {
+                        name = "end";
+                        itemno = 3;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "arrays">*/
+                class arrays
+                {
+                        name = "arrays";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = time;" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         "" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "alive">*/
+                                class alive
+                                {
+                                        itemno = 5;
+                                        priority = 1.000000;
+                                        to="end";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(isnil {(_obj GetVariable ""HURT"")} or !(dialog))"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"deletemarker mk;" \n
+                                         "{deletemarker _x} foreach my_markers;" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "respawn">*/
+                                class respawn
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="arrays";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"(((count (nearestObjects [(markerpos mk),Spawn_Places,50]) > 0) or (PLAYER_RESPAWN == 1)) && (time > (_timeout + 1)) && (respawnnow == 1))" \n
+                                         ""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"_posstart = [];" \n
+                                         "_medic_veh = 0;" \n
+                                         "_myhospital = objnull;" \n
+                                         "" \n
+                                         "" \n
+                                         "_myhospitalarray = if  (PLAYER_RESPAWN == 1) then {[MY_SPAWN]}else{(nearestObjects [(markerpos mk),Spawn_Places,51])};" \n
+                                         "_myhospitalarraytmp = _myhospitalarray;" \n
+                                         "{if (_x getVariable ""side"" != _side) then {_myhospitalarray = _myhospitalarray - [_x]}} foreach _myhospitalarraytmp;" \n
+                                         "" \n
+                                         "_myhospital = if (count _myhospitalarray > 0) then {_myhospitalarray select 0}else{objnull};" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "" \n
+                                         "if (_myhospital iskindof ""HOUSE"") then" \n
+                                         "{" \n
+                                         "_Spawn_Rooms =  if  (PLAYER_RESPAWN == 1) then {MY_SPAWN_room}else{Spawn_Rooms};" \n
+                                         "_num  = Spawn_Houses find (typeof _myhospital); " \n
+                                         "_posstartarray = [];" \n
+                                         "" \n
+                                         "{if (_x != -1) then {" \n
+                                         "_posstartarray = _posstartarray + [_myhospital buildingPos _x];" \n
+                                         "} else {" \n
+                                         "" \n
+                                         "_base = position _myhospital;" \n
+                                         "_base_pos  = [(_base select 0) + 15,(_base select 1) + 15,0];" \n
+                                         "" \n
+                                         "_spot = if (count (_base findEmptyPosition [10, 20,""B_Mortar_01_F""]) > 0) then {(_base findEmptyPosition [10, 20,""B_Mortar_01_F""])}else{_base_pos};" \n
+                                         "_posstartarray = _posstartarray + [_spot];" \n
+                                         "" \n
+                                         "}} foreach (_Spawn_Rooms select _num);" \n
+                                         "" \n
+                                         "" \n
+                                         "_posstart = _posstartarray select (floor (random (count _posstartarray)));" \n
+                                         "}else{" \n
+                                         "If ((_myhospital emptypositions ""Cargo"") > 0) then {_medic_veh = 1};" \n
+                                         "_posstart = position _myhospital;" \n
+                                         "};" \n
+                                         "" \n
+                                         "" \n
+                                         "PLAYER_RESPAWN = 0;" \n
+                                         "" \n
+                                         "" \n
+                                         "if (count _posstart > 0) then {" \n
+                                         "_pos = _posstart;" \n
+                                         "" \n
+                                         "	if !(isnil ""_pos"")  then {" \n
+                                         "	" \n
+                                         "	_pos set [2,_pos select 2 + .5];" \n
+                                         "	_obj setpos _pos;" \n
+                                         "" \n
+                                         "	if (_medic_veh == 0) then " \n
+                                         "	{" \n
+                                         "	_obj switchMove ""AmovPpneMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon"";" \n
+                                         "	}else{" \n
+                                         "	_m_num = (_myhospital emptypositions ""Cargo"");" \n
+                                         "	_obj assignAsCargoIndex [_myhospital,(_m_num - 1)];" \n
+                                         "	_obj moveincargo [_myhospital,(_m_num - 1)];" \n
+                                         "	};	" \n
+                                         "" \n
+                                         "	_obj setVariable [""HURT"", nil, true];" \n
+                                         "	};" \n
+                                         "}" \n
+                                         "else" \n
+                                         "{" \n
+                                         "if (_pos distance _oldpos > 100) then" \n
+                                         "	{" \n
+                                         "	Hint ""There is NO Medic Close"";" \n
+                                         "	_pos = [0,0,0];" \n
+                                         "	};" \n
+                                         "};" \n
+                                         "" \n
+                                         "" \n
+                                         ""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="START";
+        finalStates[] =
+        {
+                "end",
+        };
+};
+/*%FSM</COMPILE>*/

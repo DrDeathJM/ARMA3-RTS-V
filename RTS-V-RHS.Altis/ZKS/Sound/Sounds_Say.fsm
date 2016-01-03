@@ -1,0 +1,123 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Sounds_Say">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"START",0,250,594.461304,-1002.180420,684.461060,-952.180481,0.000000,"START"};
+item1[] = {"var",4,4314,595.138916,-796.003662,685.138916,-746.003662,0.000000,"var"};
+item2[] = {"end",1,250,836.954285,-796.839233,926.954529,-746.839233,0.000000,"end"};
+item3[] = {"dead",4,218,837.093872,-1000.524170,927.093872,-950.524170,1.000000,"dead"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,2};
+link3[] = {3,2};
+globals[] = {0.000000,0,0,0,0,640,480,2,39,6316128,1,490.205963,770.599915,-599.843201,-1122.922852,290,541,1};
+window[] = {0,-1,-1,-1,-1,809,526,1266,137,1,307};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Sounds_Say";
+  class States
+  {
+    /*%FSM<STATE "START">*/
+    class START
+    {
+      name = "START";
+      init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+       "" \n
+       "" \n
+       "private [""_obj"",""_side"",""_timeout"",""_sound"",""_sounds"",""_presounds""];" \n
+       "_obj = _this select 0;" \n
+       "_side = _this select 1; " \n
+       "" \n
+       "_timeout = time;" \n
+       "" \n
+       "if (isnil (""_side"")) then {_side = West};" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "dead">*/
+        class dead
+        {
+          priority = 1.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!(alive _obj) or !(local _obj))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "var">*/
+        class var
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((alive _obj) && (local _obj))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_sound = """";" \n
+           "_sounds = [];" \n
+           "" \n
+           "_sex = 0;" \n
+           "_sex = (getNumber(configfile >> ""CfgVehicles"" >> (typeof _obj) >> ""woman""));" \n
+           "" \n
+           "" \n
+           "" \n
+           "" \n
+           "if (count _this < 3) then" \n
+           "{" \n
+           "	switch (_side) do " \n
+           "	{" \n
+           "		case West : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_EN"",""holyshite_EN"",""motherfuckere_EN"",""ohjesuse_EN"",""scream1_EN"",""scream4_EN"",""shite_EN"",""thatsucks_EN""]};" \n
+           "		case East : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_RU"",""holyshite_RU"",""motherfuckere_RU"",""ohjesuse_RU"",""scream1_RU"",""scream4_RU"",""shite_RU"",""thatsucks_RU""]};" \n
+           "		case RESISTANCE : {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_CZ"",""holyshite_CZ"",""motherfuckere_CZ"",""ohjesuse_CZ"",""scream1_CZ"",""scream4_CZ"",""shite_CZ"",""thatsucks_CZ""]};" \n
+           "	};" \n
+           "" \n
+           "" \n
+           "if (_sex != 0) then {_sounds = [""scream_01"",""scream_02"",""scream_03"",""scream_04"",""scream_05"",""scream_06"",""scream_07"",""scream_08""]};" \n
+           "" \n
+           "" \n
+           "if (count _sounds == 0) then {_sounds = [""scream2"",""scream3"",""scream4"",""fucke_EN"",""holyshite_EN"",""motherfuckere_EN"",""ohjesuse_EN"",""scream1_EN"",""scream4_EN"",""shite_EN"",""thatsucks_EN""]};" \n
+           "" \n
+           "_sound = _sounds select (floor (random (count _sounds)));" \n
+           "}" \n
+           "else" \n
+           "{" \n
+           "_sound = _this select 2; " \n
+           "};" \n
+           "" \n
+           "_ordercode = {" \n
+           "private [""_obj"",""_sound""];" \n
+           "_obj = _this select 0;    //object" \n
+           "_sound = _this select 1;    //sound" \n
+           "_obj say3D _sound;" \n
+           "};" \n
+           "" \n
+           "playerorders = [_obj,_sound,_ordercode];" \n
+           "publicVariable ""playerorders"";" \n
+           "" \n
+           "if !(isDedicated) then {_obj say3D _sound};" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "end">*/
+    class end
+    {
+      name = "end";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="START";
+  finalStates[] =
+  {
+    "end",
+  };
+};
+/*%FSM</COMPILE>*/

@@ -1,0 +1,28 @@
+_uString = _this select 0
+
+_unit = call compile _uString
+
+?format ["%1", _unit] == undefined_var : Exit
+
+_side = side _unit
+
+;;Player groupChat format ["%1, %2",_side,_z1]
+
+goto "Add"
+
+#Monitor
+;;?call compile _uString == Player : Hint format ["%1 Monitor",_uString]
+~1
+_unit = call compile _uString
+
+?Alive _unit : goto "Monitor"
+
+
+#Add
+;;?call compile _uString == Player : Hint format ["%1 Add",_uString]
+~1
+?!Alive call compile _uString : goto "Add"
+
+call compile _uString addEventHandler rts_killedSld
+
+goto "Monitor"

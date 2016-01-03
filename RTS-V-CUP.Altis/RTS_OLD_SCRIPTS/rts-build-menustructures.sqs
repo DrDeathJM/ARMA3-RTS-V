@@ -1,0 +1,175 @@
+#Init
+
+_mcu = _this select 0
+_player = _this select 1
+
+ActionUnit = _mcu
+Activator = _player
+
+_side = SIDE _player
+
+?_side in [West] : _side2 = East
+?_side in [East] : _side2 = West
+
+~.2
+CloseDialog 0
+
+#MCU
+_vArray = WestMCUList + EastMCUList
+_countArray = Count _vArray
+_type = typeOf _mcu
+
+_x = 0
+#MCULoop
+_mA = _vArray Select _x
+_unitType = _mA Select 0
+?_unitType == _type : Goto "CollectInfo"
+
+_x = _x + 1
+?_x < _countArray : Goto "mcuLoop"
+
+Hint "Not Found"
+player groupChat format ["Build Type:  %1, CheckType:  %2", _type, _unitType]
+Goto "End"
+
+#CollectInfo
+_mcuName = _mA select 1
+
+bName = _mcuName
+
+?_mcuName == WestMCUName : _mcuSide = West
+?_mcuName == EastMCUName : _mcuSide = East
+
+#Conditions
+
+_mcuCommander = call compile format ["%1Commander", _mcuSide]
+
+player groupchat format ["%1 %2 %3", _mcuCommander, name _mcuCommander, _mcuSide]
+
+?_player != _mcuCommander : _msg = format ["Only the %1 commander is authorized for this interface.", _mcuSide]; goto "Denied"
+?_side != _mcuSide) : _msg = format ["Side %1 is not authorized for this interface.", _side]; goto "Denied"
+
+if (!Alive _mcu)  then {_msg = Format["%1 not available.", _name]; goto "Denied"};
+
+#Start
+~.1
+
+_idDlgBuild = 2002
+_idlist = 2000
+_idgoback = 2001
+_idbuild = 2005
+_idbuildyou = 2015
+_idbuildsquad = 2020
+_idsquadlist = 2025
+_idsquadlistbk = 2026
+_idtitle = 1050
+
+_idBtnCustom = 2016
+_idListCustom = 2030
+_idBgdCustom = 2031
+
+_idstats = 500
+
+_indnum1 = 0
+_indnum2 = 0
+
+createDialog "DlgBuild"
+
+ctrlShow [_idgoback, FALSE]
+ctrlShow [_idSquadList, FALSE]
+ctrlShow [_idSquadListbk, FALSE]
+ctrlShow [_idbuildYou, FALSE]
+ctrlShow [_idbuildSquad, FALSE]
+
+ctrlShow [_idBtnCustom, FALSE]
+ctrlShow [_idListCustom, FALSE]
+ctrlShow [_idBgdCustom, FALSE]
+
+ctrlShow [_idstats, FALSE]
+ctrlEnable [_idbuildyou, FALSE]
+ctrlEnable [_idbuildSquad, FALSE]
+
+((uiNamespace getVariable 'Display_idDlgBuild') displayCtrl _idList), ["onMouseButtonDblClick", "2000 exec ""rts-build-structures.sqs"""]
+#SetArray
+_vArray = call compile format ["%1Buildings", _side]
+vArray = _vArray
+_vArrayCount = Count _vArray
+_x = 0
+
+_stats = [_side, _side2] call compile preprocessfile "functions\rts-statistics-array.sqf"
+
+;;Clear the Stats list to repopulate
+lbClear _idStats
+~.1
+
+_s = 0
+#Statlist
+_statName = _stats select _s select 0
+_statLimit = _stats select _s select 1
+
+_info = format ["%1 - %2", _statName, _statLimit]
+_index = lbadd [_idStats, _info]
+
+_s = _s + 1
+?_s < count _stats : goto "StatList"
+
+;;Set Button names
+ctrlSetText [_idbuild, "Deploy"]
+ctrlSetText [_idtitle, _mcuName]
+
+
+buttonSetAction [_idBuild, "2000 exec ""rts-build-structures.sqs"""]
+
+;;?rts_refresh : rts_refresh = FALSE; goto "SetCursorPos"
+
+#CreateBuildDialog
+;;Clear the Vehicle build list to repopulate
+lbclear _idlist
+
+
+#ArrayLoop
+_mA = _vArray Select _x
+
+_type = _mA Select 0
+_name = _mA select 1
+_class = _mA Select 2
+_pic = ""
+_time = _mA select 3
+_supply = _mA select 4
+_ore = _mA select 5
+_energy = _mA select 6
+_unit = _mA select 7
+
+
+_info = Format["%1:Supply%2|Time %3", _name, _supply, _time]
+_index = lbadd [_idlist, _info]
+lbSetData [_idlist, _index, _type]
+lbSetValue [_idlist, _index, _time]
+lbSetPicture [_idlist, _index, _pic]
+
+_x = _x + 1
+?_x < _vArrayCount : Goto "ArrayLoop"
+
+#SetCursorPos
+
+lbSetCurSel [_idlist, _indnum1]
+
+_wait = Time + 5
+
+#RefreshWait
+~.1
+_indnum1 = lbCurSel _idlist
+
+;;?_wait < Time : goto "setarray"
+?!Alive _player : goto "end"
+?!Ctrlvisible _idlist : goto "end"
+
+goto "refreshwait"
+
+
+#End
+Exit
+
+
+#Denied
+[_side,"HQ"] sideChat _msg

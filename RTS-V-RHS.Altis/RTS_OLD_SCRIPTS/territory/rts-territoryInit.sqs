@@ -1,0 +1,88 @@
+;;exec'd from init.sqs
+
+@rts_arrays_initialized
+
+?Local Server : flagNumber = 0
+
+rts_refreshTerritoryArrays = FALSE
+
+WestFC = 0
+EastFC = 0
+GuerFC = 0
+CivFC = 0
+
+colorWest = "ColorBlue"
+colorEast = "ColorRed"
+ColorIndependent = "ColorGreen"
+colorCiv = "ColorBlack"
+
+TextureWest = "pictures\flags\flag_blufor.paa"
+TextureEast = "pictures\flags\flag_opfor.paa"
+TextureGuer = "RTSframe.jpg"
+TextureCiv = "RTSframe.jpg"
+
+rts_flagTaken = objNull
+
+[] exec "territory\rts-territorySounds.sqs"
+
+Flag1Name = "01";
+Flag2Name = "02";
+Flag3Name = "03";
+Flag4Name = "04";
+Flag5Name = "05";
+Flag6Name = "06";
+Flag7Name = "07";
+Flag8Name = "08";
+Flag9Name = "09";
+Flag10Name = "10";
+Flag11Name = "11";
+Flag12Name = "12";
+Flag13Name = "13";
+Flag14Name = "14";
+Flag15Name = "15";
+Flag16Name = "16";
+Flag17Name = "17";
+Flag18Name = "18";
+Flag19Name = "19";
+Flag20Name = "20";
+
+["1","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["2","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["3","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["4","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["5","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["6","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["7","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["8","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["9","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["10","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["11","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["12","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["13","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["14","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["15","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["16","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["17","10"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["18","20"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["19","5"] exec "territory\rts-territoryMonitor.sqs"
+~1
+["20","10"] exec "territory\rts-territoryMonitor.sqs"
+~1

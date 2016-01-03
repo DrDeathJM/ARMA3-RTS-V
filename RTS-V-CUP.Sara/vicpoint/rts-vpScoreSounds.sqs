@@ -1,0 +1,41 @@
+_side = _this
+
+
+#Init
+_t300 = false
+_t200 = false
+_t100 = false
+_t50  = false
+_t25  = false
+_t15  = false
+
+_e300 = false
+_e200 = false
+_e100 = false
+_e50  = false
+_e25  = false
+_e15  = false
+
+
+#Monitor
+~1
+_vpTicker = call compile format ["rts_vpTicker%1",_side]
+
+
+?_vpTicker <= 300 && !_t300 && side player == _side : _t300 = true; player say "team300"
+?_vpTicker <= 200 && !_t200 && side player == _side : _t200 = true; player say "team200"
+?_vpTicker <= 100 && !_t100 && side player == _side : _t100 = true; player say "team100"
+?_vpTicker <= 50 && !_t50 && side player == _side : _t50 = true; player say "team50"
+?_vpTicker <= 25 && !_t25 && side player == _side : _t25 = true; player say "team25"
+?_vpTicker <= 15 && !_t15 && side player == _side : _t15 = true; player say "team15"
+
+
+?_vpTicker <= 300 && !_e300 && side player != _side : _e300 = true; player say "enemy300"
+?_vpTicker <= 200 && !_e200 && side player != _side : _e200 = true; player say "enemy200"
+?_vpTicker <= 100 && !_e100 && side player != _side : _e100 = true; player say "enemy100"
+?_vpTicker <= 50 && !_e50 && side player != _side : _e50 = true; player say "enemy50"
+?_vpTicker <= 25 && !_e25 && side player != _side : _e25 = true; player say "enemy25"
+?_vpTicker <= 15 && !_e15 && side player != _side : _e15 = true; player say "enemy15"
+
+
+goto "Monitor"

@@ -1,0 +1,45 @@
+~.5
+VPNumber = 0
+
+WestVPC = 0
+EastVPC = 0
+GuerVPC = 0
+CivVPC = 0
+
+tickerWest = 0
+tickerEast = 0
+tickerGuer = 0
+tickerCiv = 0
+
+colorWest = "ColorBlue"
+colorEast = "ColorRed"
+ColorIndependent = "ColorYellow"
+colorCiv = "ColorGrey"
+
+TextureWest = "pictures\flags\flag_blufor.paa"
+TextureEast = "pictures\flags\flag_opfor.paa"
+TextureGuer = "pictures\rtsiii.paa"
+TextureCiv = "pictures\rtsiii.paa"
+
+rts_vpTaken = objNull
+
+NameVP1 = "Victory Point 1"
+NameVP2 = "Victory Point 2"
+NameVP3 = "Victory Point 3"
+
+
+["1"] exec "vicpoint\rts-vpMonitor.sqs"
+~1
+["2"] exec "vicpoint\rts-vpMonitor.sqs"
+~1
+["3"] exec "vicpoint\rts-vpMonitor.sqs"
+
+~5
+
+?Local Server : [] exec "vicpoint\rts-vpScore.sqs"
+~1
+1 setRadioMsg "show victory ticker"
+[] exec "vicpoint\rts-vpShowMsg.sqs"
+
+West exec "vicpoint\rts-vpScoreSounds.sqs"
+East exec "vicpoint\rts-vpScoreSounds.sqs"

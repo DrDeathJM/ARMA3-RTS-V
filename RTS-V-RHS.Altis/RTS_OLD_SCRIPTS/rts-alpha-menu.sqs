@@ -1,0 +1,218 @@
+;;Exec'd from an action on the player added by rws-init-playeractions.sqs
+
+_debug = TRUE
+
+;;re-init the most basic vars in case JIP doesn't.
+#reInit
+rts_hq = [SIDE Player,"HQ"]
+
+GUER = RESISTANCE
+CIV = CIVILIAN
+undefined_var = "scalar bool array string 0xe0ffffef"
+
+
+~.2
+
+closeDialog 0
+
+?!rts_moneyMonitorActive : [] exec "economy\rts-moneyMonitor.sqs"
+?format ["%1",playerMoney] == undefined_var : playerMoney = 0
+?format ["%1",playerMoney] == "scalar" : playerMoney = 0
+
+#Init
+ActionUnit = _this Select 0
+Activator = _this Select 1
+_actionid = _this Select 2
+
+?!Alive actionUnit : deletevehicle actionUnit; Hint "This action is on a dead body - Exiting"; Exit
+
+_bld = ActionUnit
+_player = Activator
+
+_side = SIDE _player
+
+
+?_side in [West] : _side2 = East
+?_side in [East] : _side2 = West
+
+?!(_side in [West,East]) : _player groupChat format ["Side %1 Not Recognized.  Invalid credentials:  Access Denied",SIDE _player]; Exit
+
+
+#CreateBuildDialog
+_idassetlist = 1000
+_idselect = 1005
+_idviewsel = 1010
+_idviewlist = 1015
+_idgroupList = 1020
+_groupListIndex = 0
+_idtitle = 1050
+
+
+
+_idComboHeights = 1040
+_indexComboHeights = 0
+
+_idSldQ = 1030
+_idLightQ = 1032
+_idHeavyQ = 1034
+_idAirQ = 1036
+;;_idBarracksQ = 1041
+
+
+_idstats = 500
+
+createDialog "DlgStatus"
+
+ctrlSetText [_idtitle, "Deployment Status"]
+ctrlSetText [_idselect, "PURCHASE UNITS"]
+;;ctrlShow [_idScramble, FALSE]
+;;ctrlShow [_idsatellite,FALSE]
+;;ctrlShow [_idroles, FALSE]
+;;ctrlShow [_iddestruct, FALSE]
+
+ctrlEnable [_idstats,FALSE]
+
+?!(Player in [WestCommander,EastCommander]) : ctrlShow [_iddestruct, FALSE]
+
+ctrlSetText [_idsldQ, "Soldier Queue Empty"]
+ctrlSetText [_idLightQ, "Light Queue Empty"]
+ctrlSetText [_idHeavyQ, "Heavy Queue Empty"]
+ctrlSetText [_idairQ, "Air Queue Empty"]
+;;ctrlSetText [_idBarracksQ, "Barracks Empty"]
+
+#ViewDistance
+
+_i = 0
+_amounts = ["500","900","1200","1500","1800","2000","2200","2500","3000","3500","4000","4500"]
+
+#ViewLoop
+_amt = _amounts Select _i
+_index = lbadd [_idviewlist, _amt]
+lbSetData [_idviewlist, _index, _amt]
+
+_i = _i + 1
+
+?_i < Count _amounts : Goto "ViewLoop"
+
+ctrlSetText [_idviewsel, "SET VIEW DISTANCE"]
+lbSetCurSel [_idviewlist,rts_viewdistanceindex]
+
+#Stats
+
+_assetIndex = 0
+
+#RefreshStart
+
+_stats = [_side,_side2] call compile preprocessfile "functions\rts-statistics-array.sqf"
+
+
+lbClear _idStats
+_x = 0
+#Statlist
+_statName = _stats select _x select 0
+_statLimit = _stats select _x select 1
+
+_info = format ["%1:  %2",_statName,_statLimit]
+_index = lbadd [_idStats,_info]
+
+_x = _x + 1
+?_x < count _stats : goto "StatList"
+
+#FlyHeight
+
+lbClear _idComboHeights
+_i = 0
+_amounts = ["1","10","13","20","30","50","77","100","200","300","400","500","600","700","1000","1500","2000","2500","3000"]
+
+#HeightLoop
+_amtStr = _amounts Select _i
+_amt = call compile _amtStr
+_index = lbadd [_idComboHeights, _amtStr]
+lbSetValue [_idComboHeights, _index, _amt]
+
+_i = _i + 1
+
+?_i < Count _amounts : Goto "HeightLoop"
+
+lbSetCurSel [_idComboHeights, _indexComboHeights]
+
+#GroupList
+
+lbClear _idgroupList
+_group = units group Player
+_cg = count _group
+_i = 0
+
+#GroupLoop
+_unit = _group Select _i
+
+_uInfo = [_unit] call compile preprocessfile "functions\rts-unitInfo.sqf"
+
+_uClass = _uInfo select 0
+_uVclName = _uInfo select 1
+_cPos = _uInfo select 2
+
+_info = format ["%1-%2 %3", _uClass, _cPos, _uVclName]
+
+_index = lbadd [_idGroupList,_info]
+lbSetData [_idGroupList, _index, _unit]
+lbSetValue [_idGroupList, _index, _i]
+
+_i = _i + 1
+
+?_i < _cg : Goto "GroupLoop"
+
+lbSetCurSel [_idgroupList, _groupListIndex]
+
+#AssetList
+
+_main = call compile format ["%1Assets", _side]
+_main2 = call compile format ["%1Buildings", _side]
+_x = 0
+
+#SetListInfo
+_ma = _main Select _x
+_ma2 = _main2 select _x
+
+_assetName = _ma Select 0
+_asset = _ma Select 3
+_type = _ma2 Select 0
+_pic = ""
+
+_assetLevel = call compile format ["%1Level", _asset]
+
+_done = "[UNKNOWN]"
+
+if (alive call compile _asset)  then {_done = "ONLINE"} else {_done = "OFFLINE"};
+
+;;?_debug : hint format ["asset: %1\nvar: %2\ndone: %3",_assetName,_variable,_done]
+
+_info = Format ["%1 | Level %2 %3", _assetName, _assetLevel, _done]
+_bldNameArray = call compile format ["[%1barracksName, %1LightFacName, %1HeavyFacName, %1AirFacName]" ,_side]
+?!(_assetName in _bldNameArray) : _info = Format["%1 %2", _assetName, _done]
+
+_index = lbadd [_idassetlist,_info]
+lbSetData [_idassetlist, _index, _assetName]
+lbSetValue [_idassetlist, _index, _x]
+lbSetPicture [_idassetlist, _index, _pic]
+
+_x = _x + 1
+?_x < Count _main : Goto "SetListInfo"
+
+lbSetCurSel [_idassetlist, _assetIndex]
+
+_wait = Time + 5
+
+#StatsMonitorLoop
+
+_assetIndex = lbCurSel _idassetList
+_groupListIndex = lbCurSel _idGroupList
+_indexComboHeights = lbCurSel _idComboHeights
+
+?_wait < Time : lbclear _idassetlist; goto "RefreshStart"
+
+?ctrlVisible _idassetList && alive Player : Goto "StatsMonitorLoop"
+
+
+#End
+Exit

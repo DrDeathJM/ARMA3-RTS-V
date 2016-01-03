@@ -1,0 +1,26 @@
+_idc = _this Select 0;
+
+_index = lbCurSel _idc
+_text = lbText [_idc, _index]
+_uNum = lbValue [_idc, _index]
+
+_group = units group player
+
+_unit = _group select _uNum
+
+?_unit == Player : player groupChat "You cannot release yourself from the group"; Exit
+
+unassignVehicle _unit
+
+_unit action ["EJECT",vehicle _unit]
+
+~2
+
+player groupChat format ["Releasing %1",_text]
+
+_unit setDamage 1
+~2
+
+deleteVehicle _unit
+
+Exit

@@ -1,0 +1,63 @@
+rts_newVehicle = objNull
+
+#Start
+~.5
+
+?isNull rts_newVehicle : goto "Start"
+
+
+_vcl = rts_newVehicle
+_type = typeOf _vcl
+_vclName = rts_newVehicleName
+
+?!Local _vcl : _vcl addEventHandler rts_killedSld
+
+rts_newVehicle = objNull
+
+#Custom
+
+?_type in ["O_Truck_03_ammo_F","B_Truck_01_ammo_F","O_Truck_03_repair_F","B_Truck_01_Repair_F","O_Truck_03_fuel_F","B_Truck_01_fuel_F"] : goto "AmmoCrate"
+?_type in ["WeaponBoxEast","WeaponBoxWest"] : goto "AmmoCrateLoad"
+?_type in ["B_MRAP_01_F","O_MRAP_02_F"] : goto _type
+
+goto "start"
+
+#WestMCUType
+_action = format ["%1 Menu",WestMCUName]
+_vcl addAction [_action,"rts-build-menustructures.sqs"]
+
+goto "Start"
+
+#EastMCUType
+_action = format ["%1 Menu",EastMCUName]
+_vcl addAction [_action,"rts-build-menustructures.sqs"]
+
+goto "Start"
+
+#MCU
+?(SIDE _player == West) : NewBuildingWest = _vcl; PublicVariable "NewBuildingWest";WMCU = _vcl; PublicVariable "WMCU"; WestBases = WestBases + 1; PublicVariable "WestBases"
+?(SIDE _player == East) : NewBuildingEast = _vcl; PublicVariable "NewBuildingEast";EMCU = _vcl; PublicVariable "EMCU"; EastBases = EastBases + 1; PublicVariable "EastBases"
+Goto "start"
+
+#CJ
+?(SIDE _player == West) : NewBuildingWest = _vcl; PublicVariable "NewBuildingWest";CJ = _vcl; PublicVariable "CJ"; WestBases = WestBases + 1; PublicVariable "WestBases"
+?(SIDE _player == East) : NewBuildingEest = _vcl; PublicVariable "NewBuildingEest";CJ = _vcl; PublicVariable "CJ"; EastBases = EastBases + 1; PublicVariable "EastBases"
+NewRecycler = _vcl
+Publicvariable "Newrecycler"
+
+Goto "start"
+
+#Ammocrate
+
+_vcl addAction ["*Ammo Menu*","arms\karr-arms-menu.sqs"]
+_vcl addAction ["*Drop Ammo Crate*","rts-misc-ammocrateCreate.sqs"]
+
+goto "Start"
+
+#AmmocrateLoad
+
+_vcl exec "rts-misc-ammoCrateLoad.sqs"
+
+_vcl addAction ["*Ammo Menu*","arms\karr-arms-menu.sqs"]
+
+goto "Start"

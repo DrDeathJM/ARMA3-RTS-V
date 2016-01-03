@@ -1,0 +1,87 @@
+
+_idc = _this Select 0;
+_optionNumber = _this Select 1;
+
+_building = ActionUnit
+_player = Activator
+
+;;?(_optionNumber == 4) : Goto "RandomWeather"
+;;?(_optionNumber == 5) : Goto "FastTime"
+
+#GetNumberfromString
+_index = lbCurSel _idc
+_valuestring = lbData [_idc, _index]
+_value = call compile _valuestring
+
+;;_value = call compile (ctrlText _idc)
+?format["%1", _value] == undefined_var : Hint "ERROR"; Exit
+
+?(_optionNumber == 1) : Goto "AILimit"
+?(_optionNumber == 2) : Goto "SetViewDistance"
+
+Hint "Information not found."
+Goto "End"
+
+#AILimit
+
+?(_player != WestCommander) AND (_player != EastCommander) : Hint "Only the Commander can change this option."; Exit
+
+#SetAiLimit
+
+?(PlayerCount <= 4) : MaxAILimit = 11
+?(PlayerCount >= 5) AND (PlayerCount <= 7) : MaxAILimit = 5
+?(PlayerCount >= 8) AND (PlayerCount <= 12) : MaxAILimit = 3
+?(PlayerCount >= 13) AND (PlayerCount <= 16) : MaxAILimit = 1
+?(PlayerCount >= 17) AND (PlayerCount <= 20) : MaxAILimit = 1
+?(PlayerCount >= 21) AND (PlayerCount <= 24) : MaxAILimit = 1
+
+?_value > MaxAILimit : _value = MaxAILimit; Hint Format ["Max AI Limit is %1 due to number of players",MaxAiLimit]
+
+AILimit = _value
+PublicVariable "AILimit"
+
+_text = Format["AI Limit: %1",AILimit]
+ctrlSetText [502, _text]
+
+Goto "End"
+
+#SetViewDistance
+rts_viewDistanceIndex = _index
+
+setViewDistance _value
+
+Goto "End"
+
+#RandomWeather
+
+?(_player != WestCommander) AND (_player != EastCommander) : Hint "Only the Commander can change this option."; Exit
+
+?!(RandomWeather) : Hint "Random Weather activated."
+?(RandomWeather) : Hint "Random Weather De-activated."
+~3
+?(RandomWeather) : RandomWeather = FALSE; PublicVariable "RandomWeather"; _text = Format["Turn Random Weather ON"]; Goto "RandomWeatherText"
+?!(RandomWeather) : RandomWeather = TRUE; PublicVariable "RandomWeather"; _text = Format["Turn Random Weather OFF"]; Goto "RandomWeatherText"
+
+#RandomWeatherText
+ctrlSetText [515, _text]
+
+Goto "End"
+
+#FastTime
+
+?(_player != WestCommander) AND (_player != EastCommander) : Hint "Only the Commander can change this option."; Exit
+
+;;?!(FastTime) : Hint "Fast Time is now ON."
+;;?(FastTime) : Hint "Fast Time is now OFF."
+
+?(FastTime) : FastTime = FALSE; PublicVariable "FastTime"; _text = Format["Turn Fast Time ON"]; Goto "FastTimeText"
+?!(FastTime) : FastTime = TRUE; PublicVariable "FastTime"; _text = Format["Turn Fast Time OFF"]; Goto "FastTimeText"
+
+#FastTimeText
+ctrlSetText [520, _text]
+
+Goto "End"
+
+#End
+Exit
+

@@ -1,0 +1,24 @@
+;;Serverside Supply Monitor--sends info to clients
+
+#init
+
+?!Local Server : Exit
+
+#Monitor
+~1
+
+_WestSupplyFactor = WestSupplyFactor
+_WestSupplyPerMinute = _WestSupplyFactor
+_WestSupplyPerSecond = _WestSupplyPerMinute/60
+
+_EastSupplyFactor = EastSupplyFactor
+_EastSupplyPerMinute = _EastSupplyFactor
+_EastSupplyPerSecond = _EastSupplyPerMinute/60
+
+WestSupply = WestSupply + _WestSupplyPerSecond
+publicVariable "WestSupply"
+
+EastSupply = EastSupply + _EastSupplyPerSecond
+publicVariable "EastSupply"
+
+goto "Monitor"

@@ -1,0 +1,267 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, AI_Driver_Empty">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"end",1,250,-178.959076,-732.637390,-88.958862,-682.637512,0.000000,"end"};
+item1[] = {"server",4,218,-524.615723,-1035.959961,-434.615753,-985.960083,0.000000,"server"};
+item2[] = {"not_server",4,218,-178.997986,-1034.711426,-88.997795,-984.711182,0.000000,"not" \n "server"};
+item3[] = {"check",2,250,-523.320313,-730.889404,-433.320374,-680.889404,0.000000,"check"};
+item4[] = {"start",0,250,-351.916565,-1034.793091,-261.916565,-984.793213,0.000000,"start"};
+item5[] = {"out",4,218,-524.800171,-594.743103,-434.800232,-544.743103,0.000000,"out"};
+item6[] = {"dead",4,218,-353.137451,-732.369263,-263.137451,-682.369263,0.000000,"dead"};
+item7[] = {"in",4,218,-669.825684,-730.889404,-579.825684,-680.889404,0.000000,"in"};
+item8[] = {"var",2,4346,-524.800049,-921.790405,-434.800232,-871.790222,0.000000,"var"};
+item9[] = {"driver_in",4,218,-524.800049,-831.519287,-434.800171,-781.519348,0.000000,"driver" \n "in"};
+item10[] = {"change",4,218,-325.164825,-923.223267,-235.164825,-873.223267,0.000000,"change"};
+link0[] = {1,8};
+link1[] = {2,0};
+link2[] = {3,5};
+link3[] = {3,6};
+link4[] = {3,7};
+link5[] = {4,1};
+link6[] = {4,2};
+link7[] = {5,3};
+link8[] = {6,0};
+link9[] = {7,3};
+link10[] = {8,6};
+link11[] = {8,9};
+link12[] = {8,10};
+link13[] = {9,3};
+link14[] = {10,0};
+globals[] = {0.000000,0,0,0,0,640,480,2,507,6316128,1,-968.151367,285.283173,-260.453979,-1505.009521,849,850,1};
+window[] = {0,-1,-1,-1,-1,1059,229,1829,78,1,866};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "AI_Driver_Empty";
+  class States
+  {
+    /*%FSM<STATE "end">*/
+    class end
+    {
+      name = "end";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "check">*/
+    class check
+    {
+      name = "check";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "if (_outtime1 < 0) then {" \n
+       "_deadcar = true;" \n
+       "	_car setdamage 0;" \n
+       "" \n
+       "	{" \n
+       "	_num = if (_x in [""HitFuel"",""HitFuel2"",""HitHull""]) then {.5}else{1};" \n
+       "	_car setHitPointDamage [_x,_num];" \n
+       "	} foreach _HitPonts;" \n
+       "" \n
+       "	_car setVehicleLock ""LOCKED"";" \n
+       "};" \n
+       "" \n
+       "" \n
+       "" \n
+       "_timeout = time;" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "dead">*/
+        class dead
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(alive _car) or (_deadcar)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "[_car] spawn {" \n
+           "private [""_car""];" \n
+           "_car = _this select 0;" \n
+           "sleep 50;" \n
+           "{unassignVehicle _x;_x action [""eject"", _car] } forEach crew _car;" \n
+           "sleep 10;" \n
+           "deletevehicle _car;" \n
+           "};" \n
+           "" \n
+           "[_car,_pos,_type,_dir,_marker,_colour] spawn {" \n
+           "private [""_car"",""_pos"",""_type"",""_dir"",""_marker"",""_colour""];" \n
+           "" \n
+           "_car = _this select 0;" \n
+           "_pos = _this select 1;" \n
+           "_type = _this select 2;" \n
+           "_dir = _this select 3;" \n
+           "_marker = _this select 4;" \n
+           "_colour = _this select 5;" \n
+           "" \n
+           "sleep 60;" \n
+           "" \n
+           "if (getmarkercolor _marker == _colour) then" \n
+           "{" \n
+           "_car = _type createvehicle _pos;" \n
+           "_car setvectorUp [0,0,1];" \n
+           "_car setdir _dir;" \n
+           "[_car,_pos,_marker] execFSM ""ZKS\Vehicles\AI_Driver_Empty.fsm"";" \n
+           "};" \n
+           "" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "in">*/
+        class in
+        {
+          priority = 0.000000;
+          to="check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_outtime1 != _outtime) && (count crew _car > 0))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_outtime1 = _outtime;" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "out">*/
+        class out
+        {
+          priority = 0.000000;
+          to="check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((time > (_timeout + 10)) && (count crew _car == 0) && ((_car distance _pos) > _lookdis))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_outtime1 = _outtime1 - 10;" \n
+           "" \n
+           "" \n
+           "" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "start">*/
+    class start
+    {
+      name = "start";
+      init = /*%FSM<STATEINIT""">*/"// Script by Zonekiller  -- http://zonekiller.ath.cx --    -- zonekiller@live.com.au --" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "not_server">*/
+        class not_server
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isserver)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "server">*/
+        class server
+        {
+          priority = 0.000000;
+          to="var";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isserver" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "var">*/
+    class var
+    {
+      name = "var";
+      init = /*%FSM<STATEINIT""">*/"_car = _this select 0;" \n
+       "_pos = _this select 1;" \n
+       "_dir = direction _car;" \n
+       "_type = typeof _car;" \n
+       "_marker = _this select 2;" \n
+       "_deadcar = false;" \n
+       "_lookdis = 10;" \n
+       "_outtime = 120;" \n
+       "_outtime1 = _outtime;" \n
+       "_colour = getmarkercolor _marker;" \n
+       "" \n
+       "_HitPonts = [""HitEngine"",""HitEngine1"",""HitHull"",""HitBody"",""HitFuel"",""HitFuel2"",""HitHRotor"",""HitAvionics"",""HitTurret"",""HitGun"",""HitLFWheel"",""HitLF2Wheel"",""HitRFWheel"",""HitRF2Wheel"",""HitLBWheel"",""HitLMWheel"",""HitRBWheel"",""HitRMWheel"",""HitReserveWheel"",""HitLTrack"",""HitRTrack"",""HitRGlass"",""HitLGlass"",""HitGlass1"",""HitGlass2"",""HitGlass3"",""HitGlass4"",""HitGlass5"",""HitGlass6"",""HitGlass7"",""HitGlass8"",""HitGlass9"",""HitGlass10"",""HitGlass11"",""HitGlass12"",""HitGlass13"",""HitGlass14"",""HitGlass15""];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "driver_in">*/
+        class driver_in
+        {
+          priority = 0.000000;
+          to="check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(((_car emptypositions ""Driver"") == 0) && (alive _car))"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "change">*/
+        class change
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(getmarkercolor _marker != _colour) && (count crew _car == 0) && ((_car distance _pos) < _lookdis)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"deletevehicle _car;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "dead">*/
+        class dead
+        {
+          priority = 0.000000;
+          to="end";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(alive _car) or (_deadcar)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"" \n
+           "[_car] spawn {" \n
+           "private [""_car""];" \n
+           "_car = _this select 0;" \n
+           "sleep 50;" \n
+           "{unassignVehicle _x;_x action [""eject"", _car] } forEach crew _car;" \n
+           "sleep 10;" \n
+           "deletevehicle _car;" \n
+           "};" \n
+           "" \n
+           "[_car,_pos,_type,_dir,_marker,_colour] spawn {" \n
+           "private [""_car"",""_pos"",""_type"",""_dir"",""_marker"",""_colour""];" \n
+           "" \n
+           "_car = _this select 0;" \n
+           "_pos = _this select 1;" \n
+           "_type = _this select 2;" \n
+           "_dir = _this select 3;" \n
+           "_marker = _this select 4;" \n
+           "_colour = _this select 5;" \n
+           "" \n
+           "sleep 60;" \n
+           "" \n
+           "if (getmarkercolor _marker == _colour) then" \n
+           "{" \n
+           "_car = _type createvehicle _pos;" \n
+           "_car setvectorUp [0,0,1];" \n
+           "_car setdir _dir;" \n
+           "[_car,_pos,_marker] execFSM ""ZKS\Vehicles\AI_Driver_Empty.fsm"";" \n
+           "};" \n
+           "" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="start";
+  finalStates[] =
+  {
+    "end",
+  };
+};
+/*%FSM</COMPILE>*/

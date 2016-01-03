@@ -1,0 +1,58 @@
+;;Exec'd from button on dlgStatus
+
+~.2
+
+CloseDialog 0
+
+
+#Init
+
+_idTitle = 3000
+_idHelpText = 3005
+_idHelpList = 3010
+
+
+_introText = "Select a help topic from the left to display the information in the middle."
+_howToBuildBaseText = "Building a base in RTS-4 is simple.  When the mission starts, your commander has an MCU (Mobile Construction Unit).  Only the commander can create the base.  This vehicle can create your base anywhere you wish.\n\nFirst drive to a suitable location, then select Construction Menu from your action menu.  A list of buildings will appear.  Click on the one you wish to build and then click Deploy on the right side.\n\nA preview of the building will appear.  You can drive around with the preview up to get placement exactly as you wish.\n\nIf the area is clear to build in, a HELI-H pad will appear to notify you.\n\nFind a clear area to create the building and then select -[Confirm Location]- from your action menu."
+_howToCommandText = "The commander does more than build a base.  After your base is complete, you can create AI-controlled units for other player squad leaders.  First, bring up the RTS Menu from your action menu and select the asset you wish to build from, i.e. Barracks, Vehicle Factory, Aircraft Factory, etc.  On the right side, click the Inventory button.  A list of available units along with their costs will appear.  Select what you wish to build, then in the group list on the right, select the squad leader you wish to build for by clicking his name.  Now click the Create For Squad button on the right.  A new unit will be build along with AI to drive, gun, command, etc."
+_howToBuildUnitsText = "To create units, i.e. Armor, Infantry, Aircraft, etc., first bring up the RTS Menu by clicking it in your action menu.  Select which factory you wish to build at from the center list by clicking on it.  Now click the INVENTORY button on the right.  A new list of units will appear.  Click on the unit you want and press either DEPLOY to make it empty, or DEPLOY MANNED to create it with AI to crew it.  All units have costs in OIL, ORE, and ENERGY.  If you do not have enough of a resource, you'll be denied the deployment."
+_howToCaptureText = format ["Capturing resources is vital for your army.\n\nTo capture a territory you or AI must drive a SUPPLY TRUCK up to the flag.\n\nOnce Captured, the SUPPLY TRUCK deploys into a FORWARD BASE Level 1.  This FORWARD BASE will upgrade to a maximum of level 4, enabling your team to build new units with each level.\n\nIn addition, your team will earn money and supplies from this territory as indicated in the STATUS HUD.\n\nTo take an enemy territory, you must destroy their FORWARD BASE on that territory.  If a FORWARD BASE is destroyed, then the territory will become neutral again and can be captured by the other team."]
+
+
+
+
+_helpArray = [["Introduction",_introText],["Commanding",_howToCommandText],["Building a Base",_howToBuildBaseText],["Building Units",_howToBuildUnitsText],["Capturing Territories",_howToCaptureText]]
+
+
+#CreateDialog
+createDialog "DlgHelpMenu"
+
+ctrlSetText [_idtitle, "Warfare Unleashed Manual"]
+
+_i = 0
+
+#HelpLoop
+_label = _helpArray Select _i Select 0
+_text = _helpArray Select _i Select 1
+
+_index = lbadd [_idHelpList, _label]
+lbSetData [_idHelpList, _index, _text]
+
+_i = _i + 1
+
+?_i < Count _helpArray : Goto "HelpLoop"
+
+lbSetCurSel [_idHelpList, 0]
+
+
+#Refresh
+~.5
+
+_index = lbCurSel _idHelpList
+
+_text = lbData [_idHelpList, _index]
+
+ctrlSetText [_idHelpText,_text]
+
+?ctrlVisible _idTitle && Alive Player : goto "Refresh"
+

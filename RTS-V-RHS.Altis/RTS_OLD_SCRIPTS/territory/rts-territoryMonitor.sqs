@@ -1,0 +1,209 @@
+;;exec'd from rts-territoryInit.sqs
+
+_string = _this select 0
+_minValue = _this select 1
+_flag = call compile format ["flag%1", _string]
+_flagNum = call compile _string
+_flagName = call compile format ["Flag%1Name",_string]
+
+_maxLevel = 4
+_maxValue = call compile format ["%1 * %2",_minValue,_maxLevel]
+
+
+;;Initializing Queue Numbers to 0 since Arma2 doesn't allow undefined vars
+call compile format ["EastBuildingFlag%1QNum = 0",_string]
+call compile format ["WestBuildingFlag%1QNum = 0",_string]
+call compile format ["EastBuildingFlag%1Name = Flag%1Name",_string]
+call compile format ["WestBuildingFlag%1Name = Flag%1Name",_string]
+
+call compile format ["EastBuildingFlag%1QActive = FALSE",_string]
+call compile format ["WestBuildingFlag%1QActive = FALSE",_string]
+
+_trig = call compile format ["ListFlag%1",_string]
+
+if (format ["%1", _flag] == undefined_var) then {hint "Exit"; Exit};
+
+[_string, _minValue] exec "territory\rts-territoryMarkers.sqs"
+
+_p1 = getPos _flag
+_repairPos = [(_p1 select 0) + 10, (_p1 select 1) + 10]
+_repairPad = "Land_HelipadSquare_F" createVehicleLocal _repairPos
+call compile format ["RepairPadFlag%1 = _repairPad",_string]
+_string exec "rts-vcl-repairPad.sqs"
+
+?!Local Server : Exit
+
+_trig setTriggerArea [20,20,0,true]
+
+flagNumber = flagNumber + 1; publicVariable "flagNumber"
+
+_upgradeWait = 20
+_side = CIV
+
+call compile format ["SideFlag%1 = ""%2""; publicVariable ""SideFlag%1""",_string,_side]
+call compile format ["%1FC = %1FC + 1; publicVariable ""%1FC""",_side]
+
+
+_spotPos = [(_p1 select 0) - 10, (_p1 select 1) - 10]
+
+;;_posX = _spotPos select 0
+;;_posY = _spotPos select 1
+;;_posZ = -10
+;;_dir = 0
+;;_buildTime = 20
+
+_spot = "Land_helipadempty_f" createVehicle _spotPos
+
+_level = 0
+_newValue = call compile format ["%1 * %2",_minValue,_level]
+_curValue = _newValue
+
+
+#Init
+
+_bldType = "objnull"
+ _duty = ""
+ _wait = Time + _upgradeWait
+ #Monitor
+~1
+
+ ;;for JIP
+ call compile format ["publicVariable ""SideFlag%1""",_string]
+
+_West1 = {Side _x == West && (getpos _x select 2 < 2) && typeOf vehicle _x in [repairTruckWest]} count list _trig
+_West2 = {Side _x == West && (getpos _x select 2 < 2) && typeOf vehicle _x in [ammoTruckWest]} count list _trig
+_East1 = {Side _x == East && (getpos _x select 2 < 2) && typeOf vehicle _x in [repairTruckEast]} count list _trig
+_East2 = {Side _x == East && (getpos _x select 2 < 2) && typeOf vehicle _x in [ammoTruckEast]} count list _trig
+;;_guer = {Side _x == GUER && (getpos _x select 2 < 2) && typeOf vehicle _x == "I_Truck_02_covered_F"} count list _trig
+
+_oldDuty = _duty
+
+_bld = nearestObject [_spot,_bldType]
+
+;;?_string == "1" : player sidechat format ["%1",_bld]
+
+?_West1 > 0 && isNull _bld : _side = West; _duty = "Base"; _bld = nearestObject [_flag,repairTruckWest]; goto "Owned"
+?_West2 > 0 && isNull _bld : _side = West; _duty = "Base"; _bld = nearestObject [_flag,ammoTruckWest]; goto "Owned"
+?_East1 > 0 && isNull _bld : _side = East; _duty = "Base"; _bld = nearestObject [_flag,repairTruckEast]; goto "Owned"
+?_East2 > 0 && isNull _bld : _side = East; _duty = "Base"; _bld = nearestObject [_flag,ammoTruckEast]; goto "Owned"
+
+_bld = nearestObject [_spot,_bldType]
+
+if (isNull _bld) then {_wait = Time + _upgradeWait};
+if (!isNull _bld && alive _bld && Time < _wait) then {goto "Monitor"};
+if (!isNull _bld && !alive _bld) then {goto "LevelDown"};
+if (!isNull _bld && alive _bld && Time > _wait) then {goto "LevelUp"};
+
+goto "Monitor"
+
+
+#Owned
+
+?!isNull Driver _bld : _leader = leader driver _bld; call compile format ["XP%1 = XP%1 + 4; publicVariable ""XP%1""",_leader]
+
+
+_flagSide = call compile format ["SideFlag%1",_string]
+
+?call compile _flagSide == _side && !isNull _bld : player groupchat "Already Owned"; goto "Monitor"
+?call compile _flagSide == _side && isNull _bld : _level = 0
+
+;;Lower Resource Level for losing side
+call compile format ["%1SupplyFactor = %1SupplyFactor - %2; publicVariable ""%1%2""",_flagSide,_newValue]
+
+;;Lower flagCount for losing side
+call compile format ["%1FC = %1FC - 1; publicVariable ""%1FC""",_flagSide]
+
+;;Increase flagCount for winning side
+call compile format ["%1FC = %1FC + 1; publicVariable ""%1FC""",_side]
+
+;;Change flagSide to winning side
+call compile format ["SideFlag%1 = ""%2""; publicVariable ""SideFlag%1""",_string,_side]
+
+_flagSide = call compile format ["SideFlag%1",_string]
+
+_msg = format ["%1 has taken %2.  Value:  %3/%4",_flagside,_flagName,_minValue,_maxValue]
+
+msgArray = format ["%1",[_msg,_side,_flagName,_minValue]]
+publicVariable "msgArray"
+
+~2
+
+#LevelUp
+
+_wait = Time + _upgradeWait
+
+?_level >= _maxLevel : _level = _maxLevel; goto "Monitor"
+
+;;Calculate new Supply Factor
+_level = _level + 1;
+_curValue = _newValue;
+_newValue = call compile format ["%1 * %2",_minValue,_level]
+
+;;increase WestSupplyFactor or EastSupplyFactor
+call compile format ["%1SupplyFactor = %1SupplyFactor + (%2 - %3); publicVariable ""%1%2""",_flagSide,_newValue,_curValue]
+
+_bldType = call compile format ["%1%2Level%3",_side,_duty,_level]
+_bldName = format ["%1 %2 Level %3",_flagName,_duty,_level]
+
+_posZ = -10
+?_bldType in [WestRefineryLevel1,WestRefineryLevel2,WestRefineryLevel3,EastRefineryLevel1,EastRefineryLevel2,EastRefineryLevel3] : _posZ = -5
+
+
+;;player groupChat format ["duty: %1, _D: %2, BldType: %3",_duty,_d,_bldType]
+
+_msg = format ["%1 (%2) upgraded to level %3.  Supply Value: %4/%5.",_flagName,_side,_level,_newValue,_maxValue]
+msgArray = format ["%1",[_msg,_side,_flagName,_newValue]]
+publicVariable "msgArray";
+
+;;player groupChat format ["Level Up:  Side: %1  Level %2  Btype:  %2",_side,_level,_bldType]
+
+_unitName = format ["%1 | Level %2 %3",_flagName,_level,_duty]
+
+?_level > 0 : deleteVehicle _bld; _bld = _bldType createVehicle _spotPos; _bld setPos _spotPos; _varName = format ["%1BuildingFlag%2",_flagside, _string]; call compile format ["%1 = _bld; publicvariable ""%1""",_varName]; _bld exec "territory\rts-territorySuicide.sqs"
+;;?_level > 0 : _tmpArray = [_side,[_posX,_posY,_posZ],_dir,_unitName,_buildTime]; rts_infoArray = format ["[""%1""]",_unitName]; publicVariable "rts_infoArray"; newBuilding = _bld publicVariable "newBuilding"
+?_level > 0 : newBuilding = _bld; publicVariable "newBuilding"
+
+?_level == 1 : _tArr = format ["[""%2"",1,%1ForwardBaseArray1,""%3""]",_flagSide,_bldName,_varName]
+?_level == 2 : _tArr = format ["[""%2"",1,%1ForwardBaseArray2,""%3""]",_flagSide,_bldName,_varName]
+?_level == 3 : _tArr = format ["[""%2"",1,%1ForwardBaseArray3,""%3""]",_flagSide,_bldName,_varName]
+?_level == 4 : _tArr = format ["[""%2"",1,%1ForwardBaseArray4,""%3""]",_flagSide,_bldName,_varName]
+
+?_level > 0 : call compile format ["%1Assets = [%1Assets, %2, 1, %1] call compile preprocessfile ""functions\updateArray.sqf""",_flagSide,_tArr]
+
+goto "Monitor"
+
+#LevelDown
+~10
+deleteVehicle _bld
+;;?_oldDuty == "base" : call compile format ["%1%2 = %1%2 - (_level); publicVariable ""%1%2""",_minValue,_side]
+
+;;Lower supply factor for losing side
+call compile format ["%1SupplyFactor = %1SupplyFactor - %2; publicVariable ""%1%2""",_flagSide,_newValue]
+
+;;Send message to losing side
+_msg = format ["%1 Lost!  Level %2 forward base destroyed.  Supply factor reduced by %3/min",_flagName,_level,_newValue]
+msgArray = format ["%1",[_msg,_side,_flagName,_minValue]]
+publicVariable "msgArray"
+
+;;Remove forward base from assets
+call compile format ["%1Assets = [%1Assets, %2, 0, %1] call compile preprocessfile ""functions\updateArray.sqf""",_flagSide,_tArr]
+
+_side = nul
+
+;;Lower flagCount for losing side
+call compile format ["%1FC = %1FC - 1; publicVariable ""%1FC""",_flagSide]
+
+;;Increase flagCount for winning side
+call compile format ["%1FC = %1FC + 1; publicVariable ""%1FC""",_side]
+
+;;Change flagSide to winning side
+call compile format ["SideFlag%1 = ""%2""; publicVariable ""SideFlag%1""",_string,_side]
+
+;;Reset Level to 0
+_level = 0
+
+
+goto "Init"
+
+
+

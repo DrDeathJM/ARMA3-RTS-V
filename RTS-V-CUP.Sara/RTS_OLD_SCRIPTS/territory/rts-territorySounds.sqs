@@ -1,0 +1,17 @@
+_side = SIDE Player
+
+
+
+#Init
+_oldCount = call compile format ["%1FC",_side]
+
+#Monitor
+~1
+_curCount = call compile format ["%1FC",_side]
+
+?_curCount == _oldCount : goto "Monitor"
+
+?_curCount < _oldCount : playsound "sectorLost"
+?_curCount > _oldCount : playsound "sectorCapped"
+
+goto "Init"
